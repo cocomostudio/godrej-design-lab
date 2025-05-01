@@ -1,0 +1,14 @@
+
+public/
+
+# React Router
+.react-router/
+build/
+
+# Dependencies
+node_modules/
+
+.vercel
+
+# Operating System files
+.DS_Store
