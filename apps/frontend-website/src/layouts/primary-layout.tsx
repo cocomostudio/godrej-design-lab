@@ -1,13 +1,18 @@
 
-import { Link } from "react-router"
-import { Outlet } from "react-router"
+import {
+	Outlet,
+	Link,
+} from "react-router"
 import {
 	useState,
-	useRef
 } from "react"
 
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo"
 import { GodrejLogo } from "~/__lib/this/ui/components/godrej-logo"
+
+
+
+
 
 export default function ThisLayout () {
 	return <div style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
@@ -17,17 +22,20 @@ export default function ThisLayout () {
 	</div>
 }
 
+
+
+
+
 function Header () {
 	const [ isNavOpen, setIsNavOpen ] = useState( false )
 	return <header>
 		<div className={ `relative z-10 grid ${ isNavOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]" } transition-all duration-450 ease-vaul` }>
 			<div className="overflow-hidden">
-				<HeaderNavigation isVisible={ isNavOpen } className={ `_absolute _z-10 w-full transition-transform duration-450 ease-vaul ${ isNavOpen ? "translate-y-0" : "-translate-y-full" }` } />
+				<HeaderNavigation isVisible={ isNavOpen } className={ `w-full transition-transform duration-450 ease-vaul ${ isNavOpen ? "translate-y-0" : "-translate-y-full" }` } />
 			</div>
 		</div>
 		<div className="relative container flex justify-between items-start pt-8">
 			<Link to={ "/" } className={ `transition-opacity duration-150 ease-in ${ isNavOpen ? "opacity-0 pointer-events-none" : "" }` }>
-				{/* <img src="/media/gdl-logo-1.png" alt="Godrej Design Lab logo" className="w-15" /> */}
 				<GDLLogo className="w-1c md:w-[calc(var(--column-width)/2)] lg:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
 			</Link>
 			<button type="button" className="text-sm font-bold uppercase" onClick={ () => setIsNavOpen( v => !v ) }>
@@ -38,12 +46,13 @@ function Header () {
 	</header>
 }
 
+
 interface HeaderNavigationProps extends React.ComponentProps<"header"> {
 	isVisible?: boolean;
 }
 function HeaderNavigation ( { isVisible = false, className = "" }: HeaderNavigationProps ) {
 	return <header className={ `bg-primary relative after:absolute after:top-0 after:right-0 after:w-1/3 after:h-full md:after:bg-secondary ${ className }` }>
-		<nav className="md:container md:grid-layout _flex _flex-col _md:flex-row _md:justify-between">
+		<nav className="md:container md:grid-layout">
 			<div className="end-col-1 text-secondary">
 				<div className="container flex justify-between items-start pt-8">
 					<Link to={ "/" } className={ `transition-opacity duration-250 delay-200 ease-out ${ isVisible ? 'opacity-100' : 'opacity-0' }` }>
@@ -51,7 +60,7 @@ function HeaderNavigation ( { isVisible = false, className = "" }: HeaderNavigat
 					</Link>
 					<div className={ `absolute top-full left-0 w-full transition-opacity duration-150 delay-200 ease-out ${ isVisible ? "opacity-100" : "opacity-0" }` }>
 						<div className="container text-right">
-							<button type="button" className="_md:hidden text-sm font-bold uppercase">Close</button>
+							<button type="button" className="text-sm font-bold uppercase">Close</button>
 						</div>
 					</div>
 				</div>
@@ -83,7 +92,7 @@ function HeaderNavigation ( { isVisible = false, className = "" }: HeaderNavigat
 function Footer ( { className }: React.ComponentProps<"footer"> ) {
 	return <footer className={ className }>
 		<nav className="bg-primary relative after:absolute after:top-0 after:right-0 after:w-1/3 after:h-full md:after:bg-secondary">
-			<div className="md:container md:grid-layout _flex _flex-col _md:flex-row _md:justify-between">
+			<div className="md:container md:grid-layout">
 				<div className="py-6 lg:py-9 start-col-1 end-col-5 lg:end-col-7">
 					<div className="md:w-2c-1g lg:w-3c-2g text-secondary">
 						<div className="container">
