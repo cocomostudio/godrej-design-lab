@@ -1,4 +1,68 @@
 
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/400-normal.otf" ) format( "opentype" );
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/400-italic.otf" ) format( "opentype" );
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/500-normal.otf" ) format( "opentype" );
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/500-italic.otf" ) format( "opentype" );
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/700-normal.otf" ) format( "opentype" );
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/700-italic.otf" ) format( "opentype" );
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/900-normal.otf" ) format( "opentype" );
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HB Goblet A";
+	src: url( "/fonts/hb-goblet-a-v0.5/900-italic.otf" ) format( "opentype" );
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
