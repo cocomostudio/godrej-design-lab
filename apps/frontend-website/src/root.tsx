@@ -12,6 +12,8 @@ import type { Route } from "./+types/root"
 
 import stylesheet from "./stylesheet.css?url"
 
+import { DesignInspector } from "~/__lib/this/ui/components/design-inspector"
+
 export const links: Route.LinksFunction = () => [
 	{
 		rel: "stylesheet",
@@ -27,8 +29,9 @@ export function Layout ( { children }: { children: React.ReactNode } ) {
 			<Meta />
 			<Links />
 		</head>
-		<body>
-			{ children }
+		<body className="font-sans">
+			{ children }
+			<DesignInspector enabled={ false } />
 			<ScrollRestoration />
 			<Scripts />
 		</body>
