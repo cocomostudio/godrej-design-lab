@@ -12,5 +12,6 @@ export default [
 	layout( "./layouts/primary-layout.tsx", [
 		route( "fellows/rahul-bhusan", "routes/fellow-single.tsx" ),
 		route( "kitchen-sink", "routes/kitchen-sink.tsx" ),
+		route( "about", "routes/about.tsx" ),
 	] )
 ] satisfies RouteConfig
