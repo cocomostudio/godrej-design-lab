@@ -32,6 +32,8 @@ function Content({ className }: React.ComponentProps<"main">) {
 
       <WhatWeDO className="mt-4 md:mt-8 lg:mt-10 md:flex md:flex-col md:gap-1g" />
 
+      <OurTeam className="mt-4 md:mt-8 lg:mt-10 md:flex md:flex-col md:gap-1g" />
+
       {/* <Belive className="flex"/> */}
 
       {/* <TestimonialSection className="mt-6 md:mt-8 lg:mt-10 | space-y-6 md:space-y-8 lg:space-y-10" />
@@ -106,53 +108,131 @@ function WhatWeDO({ className }: React.ComponentProps<"section">) {
       </div>
       <div className=" md:flex md:gap-1g">
         <div className="md:w-5c-4g lg:w-6c-5g md:flex md:flex-col md:justify-between">
-          <div className="md:gap-1g">
+          <div className="sm:mt-4 md:mt-0 md:gap-1g">
             <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold uppercase text-red">
               fellowship program
             </h3>
-            <p className="text-p mt-4 md:8 lg:10">
+            <p className="text-p mt-2 md:8 lg:10">
               The Godrej Design Lab Fellowship Program aims to engage with
               India’s vibrant design space by empowering pioneering talent to
               showcase their passion, expertise, and vision.
             </p>
           </div>
-          <div>
-            <a className="text-p text-mono underline" href="#">Read More</a>
+          <div className="sm:mt-2 md:mt-0">
+            <a className="text-p font-mono underline uppercase" href="#">
+              Read More
+            </a>
           </div>
         </div>
-        <div className="md:w-2c-1g lg:w-3c-2g">
-          <img className="rounded" src="https://i.ibb.co/wZVvM7XY/BGP01876-1.png" alt="" />
+        <div className="sm:my-4 md:mt-0 md:w-2c-1g lg:w-3c-2g">
+          <img
+            className="rounded"
+            src="https://i.ibb.co/wZVvM7XY/BGP01876-1.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <hr className="border-black" />
+
+      {/* below this is secound section */}
+
+      <div className=" md:flex md:gap-1g">
+        <div className="md:w-5c-4g lg:w-6c-5g md:flex md:flex-col md:justify-between">
+          <div className="sm:mt-4 md:mt-0 md:gap-1g">
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold uppercase text-red">
+              Conscious Collective
+            </h3>
+            <p className="text-p mt-2 md:8 lg:10">
+              Our flagship event is an initiative to create awareness and drive
+              solutions towards better living. With a focus on Conscious Spaces
+              and Sustainable Materials we aim to build a community of
+              like-minded professionals who will reimagine a more sustainable
+              future and act as ambassadors to explore possibilities for better
+              living for people and planet.
+            </p>
+          </div>
+          <div className="sm:mt-2 md:mt-0">
+            <a className="text-p font-mono underline uppercase" href="#">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div className="sm:my-4 md:mt-0 md:w-2c-1g lg:w-3c-2g">
+          <img
+            className="rounded"
+            src="https://i.ibb.co/gLwSnXVJ/CCC-Cover-1.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <hr className="border-black" />
+
+      {/* below this is secound section */}
+
+      <div className=" md:flex md:gap-1g">
+        <div className="md:w-5c-4g lg:w-6c-5g md:flex md:flex-col md:justify-between">
+          <div className="sm:mt-4 md:mt-0 md:gap-1g">
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold uppercase text-red">
+              Campus Connect
+            </h3>
+            <p className="text-p mt-2 md:8 lg:10">
+              At Conscious Collective, an initiative by Godrej Design Lab, we
+              seek to bring together professionals from the industry to
+              celebrate this conscious future. Our objective is to bring
+              together like- minded professionals who will re-imagine a more
+              sustainable future and act as ambassadors to explore possibilities
+              of a world that is much healthier and greener for us and for our
+              future generations.
+            </p>
+          </div>
+          <div className="sm:mt-2 md:mt-0">
+            <a className="text-p font-mono underline uppercase" href="#">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div className="sm:my-4 md:mt-0 md:w-2c-1g lg:w-3c-2g">
+          <img
+            className="rounded"
+            src="https://i.ibb.co/bMb84mPs/9165f49b04a9564d82d41783f60e8d293e31f339.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <hr className="border-black" />
+    </section>
+  );
+}
+
+function OurTeam({ className }: React.ComponentProps<"section">) {
+  return (
+    <section className={className}>
+      <div className="md:w-6c-5g lg-9c-8c">
+        <h2 className="text-h1 font-bold uppercase">
+          <span className="text-blue-gray">Our Team</span>
+        </h2>
+      </div>
+      <div className="flex flex-col gap-1g">
+        <div className="md:flex">
+          <div className="sm:my-4 md:my-0 md:w-2c-2g md:mr-4 lg:mr-8 ">
+            <img className="rounded" src="https://i.ibb.co/99t7FMpR/image-15.png" alt="" />
+          </div>
+          <div className="md:w-6c-5g lg:w-7c-6g">
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">Nyrika Holkar</h3>
+            <p className="mt-4 sm:text-sm md:text-p uppercase font-mono">
+              EXECUTIVE DIRECTOR, GODREJ ENTERPRISES GROUP
+            </p>
+            <p className="text-p sm:mt-1 md:mt-2 lg:mt-4">
+              Nyrika Holkar is an Indian businessperson, philanthropist, and a
+              fourth-generation member of the Godrej family. As brand custodian
+              she is instrumental in shaping the impact of the Godrej
+              Enterprises Group towards our purpose to ‘Pioneer progress for
+              generations’.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-/* <div className="container md:grid-layout">
-        <div className="start-col-1 end-col-1 hidden md:block">
-            <h2>This is for sidebar</h2>
-        </div>
-
-	    <div className="start-col-2 end-col-last lg:start-col-3">
-            <h1 className="text-h1 font-bold uppercase">
-                <span className="text-blue-gray">About</span>
-                <br />
-                <span className="text-red">Godrej Design Lab</span>
-            </h1>
-		</div>
-
-        <div className="start-col-4 end-col-last my-4 md:my-8 lg:my-10">
-            <p className="text-h3 font-normal">Godrej Design Lab is an initiative of Godrej Enterprise Group to encourage and advance design excellence and exploration. It is our way to reach out and collaborate on multiple fronts with the ever growing Indian design ecosystem. Since 2015, we have worked with talented individuals, firms, and organizations to explore how design can innovate and impact, making pioneering strides in the areas of product and architectural design, material development and social impact.</p>
-        </div>
-
-        <hr className="border-black start-col-2 end-col-last" />
-
-        <div className="mt-4 md:mt-8 lg:mt-10 start-col-2 end-col-last lg:start-col-3">
-            <h1 className="text-h1 font-bold uppercase">
-                <span className="text-red">Why Godrej Design Lab</span>
-            </h1>
-		</div>
-
-        <div className="start-col-4 end-col-last my-4 md:my-8 lg:my-10">
-            <p className="text-h3 font-normal">Godrej has been part of life in India for more than 125 years. Our focus on driving design-led innovation resulted in products like the world’s first springless locks, the India’s first locally manufactured refrigerators and typewriters. Today we continue to drive innovation to build solutions that improve lives in our customer’s homes and towards the development of our country.</p>
-        </div>
-	</div> */
