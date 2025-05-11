@@ -33,14 +33,6 @@ function Content({ className }: React.ComponentProps<"main">) {
       <WhatWeDO className="mt-4 md:mt-8 lg:mt-10 md:flex md:flex-col md:gap-1g" />
 
       <OurTeam className="mt-4 md:mt-8 lg:mt-10 md:flex md:flex-col md:gap-1g" />
-
-      {/* <Belive className="flex"/> */}
-
-      {/* <TestimonialSection className="mt-6 md:mt-8 lg:mt-10 | space-y-6 md:space-y-8 lg:space-y-10" />
-
-		<FellowsWordsSection className="mt-6 md:mt-8 lg:mt-10 | space-y-6 md:space-y-8 lg:space-y-10" />
-
-		<CreditsSection /> */}
     </main>
   );
 }
@@ -214,12 +206,18 @@ function OurTeam({ className }: React.ComponentProps<"section">) {
         </h2>
       </div>
       <div className="flex flex-col gap-1g">
-      <div className="md:flex">
+        <div className="md:flex">
           <div className="my-4 md:my-0 md:my-0 md:w-2c-2g md:mr-4 lg:mr-8 ">
-            <img className="rounded" src="https://i.ibb.co/99t7FMpR/image-15.png" alt="" />
+            <img
+              className="rounded"
+              src="https://i.ibb.co/99t7FMpR/image-15.png"
+              alt=""
+            />
           </div>
           <div className="md:w-6c-5g lg:w-7c-6g">
-            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">Nyrika Holkar</h3>
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">
+              Nyrika Holkar
+            </h3>
             <p className="mt-1 md:mt-2 lg:mt-4 sm:text-sm md:text-p uppercase font-mono">
               EXECUTIVE DIRECTOR, GODREJ ENTERPRISES GROUP
             </p>
@@ -235,16 +233,24 @@ function OurTeam({ className }: React.ComponentProps<"section">) {
         {/* this is the second section */}
         <div className="md:flex">
           <div className="my-4 md:my-0 md:my-0 md:w-2c-2g md:mr-4 lg:mr-8 ">
-            <img className="rounded" src="https://i.ibb.co/99t7FMpR/image-15.png" alt="" />
+            <img
+              className="rounded"
+              src="https://i.ibb.co/99t7FMpR/image-15.png"
+              alt=""
+            />
           </div>
           <div className="md:w-6c-5g lg:w-7c-6g">
-            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">Summet Bhojani</h3>
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">
+              Summet Bhojani
+            </h3>
             <p className="mt-1 md:mt-2 lg:mt-4 sm:text-sm md:text-p uppercase font-mono">
-            HEAD OF BRAND & STRATEGIC INSIGHTS GROUP, GODREJ ENTERPRISES GROUP
+              HEAD OF BRAND & STRATEGIC INSIGHTS GROUP, GODREJ ENTERPRISES GROUP
             </p>
             <p className="text-p mt-1 md:mt-2 lg:mt-4">
-            Sumeet Bhojani leads Brand & Strategic Insights Group which works across the Godrej Enterprises Group to drive excellence in marketing, communication, consumer insights, 
-            and to drive our purpose to pioneer progress for generations.
+              Sumeet Bhojani leads Brand & Strategic Insights Group which works
+              across the Godrej Enterprises Group to drive excellence in
+              marketing, communication, consumer insights, and to drive our
+              purpose to pioneer progress for generations.
             </p>
           </div>
         </div>
@@ -253,36 +259,50 @@ function OurTeam({ className }: React.ComponentProps<"section">) {
 
         <div className="md:flex">
           <div className="my-4 md:my-0 md:my-0 md:w-2c-2g md:mr-4 lg:mr-8 ">
-            <img className="rounded" src="https://i.ibb.co/TNDc3b3/BGP01866-1.png" alt="" />
+            <img
+              className="rounded"
+              src="https://i.ibb.co/TNDc3b3/BGP01866-1.png"
+              alt=""
+            />
           </div>
           <div className="md:w-6c-5g lg:w-7c-6g">
-            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">Henry Skupniewicz</h3>
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">
+              Henry Skupniewicz
+            </h3>
             <p className="mt-1 md:mt-2 lg:mt-4 sm:text-sm md:text-p uppercase font-mono">
-            HEAD OF GODREJ DESIGN LAB, GODREJ ENTERPRISES GROUP
+              HEAD OF GODREJ DESIGN LAB, GODREJ ENTERPRISES GROUP
             </p>
             <p className="text-p mt-1 md:mt-2 lg:mt-4">
-            Henry Skupniewicz has extensive experience working within the design community across 
-India including teaching at and founding the FabLab at CEPT University in Ahmedabad. 
-Henry studied Computational Design at the Massachusetts Institute of Technology.
+              Henry Skupniewicz has extensive experience working within the
+              design community across India including teaching at and founding
+              the FabLab at CEPT University in Ahmedabad. Henry studied
+              Computational Design at the Massachusetts Institute of Technology.
             </p>
           </div>
         </div>
         {/* this is the fourth section */}
         <div className="md:flex">
           <div className="my-4 md:my-0 md:my-0 md:w-2c-2g md:mr-4 lg:mr-8 ">
-            <img className="rounded" src="https://i.ibb.co/21n9YS7t/Ashita-Misquitta-1.png" alt="" />
+            <img
+              className="rounded"
+              src="https://i.ibb.co/21n9YS7t/Ashita-Misquitta-1.png"
+              alt=""
+            />
           </div>
           <div className="md:w-6c-5g lg:w-7c-6g">
-            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">Ashita Misquitta</h3>
+            <h3 className="text-h4 md:text-h2 lg:text-h4 font-bold ">
+              Ashita Misquitta
+            </h3>
             <p className="mt-1 md:mt-2 lg:mt-4 sm:text-sm md:text-p uppercase font-mono">
-            COMMUNICATIONS AT GODREJ DESIGN LAB, GODREJ ENTERPRISES GROUP
+              COMMUNICATIONS AT GODREJ DESIGN LAB, GODREJ ENTERPRISES GROUP
             </p>
             <p className="text-p mt-1 md:mt-2 lg:mt-4">
-            Ashita Misquitta is a brand strategist and communications specialist. She is passionate 
-            about story-telling and bringing alive narratives that excite and inspire.
+              Ashita Misquitta is a brand strategist and communications
+              specialist. She is passionate about story-telling and bringing
+              alive narratives that excite and inspire.
             </p>
           </div>
-        </div>        
+        </div>
       </div>
     </section>
   );
