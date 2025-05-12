@@ -307,3 +307,4 @@ function OurTeam({ className }: React.ComponentProps<"section">) {
     </section>
   );
 }
+
