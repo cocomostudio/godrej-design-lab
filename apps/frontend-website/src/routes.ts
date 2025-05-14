@@ -13,5 +13,6 @@ export default [
 		route( "fellows/rahul-bhusan", "routes/fellow-single.tsx" ),
 		route( "kitchen-sink", "routes/kitchen-sink.tsx" ),
 		route( "about", "routes/about.tsx" ),
+		route( "about-fellowship", "routes/about-fellowship.tsx" ),
 	] )
 ] satisfies RouteConfig
