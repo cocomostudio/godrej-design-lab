@@ -5,7 +5,6 @@ public/
 .react-router/
 build/
 
-# Dependencies
 node_modules/
 package-lock.json
 pnpm-lock.yaml
