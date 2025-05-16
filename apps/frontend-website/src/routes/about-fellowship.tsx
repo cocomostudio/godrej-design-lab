@@ -27,9 +27,7 @@ function Content({ className }: React.ComponentProps<"main">) {
   return (
     <main className={className}>
       <IntroSection className="md:flex md:flex-col md:gap-1g" />
-
       <HowWeSupport className="md:flex md:flex-col md:gap-1g" />
-
       <TFJ className="md:flex md:flex-col md:gap-1g" />
     </main>
   );
@@ -52,17 +50,17 @@ function IntroSection({ className }: React.ComponentProps<"section">) {
       </div>
 
       <div className="md:flex md:justify-between gap-5">
-        <div>
-          <img
-            className="rounded"
-            src="https://i.ibb.co/r29Q3z9c/fellowship-1.png"
-            alt=""
-          />
-        </div>
-        <div>
+        <div className="mt-4 md:mt-0">
           <img
             className="rounded"
             src="https://i.ibb.co/Q7TtsgKp/fellowship-1.png"
+            alt=""
+          />
+        </div>
+        <div className="mt-4 md:mt-0">
+          <img
+            className="rounded"
+            src="https://i.ibb.co/r29Q3z9c/fellowship-1.png"
             alt=""
           />
         </div>
@@ -87,6 +85,7 @@ function IntroSection({ className }: React.ComponentProps<"section">) {
           space to the ever changing Indian design ecosystem.
         </p>
       </div>
+
       <div className="mt-4 md:mt-0">
         <img
           className="rounded w-full"
@@ -94,6 +93,7 @@ function IntroSection({ className }: React.ComponentProps<"section">) {
           alt="Fellowship 2018 Naik & shah"
         />
       </div>
+
       <hr className="border-black mt-6 md:mt-0" />
     </section>
   );
@@ -209,7 +209,7 @@ function TFJ({ className }: React.ComponentProps<"section">) {
         />
       </div>
 
-      <div className="md:ml-2c-2g lg:ml-3c-3g md:mt-0 md:w-5c-4g lg:w-6c-5g md:gap-1g ">
+      <div className="md:ml-2c-2g lg:ml-3c-3g md:mt-0 md:w-5c-4g lg:w-6c-5g md:flex md:flex-col md:gap-1g ">
         <p className="text-p mt-3.5 md:mt-0">
           In selecting Fellows, we build cohorts made of diverse projects which
           also speak to and build off of each other. Individually, they should
@@ -221,12 +221,12 @@ function TFJ({ className }: React.ComponentProps<"section">) {
         <div className="mt-4 md:mt-0">
           <img
             className="rounded w-full"
-            src="https://i.ibb.co/JRz7VTzL/BGP-07759-1.png"
+            src="https://i.ibb.co/TMVN1V69/fellowship-4.png"
             alt="Fellowship"
           />
         </div>
 
-        <p className="text-p mt-3.5 md:mt-0">
+        <p className="text-p mt-4 md:mt-0">
           An important, evolving aspect of the program has been that of
           mentorship and co-mentorship. This year marked the first Fellows’
           Retreat which gave a unique opportunity for this year’s cohort to
@@ -238,14 +238,14 @@ function TFJ({ className }: React.ComponentProps<"section">) {
         </p>
       </div>
       <div className="md:flex md:justify-between gap-5">
-        <div>
+        <div className="mt-4 md:mt-0">
           <img
             className="rounded"
             src="https://i.ibb.co/d3RkMT1/Image-3910-1.png"
             alt=""
           />
         </div>
-        <div>
+        <div className="mt-4 md:mt-0">
           <img
             className="rounded"
             src="https://i.ibb.co/x8LKR2BM/Image-2870-1.png"
