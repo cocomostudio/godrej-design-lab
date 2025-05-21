@@ -49,7 +49,7 @@ function IntroSection({ className }: React.ComponentProps<"section">) {
 				</p>
 			</div>
 
-			<div className="md:flex md:justify-between gap-1">
+			<div className="md:flex md:justify-between gap-1g">
 				<div className="mt-4 md:mt-0 grow">
 					<img
 						className="rounded-md w-full"
@@ -135,7 +135,7 @@ function HowWeSupport({ className }: React.ComponentProps<"section">) {
 						talent and impact with as many audiences as is possible including:
 					</p>
 
-					<ul className="text-p list-disc ml-8 md:ml-6 mt-6 lg:mt-8">
+					<ul className="text-p list-disc ml-8 md:ml-6 lg:ml-8 mt-6 lg:mt-8">
 						<li>Fellowship Launch and Exhibition at Conscious Collective</li>
 						<li>
 							The Fellows’ Retreat — a long weekend with other Fellows and
@@ -237,7 +237,7 @@ function TFJ({ className }: React.ComponentProps<"section">) {
 					together a strong community of support.
 				</p>
 			</div>
-			<div className="md:flex md:justify-between gap-1">
+			<div className="md:flex md:justify-between gap-1g">
 				<div className="mt-4 md:mt-0 grow">
 					<img
 						className="rounded-md w-full"
