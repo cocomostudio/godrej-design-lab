@@ -573,6 +573,12 @@ const transitionsAndAnimations = plugin( () => {}, {
 				"450": "450ms",
 				"750": "750ms",
 			},
+			transitionDelay: {
+				"250": "250ms",
+				"400": "400ms",
+				"450": "450ms",
+				"750": "750ms",
+			},
 			transitionTimingFunction: {
 				"ease-in-quad": "cubic-bezier( .55, .085, .68, .53 )",
 				"ease-in-cubic": "cubic-bezier( .550, .055, .675, .19 )",
@@ -599,6 +605,18 @@ const transitionsAndAnimations = plugin( () => {}, {
 			}
 		}
 	}
+} )
+
+/**
+ |
+ | Variants
+ |
+ |
+ */
+const variantsPlugin = plugin( ({ addVariant }) => {
+	addVariant( "webkit", "@supports ( background: -webkit-named-image(i) )" )
+	addVariant( "interpolate", "@supports ( interpolate-size: allow-keywords )" )
+	addVariant( "not-interpolate", "@supports ( not ( interpolate-size: allow-keywords ) )" )
 } )
 
 
@@ -663,7 +681,6 @@ export default {
 		typographyPlugin,
 		colorsPlugin,
 		transitionsAndAnimations,
+		variantsPlugin,
 	],
 } satisfies Config
-
-
