@@ -6,6 +6,16 @@
 @layer base {
 	/**
 	 |
+	 | Resets
+	 |
+	 |
+	 */
+	:root {
+		interpolate-size: allow-keywords;
+	}
+
+	/**
+	 |
 	 | Fonts
 	 |
 	 |
