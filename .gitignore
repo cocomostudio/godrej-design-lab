@@ -1,4 +1,7 @@
 
+# Any temporary directory
+__tmp*
+
 public/
 
 # React Router
