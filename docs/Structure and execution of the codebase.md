@@ -30,7 +30,7 @@ pnpm run dev
 As you can see, they look identical to the `npm` equivalents.
 
 `pnpm` is more space-efficient than `npm`.
-If you want 10 projects on your system and they all depend on `react`, `npm` will install copies of `react` in all 10 project folders. But with `pnpm`, only copy of `react` is stored (in a global cache). All 10 projects simply point to the global copy of `react`.
+If you want 10 projects on your system and they all depend on `react`, `npm` will install copies of `react` in the `node_modules` folders of all 10 projects. But with `pnpm`, only copy of `react` is stored (in a global cache). All 10 projects simply point to the global copy of `react`.
 `pnpm` sets up a _hard link_ to the main dependency that is stored in the global `pnpm` cache.
 Just as how the internet has hyperlinks to web pages, _hard links_ are like that but for the file-system. `pnpm` won't add another copy of `react` for your new ReactJS project, it simply links to the central copy of `react`.
 This mechanism of `pnpm` significantly saves hard-drive space.
