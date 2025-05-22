@@ -14,6 +14,10 @@ function Content({ className }: React.ComponentProps<"main">) {
   return (
     <main className={className}>
       <HeroSection />
+      <FellowShip className="md:w-7c-6g lg:w-10c-9g "/>
+      <ConsciousCollective className="md:w-7c-6g lg:w-10c-9g "/>
+      <Reports className="md:w-7c-6g lg:w-10c-9g "/>
+      <DesignSeries className="md:w-7c-6g lg:w-10c-9g "/>
     </main>
   );
 }
@@ -22,7 +26,7 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
   return (
     <section className={className}>
       <div className="mt-4 md:w-7c-6g lg:w-10c-9g md:flex md:flex-col space-y-8 lg:space-y-10 ">
-        <div className="bg-[url(https://i.ibb.co/F459gzYq/Rectangle-16.png)] md:h-[400px] bg-no-repeat bg-cover rounded-md ">
+        <div className="bg-[url(https://i.ibb.co/F459gzYq/Rectangle-16.png)] md:h-[400px] bg-no-repeat bg-cover rounded-md  bg-linear-to-r from-cyan-500 to-blue-500">
           <div className="md:p-6 lg:p-8 md:w-4c-3g lg:w-6c-5g flex flex-col justify-between h-[400px]">
             <div>
               <h1 className="text-h2 font-medium uppercase text-white">
@@ -30,7 +34,7 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
                 INTERVENTIONS IN <br /> THE VENICE BIENNALE
               </h1>
             </div>
-            <div className=" md:w-3c-2g lg:w-4c-3g ">
+            <div className=" md:w-3c-2g lg:w-4c-3g mb-15 md:mb-0">
               <p className="text-p text-white">
                 The subcontinent's proposed role in the future of sustainable
                 practices was front and centre at the international biennale.
@@ -50,27 +54,117 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
             </div>
           </div>
         </div>
-       
-        {/* <div className=" mt-0 md:ml-3c-3g lg:ml-4c-4g md:w-4c-3g lg:w-6c-5g md:-mt-40">
-          <div className="bg-[url(https://i.ibb.co/p6Bj4sfZ/Vector.png)] md:bg-[url(https://i.ibb.co/pjznmfJh/Vector.png)] bg-no-repeat md:h-[300px] w-full md:bg-right md:bg-contain text-white">
-            <h3 className="text-h3 md:py-6 md:px-8">
-              <span>Godrej Design Lab is a platform</span>
-              <br />
-              <span className="font-light">
-                encourages and advances <br />
-                design excellence and exploration.
-              </span>
-            </h3>
-            <div>
-              <button>Learn More</button>
-            </div>
-          </div>
-        </div> */}
-      </div>
-      <hr className="border-black mt-8 md:mt-8" />
-      <div className="bg-green-300 h-[500px]">
-        <h3>This is test div </h3>
+        <hr className="border-black mt-8 md:mt-8" />
       </div>
     </section>
   );
 }
+   
+function FellowShip({ className }: React.ComponentProps<"section">) {
+  return (
+    <section className={className}>
+      <div className="flex justify-between  mt-6 md:mt-8 lg:mt-10">
+        <h2 className="text-h1 font-bold uppercase text-midnight-blue">
+          Fellowship
+        </h2>
+        <button className="px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white	uppercase">See all</button>
+      </div>
+
+      <div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-1g">
+
+        <div className="flex-1">
+          <img className="rounded-md w-full" src="https://i.ibb.co/LhrsXjDr/image-6.png" alt="Home 2" />
+          <div className="mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold text-midnight-blue">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+          </div>
+        </div>
+
+        <div className="flex-1">
+          <img className="rounded-md w-full" src="https://i.ibb.co/9zRXMYs/image-7.png" alt="Home 2" />
+          <div className="mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold text-midnight-blue">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+          </div>
+        </div>
+
+      </div>
+      <hr className="border-black mt-6 md:mt-8 md:mt-10" />
+    </section>
+  );
+}
+
+function ConsciousCollective({ className }: React.ComponentProps<"section">) {
+  return (
+    <section className={className}>
+       <div className="flex justify-between  mt-6 md:mt-8 lg:mt-10">
+          <h2 className="text-h1 font-bold uppercase text-midnight-blue">
+            Conscious collective
+          </h2>
+        <button className="px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white	uppercase">See all</button>
+      </div>
+      <div className="mt-6 md:mt-8 lg:mt-10">
+        <img className="rounded-md w-full" src="https://i.ibb.co/LhrsXjDr/image-6.png" alt="Home 2" />
+      </div>
+      <div className="md:ml-3c-4g lg:ml-5c-5g md:w-4c-3g lg:w-5c-4g mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+      </div>
+        <hr className="border-black mt-6 md:mt-8 md:mt-10" />
+    </section>
+  );
+} 
+
+function Reports({ className }: React.ComponentProps<"section">) {
+  return (
+    <section className={className}>
+      <div className="flex justify-between  mt-6 md:mt-8 lg:mt-10">
+        <h2 className="text-h1 font-bold uppercase text-midnight-blue">
+          Reports
+        </h2>
+        <button className="px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white	uppercase">See all</button>
+      </div>
+
+      <div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-1g">
+
+        <div className="flex-1">
+          <img className="rounded-md w-full" src="https://i.ibb.co/LhrsXjDr/image-6.png" alt="Home 2" />
+          <div className="mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold text-midnight-blue">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+          </div>
+        </div>
+
+        <div className="flex-1">
+          <img className="rounded-md w-full" src="https://i.ibb.co/9zRXMYs/image-7.png" alt="Home 2" />
+          <div className="mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold text-midnight-blue">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+          </div>
+        </div>
+
+      </div>
+      <hr className="border-black mt-6 md:mt-8 md:mt-10" />
+    </section>
+  );
+}
+
+function DesignSeries({ className }: React.ComponentProps<"section">) {
+  return (
+    <section className={className}>
+       <div className="flex justify-between  mt-6 md:mt-8 lg:mt-10">
+          <h2 className="text-h1 font-bold uppercase text-midnight-blue">
+            Conscious collective
+          </h2>
+        <button className="px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white	uppercase">See all</button>
+      </div>
+      <div className="mt-6 md:mt-8 lg:mt-10">
+        <img className="rounded-md w-full" src="https://i.ibb.co/LhrsXjDr/image-6.png" alt="Home 2" />
+      </div>
+      <div className="md:ml-3c-4g lg:ml-5c-5g md:w-4c-3g lg:w-5c-4g mt-4 md:mt-5 lg:mt-6">
+            <h4 className="text-p font-bold">Fellowship 2024</h4>
+            <p className="text-p mt-3.5 md:mt-3 lg:mt-4">The final reveal. Our 2024 fellows have been working on refining and building their designs of design impact through the last year. Come take a look.</p>
+      </div>
+    </section>
+  );
+} 
