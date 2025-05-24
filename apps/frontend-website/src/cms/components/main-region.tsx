@@ -1,0 +1,28 @@
+
+/**
+ |
+ | Main region
+ |
+ |
+ */
+
+import { shallow_clone_props } from "../utilities/shallow-clone-props"
+
+export class MainRegion {
+	static id = "container.main-region-v1"
+
+	constructor ( child_nodes ) {
+		return {
+			__component: MainRegion.id,
+			__content: [ ...child_nodes ]
+		}
+	}
+
+	static process_node ( props ) {
+		return shallow_clone_props( props )
+	}
+
+	static Renderer ({ children }) {
+		return <div className="main-region mt-8 md:mt-9 lg:mt-10">{ children }</div>
+	}
+}

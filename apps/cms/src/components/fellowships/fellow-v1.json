@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_fellowships_fellow_v1",
+	"info": {
+		"displayName": "Fellow",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"collectionName": "components_text_quote_v1",
+	"info": {
+		"displayName": "Quote",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "blocks"
+		}
+	}
+}

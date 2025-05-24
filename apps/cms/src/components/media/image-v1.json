@@ -1,0 +1,15 @@
+{
+	"collectionName": "components_media_image_v1",
+	"info": {
+		"displayName": "Image",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"file": {
+			"allowedTypes": [ "images" ],
+			"type": "media",
+			"multiple": false
+		}
+	}
+}

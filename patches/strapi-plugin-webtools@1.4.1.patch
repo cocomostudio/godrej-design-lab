@@ -1,0 +1,62 @@
+diff --git a/dist/server/index.js b/dist/server/index.js
+index ffde2b2e44f29cb21717aee291a30a959ee93715..9e8c89f8e906a52ed3d3e8ad0239daef4e65d347 100644
+--- a/dist/server/index.js
++++ b/dist/server/index.js
+@@ -320,6 +320,14 @@ const routes = {
+         config: {
+           policies: []
+         }
++      },
++      {
++        method: "POST",
++        path: "/router",
++        handler: "core.router",
++        config: {
++          policies: []
++        }
+       }
+     ]
+   },
+@@ -631,7 +639,10 @@ const infoController = {
+ const sanitizeOutput = (data, contentType, auth) => strapi.contentAPI.sanitize.output(data, contentType, { auth });
+ const coreController = {
+   router: async (ctx) => {
+-    const { path, ...searchQuery } = ctx.query;
++    let { path, ...searchQuery } = ctx.query;
++    if ( searchQuery.pull_query_from_body === "true" ) {
++     	searchQuery = ctx.request.body
++    }
+     const { auth } = ctx.state;
+     const { entity, contentType } = await getPluginService("url-alias").findRelatedEntity(path, searchQuery);
+     if (!entity) {
+diff --git a/dist/server/index.mjs b/dist/server/index.mjs
+index 539185b33db613359e336165f619bf76142128a0..c25d0c7bc6676336b0bfda22f9541afc4a7156ac 100644
+--- a/dist/server/index.mjs
++++ b/dist/server/index.mjs
+@@ -313,6 +313,14 @@ const routes = {
+         config: {
+           policies: []
+         }
++      },
++      {
++        method: "POST",
++        path: "/router",
++        handler: "core.router",
++        config: {
++          policies: []
++        }
+       }
+     ]
+   },
+@@ -624,7 +632,10 @@ const infoController = {
+ const sanitizeOutput = (data, contentType, auth) => strapi.contentAPI.sanitize.output(data, contentType, { auth });
+ const coreController = {
+   router: async (ctx) => {
+-    const { path, ...searchQuery } = ctx.query;
++    let { path, ...searchQuery } = ctx.query;
++    if ( searchQuery.pull_query_from_body === "true" ) {
++        searchQuery = ctx.request.body
++    }
+     const { auth } = ctx.state;
+     const { entity, contentType } = await getPluginService("url-alias").findRelatedEntity(path, searchQuery);
+     if (!entity) {
