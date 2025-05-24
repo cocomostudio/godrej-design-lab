@@ -6,7 +6,9 @@
  |
  */
 
-import { ContentRegion } from "./content-region"
+import { HeadingRegion } from "./heading-region"
+import { SideRegion } from "./side-region"
+import { MainRegion } from "./main-region"
 
 export class PageLayout {
 	static id = "container.page-layout-v1"
@@ -14,7 +16,11 @@ export class PageLayout {
 	static process_node ( props ) {
 		return {
 			__component: PageLayout.id,
-			__content: new ContentRegion( props.content ),
+			__content: [
+				new HeadingRegion( props.heading_region ),
+				new SideRegion( props.side_region ),
+				new MainRegion( props.main_region ),
+			]
 		}
 	}
 

@@ -30,7 +30,19 @@
 			"target": "api::post-category.post-category",
 			"inversedBy": "posts"
 		},
-		"content": {
+		"heading_region": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		},
+		"main_region": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		},
+		"side_region": {
 			"type": "dynamiczone",
 			"components": [
 				"container.section-v1"

@@ -24,7 +24,20 @@
 			"type": "component",
 			"component": "media.image-v1"
 		},
-		"content": {
+		"heading_region": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		},
+		"main_region": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1",
+				"fellowships.fellowship-v1"
+			]
+		},
+		"side_region": {
 			"type": "dynamiczone",
 			"components": [
 				"container.section-v1"

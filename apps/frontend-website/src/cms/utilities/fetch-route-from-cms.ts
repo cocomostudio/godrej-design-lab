@@ -49,11 +49,21 @@ function prepare_request_payload () {
 		cover: {
 			populate: "*",
 		},
-		content: {
+		heading_region: {
 			on: {
 				"container.section-v1": populate_v1_section,
 			}
 		},
+		side_region: {
+			on: {
+				"container.section-v1": populate_v1_section,
+			}
+		},
+		main_region: {
+			on: {
+				"container.section-v1": populate_v1_section,
+			}
+		}
 	}
 
 	return {

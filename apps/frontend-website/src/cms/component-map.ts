@@ -1,6 +1,8 @@
 
 import { PageLayout } from "./components/page-layout"
-import { ContentRegion } from "./components/content-region"
+import { HeadingRegion } from "./components/heading-region"
+import { SideRegion } from "./components/side-region"
+import { MainRegion } from "./components/main-region"
 import { Section } from "./components/section"
 import { Column } from "./components/column"
 import { OneColumnLayout } from "./components/1-column-layout"
@@ -14,7 +16,9 @@ import { UnorderedList } from "./components/unordered-list"
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
 
-	"container.content-region-v1": ContentRegion,
+	"container.heading-region-v1": HeadingRegion,
+	"container.side-region-v1": SideRegion,
+	"container.main-region-v1": MainRegion,
 
 	"container.section-v1": Section,
 	"container.column-v1": Column,
