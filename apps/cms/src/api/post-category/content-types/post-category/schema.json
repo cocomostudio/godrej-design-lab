@@ -1,0 +1,30 @@
+{
+	"kind": "collectionType",
+	"collectionName": "post_categories_v1",
+	"info": {
+		"singularName": "post-category",
+		"pluralName": "post-categories",
+		"displayName": "Post categories",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {
+		"webtools": {
+			"enabled": false
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"posts": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::post.post",
+			"mappedBy": "category"
+		}
+	}
+}

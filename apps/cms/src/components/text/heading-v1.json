@@ -1,0 +1,39 @@
+{
+	"collectionName": "components_text_heading_v1",
+	"info": {
+		"displayName": "Heading",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"level": {
+			"type": "enumeration",
+			"enum": [
+				"h1",
+				"h2",
+				"h3",
+				"h4",
+				"h5"
+			],
+			"default": "h1",
+			"required": true
+		},
+		"heading": {
+			"type": "string",
+			"required": false
+		},
+		"pre_heading": {
+			"type": "string",
+			"required": false
+		},
+		"font_family": {
+			"type": "enumeration",
+			"enum": [
+				"sans-serif",
+				"monospace"
+			],
+			"default": "sans-serif",
+			"required": true
+		}
+	}
+}

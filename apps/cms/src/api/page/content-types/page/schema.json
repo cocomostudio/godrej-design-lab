@@ -1,0 +1,44 @@
+{
+	"kind": "collectionType",
+	"collectionName": "pages_v1",
+	"info": {
+		"singularName": "page",
+		"pluralName": "pages",
+		"displayName": "Page",
+		"description": "Pages"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {
+		"webtools": {
+			"enabled": true
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "component",
+			"component": "media.image-v1"
+		},
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		},
+		"url_alias": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "plugin::webtools.url-alias",
+			"writable": true,
+			"configurable": false,
+			"editable": false,
+			"visible": false,
+			"unique": true
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"collectionName": "components_text_unordered_list_v1",
+	"info": {
+		"displayName": "List (unordered)",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"items": {
+			"type": "component",
+			"component": "text.plain-string-v1",
+			"repeatable": true,
+			"min": 1
+		},
+		"two_columns": {
+			"type": "boolean",
+			"default": false,
+			"required": true
+		}
+	}
+}

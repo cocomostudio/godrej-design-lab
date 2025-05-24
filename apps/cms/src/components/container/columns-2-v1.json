@@ -1,0 +1,32 @@
+{
+	"collectionName": "components_container_columns_2_v1",
+	"info": {
+		"displayName": "2-column Layout",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"1:1",
+				"1:2",
+				"2:1",
+				"1:8",
+				"2:7",
+				"3:4",
+				"7:2"
+			],
+			"default": "1:2",
+			"required": true
+		},
+		"column_1": {
+			"type": "dynamiczone",
+			"components": [ "text.heading-v1", "text.wysiwyg-v1", "miscellaneous.horizontal-rule-v1", "media.image-v1", "text.quote-v1", "text.unordered-list-v1" ]
+		},
+		"column_2": {
+			"type": "dynamiczone",
+			"components": [ "text.heading-v1", "text.wysiwyg-v1", "miscellaneous.horizontal-rule-v1", "media.image-v1", "text.quote-v1", "text.unordered-list-v1" ]
+		}
+	}
+}

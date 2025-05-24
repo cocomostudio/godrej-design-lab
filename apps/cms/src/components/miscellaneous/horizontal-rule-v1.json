@@ -1,0 +1,19 @@
+{
+	"collectionName": "components_miscellaneous_horizontal_rule_v1",
+	"info": {
+		"displayName": "Horizontal Rule",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"shade": {
+			"type": "enumeration",
+			"enum": [
+				"light",
+				"dark"
+			],
+			"default": "dark",
+			"required": true
+		}
+	}
+}

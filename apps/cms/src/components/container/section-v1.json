@@ -1,0 +1,23 @@
+{
+	"collectionName": "components_container_section_v1",
+	"info": {
+		"displayName": "Section",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"add_to_table_of_contents": {
+			"type": "boolean",
+			"required": true,
+			"default": false
+		},
+		"title": {
+			"type": "string",
+			"required": false
+		},
+		"content": {
+			"type": "dynamiczone",
+			"components": [ "container.columns-2-v1", "container.columns-1-v1", "text.heading-v1", "text.wysiwyg-v1", "miscellaneous.horizontal-rule-v1", "media.image-v1", "text.quote-v1", "text.unordered-list-v1" ]
+		}
+	}
+}
