@@ -7,12 +7,17 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [ ],
+	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"packageManager": "pnpm@9.1.0",
 	"engines": {
 		"node": ">=20.14.0",
 		"pnpm": ">=9.1.0"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"strapi-plugin-webtools@1.4.1": "patches/strapi-plugin-webtools@1.4.1.patch"
+		}
 	}
 }
