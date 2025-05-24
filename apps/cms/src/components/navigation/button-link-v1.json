@@ -1,0 +1,19 @@
+{
+	"collectionName": "components_navigation_button_link_v1",
+	"info": {
+		"displayName": "Button Link",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"label": {
+			"type": "string",
+			"required": true
+		},
+		"link": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"required": true
+		}
+	}
+}

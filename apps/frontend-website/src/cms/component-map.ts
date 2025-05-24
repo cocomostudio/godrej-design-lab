@@ -12,6 +12,8 @@ import { Image } from "./components/image"
 import { WYSIWYG } from "./components/wysiwyg"
 import { Heading } from "./components/heading"
 import { UnorderedList } from "./components/unordered-list"
+import { ButtonLink } from "./components/button-link"
+import { ImageLink } from "./components/image-link"
 
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
@@ -30,4 +32,6 @@ export const component_map = {
 	"text.wysiwyg-v1": WYSIWYG,
 	"text.heading-v1": Heading,
 	"text.unordered-list-v1": UnorderedList,
+	"navigation.button-link-v1": ButtonLink,
+	"navigation.image-link-v1": ImageLink,
 }
