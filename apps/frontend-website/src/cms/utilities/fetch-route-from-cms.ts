@@ -69,6 +69,14 @@ function prepare_request_payload () {
 		main_region: {
 			on: {
 				"container.section-v1": populate_v1_section,
+				"fellowships.fellowship-v1": {
+					populate: [
+						"projects",
+						"projects.cover.file",
+						"projects.fellows",
+						"projects.link",
+					]
+				}
 			}
 		}
 	}

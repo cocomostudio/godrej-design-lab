@@ -1,0 +1,33 @@
+{
+	"collectionName": "components_fellowships_fellowship_project_v1",
+	"info": {
+		"displayName": "Fellowship Project",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "component",
+			"component": "media.image-v1"
+		},
+		"description": {
+			"type": "text",
+			"required": true
+		},
+		"fellows": {
+			"type": "component",
+			"component": "fellowships.fellow-v1",
+			"repeatable": true,
+			"min": 1
+		},
+		"link": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"required": false
+		}
+	}
+}

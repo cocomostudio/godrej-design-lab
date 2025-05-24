@@ -14,6 +14,7 @@ import { Heading } from "./components/heading"
 import { UnorderedList } from "./components/unordered-list"
 import { ButtonLink } from "./components/button-link"
 import { ImageLink } from "./components/image-link"
+import { Fellowship } from "./components/fellowship"
 
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
@@ -34,4 +35,6 @@ export const component_map = {
 	"text.unordered-list-v1": UnorderedList,
 	"navigation.button-link-v1": ButtonLink,
 	"navigation.image-link-v1": ImageLink,
+
+	"fellowships.fellowship-v1": Fellowship,
 }
