@@ -2,8 +2,6 @@
 # Any temporary directory
 __tmp*
 
-public/
-
 # React Router
 .react-router/
 build/
