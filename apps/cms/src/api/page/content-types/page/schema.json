@@ -27,7 +27,8 @@
 		"heading_region": {
 			"type": "dynamiczone",
 			"components": [
-				"container.section-v1"
+				"container.section-v1",
+				"miscellaneous.blurb-v1"
 			]
 		},
 		"main_region": {

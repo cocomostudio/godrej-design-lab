@@ -9,7 +9,7 @@ import { shallow_clone_props } from "../utilities/shallow-clone-props";
 
 export class Blurb {
 
-    static id = "text.blurb-v1";
+    static id = "miscellaneous.blurb-v1";
 
 static process_node(props) {
     return shallow_clone_props(props); 

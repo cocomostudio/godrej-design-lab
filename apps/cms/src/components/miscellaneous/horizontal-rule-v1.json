@@ -4,7 +4,7 @@
 		"displayName": "Horizontal Rule",
 		"description": ""
 	},
-	"options": { },
+"options": { },
 	"attributes": {
 		"shade": {
 			"type": "enumeration",

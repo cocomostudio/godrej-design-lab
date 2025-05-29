@@ -17,7 +17,7 @@
 		},
 		"content": {
 			"type": "dynamiczone",
-			"components": [ "container.columns-2-v1", "container.columns-1-v1", "text.heading-v1", "text.wysiwyg-v1", "miscellaneous.horizontal-rule-v1", "media.image-v1", "text.quote-v1", "text.unordered-list-v1", "navigation.button-link-v1", "navigation.image-link-v1" ]
+			"components": ["container.columns-2-v1", "container.columns-1-v1", "text.heading-v1", "text.wysiwyg-v1", "miscellaneous.horizontal-rule-v1", "media.image-v1", "text.quote-v1", "text.unordered-list-v1", "navigation.button-link-v1", "navigation.image-link-v1" ]
 		}
 	}
 }
