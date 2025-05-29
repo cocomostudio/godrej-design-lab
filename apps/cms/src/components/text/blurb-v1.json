@@ -1,0 +1,13 @@
+{
+	"collectionName": "components_text_blurb_v1",
+	"info": {
+		"displayName": "Blurb",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "blocks"
+		}
+	}
+}

@@ -15,6 +15,7 @@ import { UnorderedList } from "./components/unordered-list"
 import { ButtonLink } from "./components/button-link"
 import { ImageLink } from "./components/image-link"
 import { Fellowship } from "./components/fellowship"
+import { Quote } from "./components/quote"
 
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
@@ -37,4 +38,5 @@ export const component_map = {
 	"navigation.image-link-v1": ImageLink,
 
 	"fellowships.fellowship-v1": Fellowship,
+	"text.quote-v1": Quote // Placeholder for Quote component, to be implemented
 }
