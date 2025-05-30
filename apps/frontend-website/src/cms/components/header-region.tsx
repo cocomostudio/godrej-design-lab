@@ -8,12 +8,12 @@
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 
-export class HeadingRegion {
-	static id = "container.heading-region-v1"
+export class HeaderRegion {
+	static id = "container.header-region-v1"
 
 	constructor ( child_nodes ) {
 		return {
-			__component: HeadingRegion.id,
+			__component: HeaderRegion.id,
 			__content: [ ...child_nodes ]
 		}
 	}
@@ -23,6 +23,6 @@ export class HeadingRegion {
 	}
 
 	static Renderer ({ children }) {
-		return <div className="heading-region mt-8">{ children }</div>
+		return <div className="header-region mt-8">{ children }</div>
 	}
 }

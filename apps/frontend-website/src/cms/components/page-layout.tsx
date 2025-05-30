@@ -6,7 +6,7 @@
  |
  */
 
-import { HeadingRegion } from "./heading-region"
+import { HeaderRegion } from "./header-region"
 import { SideRegion } from "./side-region"
 import { MainRegion } from "./main-region"
 
@@ -17,7 +17,7 @@ export class PageLayout {
 		return {
 			__component: PageLayout.id,
 			__content: [
-				new HeadingRegion( props.heading_region ),
+				new HeaderRegion( props.header_region ),
 				new SideRegion( props.side_region ),
 				new MainRegion( props.main_region ),
 			]

@@ -1,6 +1,6 @@
 
 import { PageLayout } from "./components/page-layout"
-import { HeadingRegion } from "./components/heading-region"
+import { HeaderRegion } from "./components/header-region"
 import { SideRegion } from "./components/side-region"
 import { MainRegion } from "./components/main-region"
 import { Section } from "./components/section"
@@ -19,7 +19,7 @@ import { Fellowship } from "./components/fellowship"
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
 
-	"container.heading-region-v1": HeadingRegion,
+	"container.header-region-v1": HeaderRegion,
 	"container.side-region-v1": SideRegion,
 	"container.main-region-v1": MainRegion,
 

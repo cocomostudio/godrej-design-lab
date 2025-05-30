@@ -24,11 +24,11 @@
 			"type": "component",
 			"component": "media.image-v1"
 		},
-		"heading_region": {
 			"type": "dynamiczone",
 			"components": [
 				"container.section-v1"
 			]
+		"header_region": {
 		},
 		"main_region": {
 			"type": "dynamiczone",

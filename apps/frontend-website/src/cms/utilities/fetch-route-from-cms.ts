@@ -56,7 +56,7 @@ function prepare_request_payload () {
 		cover: {
 			populate: "*",
 		},
-		heading_region: {
+		header_region: {
 			on: {
 				"container.section-v1": populate_v1_section,
 			}
