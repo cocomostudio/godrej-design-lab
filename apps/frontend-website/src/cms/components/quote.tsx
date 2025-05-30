@@ -5,7 +5,6 @@
  |
  |
  */
-
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
 
@@ -19,24 +18,34 @@ export class Quote {
 		return shallow_clone_props(props);
 	}
 
-	static Renderer(props) {
-		console.log(props);
+static Renderer(props) {
+	console.log(props.content);
+  return (
+    <blockquote>
+      <p>
+        <BlocksRenderer
+          content={props.content}
+          blocks={{
+            paragraph: ({ children }) => <>{children}</>,
+            heading: ({ children }) => <>{children}</>,
+            link: ({ children, url }) => <a href={url}>{children}</a>,
+            quote: ({ children }) => <>{children}</>,
+            code: ({ children }) => <>{children}</>,
+            image: () => null, // skip image rendering inside text
+						
+            // Render lists inline with no bullets/numbers and no extra spans
+            list: ({ children }) => <>{children}</>,
 
-		return <blockquote> <p>
-			<BlocksRenderer 
-				content={props.content} 
-				blocks={{
-					paragraph: ({ children }) => <>{children}</>,
-					heading: ({ children }) =>  <>{children}</>,
-					link: ({ children, url }) => <a href={url}>{children}</a>,
-				}}
-				modifiers={{
-					bold: ({ children }) => <strong>{children}</strong>,
-					italic: ({ children }) => <span className="italic">{children}</span>,
-				}}
-			/>
-			</p>
-		</blockquote> 
-
-	}
+            // Render list items directly (no <li>)
+            "list-item": ({ children }) => <>{children}</>
+          }}
+          modifiers={{
+            bold: ({ children }) => <strong>{children}</strong>,
+            italic: ({ children }) => <span className="italic">{children}</span>,
+          }}
+        />
+      </p>
+    </blockquote>
+  );
+}
 }

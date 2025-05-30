@@ -21,7 +21,7 @@ function prepare_request_payload () {
 		"miscellaneous.horizontal-rule-v1": populate_all,
 		"text.plain-string-v1": populate_all,
 		"text.quote-v1": populate_all,
-		"text.blurb-v1": populate_all,
+		"miscellaneous.blurb-v1": populate_all,
 		"media.image-v1": populate_all,
 		"text.wysiwyg-v1": populate_all,
 		"text.heading-v1": populate_all,
