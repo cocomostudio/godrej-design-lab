@@ -26,8 +26,8 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
 	return (
 		<section className={className}>
 			<div className="mt-4 md:w-7c-6g lg:w-10c-9g md:flex md:flex-col space-y-8 lg:space-y-10 ">
-				<div className="bg-[url(https://i.ibb.co/F459gzYq/Rectangle-16.png)] bg-center md:h-[400px] bg-no-repeat bg-cover rounded-md ">
-					<div className="bg-gradient-to-t from-transparent to-[#6B682E] rounded-md">
+				<div className="bg-[url(https://i.ibb.co/F459gzYq/Rectangle-16.png)] bg-center md:h-[400px] bg-no-repeat bg-cover rounded-[18px]">
+					<div className="bg-gradient-to-t from-transparent to-[#6B682E] rounded-[18px]">
 						<div className="px-3 py-5 md:p-6 lg:p-8 md:w-4c-3g lg:w-6c-5g flex flex-col justify-between h-[400px] ">
 							<div>
 								<h1 className="text-h2 font-medium uppercase text-white">
@@ -75,15 +75,15 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Fellowship
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
 					See all
 				</button>
 			</div>
 
-			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-1g">
+			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-2g md:gap-1g">
 				<div className="flex-1">
 					<img
-						className="rounded-md w-full"
+						className="rounded-xl w-full"
 						src="https://i.ibb.co/LhrsXjDr/image-6.png"
 						alt="Home 2"
 					/>
@@ -101,7 +101,7 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 
 				<div className="flex-1">
 					<img
-						className="rounded-md w-full"
+						className="rounded-xl w-full"
 						src="https://i.ibb.co/9zRXMYs/image-7.png"
 						alt="Home 2"
 					/>
@@ -129,13 +129,13 @@ function ConsciousCollective({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Conscious collective
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
 					See all
 				</button>
 			</div>
 			<div className="mt-6 md:mt-8 lg:mt-10">
 				<img
-					className="rounded-md w-full"
+					className="rounded-3xl w-full"
 					src="https://i.ibb.co/LhrsXjDr/image-6.png"
 					alt="Home 2"
 				/>
@@ -160,15 +160,15 @@ function Reports({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Reports
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
 					See all
 				</button>
 			</div>
 
-			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-1g">
+			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-2g md:gap-1g">
 				<div className="flex-1">
 					<img
-						className="rounded-md w-full"
+						className="rounded-xl w-full"
 						src="https://i.ibb.co/LhrsXjDr/image-6.png"
 						alt="Home 2"
 					/>
@@ -186,7 +186,7 @@ function Reports({ className }: React.ComponentProps<"section">) {
 
 				<div className="flex-1">
 					<img
-						className="rounded-md w-full"
+						className="rounded-xl w-full"
 						src="https://i.ibb.co/9zRXMYs/image-7.png"
 						alt="Home 2"
 					/>
@@ -214,13 +214,13 @@ function DesignSeries({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase flex-1">
 					design series
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-md bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
 					See all
 				</button>
 			</div>
 			<div className="mt-6 md:mt-8 lg:mt-10">
 				<img
-					className="rounded-md w-full"
+					className="rounded-3xl w-full"
 					src="https://i.ibb.co/LhrsXjDr/image-6.png"
 					alt="Home 2"
 				/>
