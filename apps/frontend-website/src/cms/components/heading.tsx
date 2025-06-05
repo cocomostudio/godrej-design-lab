@@ -11,24 +11,36 @@ import { shallow_clone_props } from "../utilities/shallow-clone-props"
 export class Heading {
 	static id = "text.heading-v1"
 
+	constructor ( props ) {
+		return {
+			__component: Heading.id,
+			...props,
+		}
+	}
+
 	static process_node ( props ) {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ({ level, heading, pre_heading = "", font_family }) {
+	static Renderer ({ level, heading, pre_heading = "", font_family, className = null, children = null }) {
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 		const Heading = heading_levels_to_elements[ level ]
 		const classes = heading_levels_to_classes[ level ]
 
-		if ( pre_heading ) {
-			return <Heading className={ `_mt-8 ${ classes } ${ font_family_class } font-bold uppercase` }>
+		if ( children ) {
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } font-bold uppercase text-primary ${ className }` }>
+				{ children }
+			</Heading>
+		}
+		else if ( pre_heading ) {
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } font-bold uppercase ${ className }` }>
 				<span className="text-primary">{ pre_heading }</span>
 				<br />
 				<span className="text-secondary">{ heading }</span>
 			</Heading>
 		}
 		else {
-			return <Heading className={ `_mt-8 ${ classes } font-bold uppercase text-secondary` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } font-bold uppercase text-secondary ${ className }` }>
 				{ heading }
 			</Heading>
 		}
