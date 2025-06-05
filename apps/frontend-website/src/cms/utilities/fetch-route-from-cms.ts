@@ -53,6 +53,9 @@ function prepare_request_payload () {
 		}
 	}
 	let populate = {
+		page_context: {
+			populate: "*",
+		},
 		cover: {
 			populate: "*",
 		},

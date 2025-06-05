@@ -1,5 +1,5 @@
 
-import { PageLayout } from "./components/page-layout"
+import { PageLayout } from "./components/page-layout/page-layout"
 import { HeaderRegion } from "./components/header-region"
 import { SideRegion } from "./components/side-region"
 import { MainRegion } from "./components/main-region"
