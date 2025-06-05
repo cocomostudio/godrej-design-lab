@@ -1,0 +1,14 @@
+{
+	"collectionName": "components_media_gallery_v1",
+	"info": {
+		"displayName": "Gallery",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "dynamiczone",
+			"components": [ "media.gallery-1-image-row-v1", "media.gallery-2-image-row-v1", "media.gallery-3-image-row-v1" ]
+		}
+	}
+}

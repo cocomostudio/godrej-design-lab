@@ -1,0 +1,28 @@
+{
+	"collectionName": "components_media_gallery_2_image_row_v1",
+	"info": {
+		"displayName": "2 Image Row",
+		"description": "Add a row with 2 images."
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"1:1",
+				"1:2",
+				"2:1"
+			],
+			"default": "1:2",
+			"required": true
+		},
+		"images": {
+			"allowedTypes": [ "images" ],
+			"type": "media",
+			"required": true,
+			"multiple": true,
+			"min": 2,
+			"max": 2
+		}
+	}
+}

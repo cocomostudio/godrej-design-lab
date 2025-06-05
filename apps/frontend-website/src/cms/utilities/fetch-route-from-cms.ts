@@ -22,6 +22,17 @@ function prepare_request_payload () {
 		"text.plain-string-v1": populate_all,
 		"text.quote-v1": populate_all,
 		"media.image-v1": populate_all,
+		"media.gallery-v1": {
+			populate: {
+				content: {
+					on: {
+						"media.gallery-1-image-row-v1": populate_all,
+						"media.gallery-2-image-row-v1": populate_all,
+						"media.gallery-3-image-row-v1": populate_all,
+					}
+				}
+			}
+		},
 		"text.wysiwyg-v1": populate_all,
 		"text.heading-v1": populate_all,
 		"text.unordered-list-v1": populate_all,
