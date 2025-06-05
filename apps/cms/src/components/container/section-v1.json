@@ -6,7 +6,7 @@
 	},
 	"options": { },
 	"attributes": {
-		"add_to_table_of_contents": {
+		"register_with_toc": {
 			"type": "boolean",
 			"required": true,
 			"default": false

@@ -26,6 +26,11 @@
 			"type": "component",
 			"component": "miscellaneous.color-scheme-v1"
 		},
+		"toc": {
+			"type": "boolean",
+			"default": true,
+			"required": true
+		},
 		"title": {
 			"type": "string",
 			"required": true

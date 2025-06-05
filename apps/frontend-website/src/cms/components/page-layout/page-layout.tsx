@@ -18,13 +18,21 @@ export class PageLayout {
 	static id = "container.page-layout-v1"
 
 	static process_node ( props ) {
+		const navigable_content = [
+			...( props?.header_region?.content ?? [ ] ),
+			...( props?.main_region?.content ?? [ ] ),
+		]
+
 		return {
 			__component: PageLayout.id,
 			__content: [
+				new SideRegion( props.side_region, props.toc, navigable_content ),
 				new HeaderRegion( props.header_region ),
-				new SideRegion( props.side_region ),
 				new MainRegion( props.main_region ),
 			],
+			side_region_empty: !props.side_region && !props.toc,
+			toc: props.toc,
+			navigable_content,
 			meta: {
 				title: props.title,
 				description: props.description,
