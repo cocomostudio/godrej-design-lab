@@ -6,10 +6,6 @@
 	},
 	"options": { },
 	"attributes": {
-		"label": {
-			"type": "string",
-			"required": true
-		},
 		"link": {
 			"type": "component",
 			"component": "navigation.link-v1",
