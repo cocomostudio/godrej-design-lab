@@ -16,6 +16,12 @@
 		}
 	},
 	"attributes": {
+		"page_context": {
+			"type": "relation",
+			"relation": "manyToOne",
+			"target": "api::page-context.page-context",
+			"required": true
+		},
 		"title": {
 			"type": "string",
 			"required": true
