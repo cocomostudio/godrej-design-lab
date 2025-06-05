@@ -10,6 +10,15 @@
 			"allowedTypes": [ "images" ],
 			"type": "media",
 			"multiple": false
+		},
+		"aspect_ratio": {
+			"type": "enumeration",
+			"enum": [
+				"natural",
+				"1:1 (square)"
+			],
+			"required": true,
+			"default": "natural"
 		}
 	}
 }
