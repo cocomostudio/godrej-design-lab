@@ -13,6 +13,13 @@ import { CMS_PUBLIC_DIR_URL } from "env"
 export class Image {
 	static id = "media.image-v1"
 
+	constructor ( file ) {
+		return {
+			__component: Image.id,
+			file,
+		}
+	}
+
 	static process_node ( props ) {
 		return shallow_clone_props( props )
 	}
