@@ -35,6 +35,7 @@ function prepare_request_payload () {
 	}
 	const populate_v1_section = {
 		populate: {
+			heading: "*",
 			content: {
 				on: {
 					"container.columns-2-v1": {
