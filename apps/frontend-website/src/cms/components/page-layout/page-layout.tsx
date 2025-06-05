@@ -12,6 +12,7 @@ import { MainRegion } from "../main-region"
 import { DocumentMeta } from "./document-meta"
 import { Header } from "./header"
 import { Footer } from "./footer"
+import { useColorSchemeStyles } from "./use-color-scheme-styles"
 
 export class PageLayout {
 	static id = "container.page-layout-v1"
@@ -30,10 +31,13 @@ export class PageLayout {
 				cover: props.cover,
 			},
 			page_context: props.page_context,
+			color_scheme: props.color_scheme,
 		}
 	}
 
-	static Renderer ({ meta, page_context, children }) {
+	static Renderer ({ meta, page_context, color_scheme, children }) {
+		const color_scheme_styles = useColorSchemeStyles( color_scheme )
+
 		return <>
 			<DocumentMeta
 				title={ meta.title }
@@ -42,7 +46,7 @@ export class PageLayout {
 				cover={ meta.cover || page_context.cover }
 			/>
 
-			<div className="bg-white">
+			<div className="bg-white" style={ color_scheme_styles }>
 				<Header navigation={ page_context.navigation } featured_links={ page_context.featured_links } />
 
 				<div className="relative container max-md:flex flex-col">

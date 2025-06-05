@@ -1,0 +1,28 @@
+{
+	"collectionName": "components_miscellaneous_color_scheme_v1",
+	"info": {
+		"displayName": "Color Scheme",
+		"description": "The color pairings that will reflect all over the page."
+	},
+	"options": { },
+	"attributes": {
+		"colors": {
+			"type": "enumeration",
+			"enum": [
+				"blue-gray / dodger-blue",
+				"dodger-blue / midnight-blue",
+				"blue-gray / red",
+				"maroon-red / red",
+				"blue-gray / orange-red",
+				"orange-red / maroon-red",
+				"blue-gray / lime-green",
+				"brown-green / lime-green",
+				"yellow / umber-brown",
+				"yellow / brown-green",
+				"blue-gray / indigo"
+			],
+			"default": "dodger-blue / midnight-blue",
+			"required": true
+		}
+	}
+}

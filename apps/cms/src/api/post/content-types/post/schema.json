@@ -22,6 +22,10 @@
 			"target": "api::page-context.page-context",
 			"required": true
 		},
+		"color_scheme": {
+			"type": "component",
+			"component": "miscellaneous.color-scheme-v1"
+		},
 		"title": {
 			"type": "string",
 			"required": true

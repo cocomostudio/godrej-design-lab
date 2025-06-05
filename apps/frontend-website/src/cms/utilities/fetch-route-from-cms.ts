@@ -57,6 +57,9 @@ function prepare_request_payload () {
 		page_context: {
 			populate: "*",
 		},
+		color_scheme: {
+			populate: "*"
+		},
 		cover: {
 			populate: "*",
 		},
