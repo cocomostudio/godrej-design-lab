@@ -8,8 +8,8 @@ export class TwoColumnLayout {
 		props = { ...props }
 
 		props.__content = [
-			new Column( props.column_1, 1, props ),
-			new Column( props.column_2, 2, props ),
+			new Column( props.column_1?.content, 1, props ),
+			new Column( props.column_2.content, 2, props ),
 		]
 
 		delete props.column_1

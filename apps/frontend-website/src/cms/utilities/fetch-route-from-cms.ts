@@ -38,13 +38,32 @@ function prepare_request_payload () {
 			heading: "*",
 			content: {
 				on: {
+					"container.columns-1-v1": {
+						populate: {
+							column: {
+								populate: {
+									content: {
+										on: populate_v1_attributes
+									}
+								}
+							},
+						}
+					},
 					"container.columns-2-v1": {
 						populate: {
 							column_1: {
-								on: populate_v1_attributes
+								populate: {
+									content: {
+										on: populate_v1_attributes
+									}
+								}
 							},
 							column_2: {
-								on: populate_v1_attributes
+								populate: {
+									content: {
+										on: populate_v1_attributes
+									}
+								}
 							},
 						}
 					},

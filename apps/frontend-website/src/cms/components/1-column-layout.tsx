@@ -8,9 +8,9 @@ export class OneColumnLayout {
 		props = { ...props }
 
 		props.__content = [
-			new Column( props.content, 1, props ),
+			new Column( props.column.content, 1, props ),
 		]
-		delete props.content
+		delete props.column
 
 		props.layout = "1"
 
