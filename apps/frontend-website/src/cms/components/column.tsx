@@ -20,7 +20,7 @@ export class Column {
 	static Renderer ({ number, children, __parent }) {
 		const layout = __parent.layout
 		const className = column_config_to_classname[ layout ][ number ]
-		return <div className={ `${ className } [&>:first-child]:mt-0` }>
+		return <div className={ `${ className } [&>:first-child]:mt-0 max-md:empty:hidden` }>
 			{ children }
 		</div>
 	}

@@ -23,6 +23,6 @@ export class HeaderRegion {
 	}
 
 	static Renderer ({ children }) {
-		return <div className="header-region mt-8">{ children }</div>
+		return <div className="header-region empty:hidden max-md:order-first mt-8 md:ml-1c-1g lg:ml-2c-2g">{ children }</div>
 	}
 }

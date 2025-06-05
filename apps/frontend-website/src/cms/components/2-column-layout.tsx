@@ -19,7 +19,7 @@ export class TwoColumnLayout {
 	}
 
 	static Renderer ({ children }) {
-		return <div className="2-column-layout mt-4 md:mt-8 lg:mt-10 [&.column:first-child]:mt-0 flex max-md:flex-col basis-full">
+		return <div className="2-column-layout mt-4 md:mt-8 lg:mt-10 [&.column:first-child]:mt-0 flex max-md:flex-col basis-full max-md:gap-6">
 			{ children }
 		</div>
 	}
