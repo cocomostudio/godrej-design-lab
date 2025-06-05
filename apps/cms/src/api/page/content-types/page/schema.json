@@ -27,8 +27,9 @@
 			"required": true
 		},
 		"cover": {
-			"type": "component",
-			"component": "media.image-v1"
+			"type": "media",
+			"allowedTypes": [ "images" ],
+			"multiple": false
 		},
 		"header_region": {
 			"type": "component",
