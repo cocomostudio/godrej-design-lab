@@ -30,24 +30,17 @@
 			"type": "component",
 			"component": "media.image-v1"
 		},
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1"
-			]
 		"header_region": {
+			"type": "component",
+			"component": "container.header-region-v1"
 		},
 		"main_region": {
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1",
-				"fellowships.fellowship-v1"
-			]
+			"type": "component",
+			"component": "container.main-region-v1"
 		},
 		"side_region": {
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1"
-			]
+			"type": "component",
+			"component": "container.side-region-v1"
 		},
 		"url_alias": {
 			"type": "relation",

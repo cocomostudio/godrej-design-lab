@@ -1,0 +1,17 @@
+{
+	"collectionName": "components_container_main_region_v1",
+	"info": {
+		"displayName": "Main Region",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1",
+				"fellowships.fellowship-v1"
+			]
+		}
+	}
+}

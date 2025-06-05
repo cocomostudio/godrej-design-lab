@@ -60,25 +60,37 @@ function prepare_request_payload () {
 			populate: "*",
 		},
 		header_region: {
-			on: {
-				"container.section-v1": populate_v1_section,
+			populate: {
+				content: {
+					on: {
+						"container.section-v1": populate_v1_section,
+					}
+				}
 			}
 		},
 		side_region: {
-			on: {
-				"container.section-v1": populate_v1_section,
+			populate: {
+				content: {
+					on: {
+						"container.section-v1": populate_v1_section,
+					}
+				}
 			}
 		},
 		main_region: {
-			on: {
-				"container.section-v1": populate_v1_section,
-				"fellowships.fellowship-v1": {
-					populate: [
-						"projects",
-						"projects.cover.file",
-						"projects.fellows",
-						"projects.link",
-					]
+			populate: {
+				content: {
+					on: {
+						"container.section-v1": populate_v1_section,
+						"fellowships.fellowship-v1": {
+							populate: [
+								"projects",
+								"projects.cover.file",
+								"projects.fellows",
+								"projects.link",
+							]
+						}
+					}
 				}
 			}
 		}

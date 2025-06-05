@@ -1,0 +1,16 @@
+{
+	"collectionName": "components_container_side_region_v1",
+	"info": {
+		"displayName": "Side Region",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		}
+	}
+}

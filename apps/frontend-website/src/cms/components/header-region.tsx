@@ -14,7 +14,7 @@ export class HeaderRegion {
 	constructor ( child_nodes ) {
 		return {
 			__component: HeaderRegion.id,
-			__content: [ ...child_nodes ]
+			__content: Array.isArray( child_nodes?.content ) ? [ ...child_nodes.content ] : [ ]
 		}
 	}
 

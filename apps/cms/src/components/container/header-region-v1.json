@@ -1,0 +1,16 @@
+{
+	"collectionName": "components_container_header_region_v1",
+	"info": {
+		"displayName": "Header Region",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"container.section-v1"
+			]
+		}
+	}
+}

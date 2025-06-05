@@ -37,22 +37,16 @@
 			"inversedBy": "posts"
 		},
 		"header_region": {
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1"
-			]
+			"type": "component",
+			"component": "container.header-region-v1"
 		},
 		"main_region": {
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1"
-			]
+			"type": "component",
+			"component": "container.main-region-v1"
 		},
 		"side_region": {
-			"type": "dynamiczone",
-			"components": [
-				"container.section-v1"
-			]
+			"type": "component",
+			"component": "container.side-region-v1"
 		},
 		"url_alias": {
 			"type": "relation",
