@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "react-router build",
+		"dev:ec2": "react-router dev --port 80",
 		"dev": "react-router dev --port 9999",
 		"start": "react-router-serve ./build/server/index.js",
 		"typecheck": "react-router typegen && tsc",
