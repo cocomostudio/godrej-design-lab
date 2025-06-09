@@ -82,8 +82,8 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 
 			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-2g md:gap-1g">
 				<div className="flex-1">
-					<img
-						className="rounded-xl w-full"
+					<img 
+						className="rounded-xl w-full transition duration-700 ease-in-out hover-transition-one"
 						src="https://i.ibb.co/LhrsXjDr/image-6.png"
 						alt="Home 2"
 					/>
@@ -101,7 +101,7 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 
 				<div className="flex-1">
 					<img
-						className="rounded-xl w-full"
+						className="rounded-xl w-full transition duration-700 ease-in-out hover-transition-two"
 						src="https://i.ibb.co/9zRXMYs/image-7.png"
 						alt="Home 2"
 					/>
@@ -168,7 +168,7 @@ function Reports({ className }: React.ComponentProps<"section">) {
 			<div className="flex flex-col md:flex-row flex-grow mt-6 md:mt-8 lg:mt-10 gap-2g md:gap-1g">
 				<div className="flex-1">
 					<img
-						className="rounded-xl w-full"
+						className="rounded-xl w-full transition duration-700 ease-in-out hover-transition-three"
 						src="https://i.ibb.co/LhrsXjDr/image-6.png"
 						alt="Home 2"
 					/>
@@ -186,7 +186,7 @@ function Reports({ className }: React.ComponentProps<"section">) {
 
 				<div className="flex-1">
 					<img
-						className="rounded-xl w-full"
+						className="rounded-xl w-full transition duration-700 ease-in-out hover-transition-four"
 						src="https://i.ibb.co/9zRXMYs/image-7.png"
 						alt="Home 2"
 					/>

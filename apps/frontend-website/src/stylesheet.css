@@ -63,6 +63,36 @@
 	font-display: swap;
 }
 
+/* Your custom global styles */
+.hover-transition-one:hover ,
+.hover-transition-two:hover,
+.hover-transition-three:hover,
+ .hover-transition-four:hover{
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+
+.hover-transition-one:hover {
+  mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+  -webkit-mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+}
+.hover-transition-two:hover {
+  mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+  -webkit-mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+}
+.hover-transition-three:hover {
+  mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+  -webkit-mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+}
+.hover-transition-four:hover {
+  mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+  -webkit-mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
