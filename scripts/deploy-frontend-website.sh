@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-# Source environment variables from /etc/environment
-if [ -f /etc/environment ]; then
+# Source environment variables from our dedicated env file
+if [ -f /etc/gdl.env ]; then
   set -o allexport
-  source /etc/environment
+  source /etc/gdl.env
   set +o allexport
 fi
 
@@ -20,11 +20,13 @@ fi
 pnpm install
 
 # Update env.ts with the CMS private IP
-# Note: CMS_PRIVATE_IP is sourced from /etc/environment
+# Note: CMS_PRIVATE_IP is sourced from /etc/gdl.env
 if [ -n "$CMS_PRIVATE_IP" ]; then
+  echo "Found CMS_PRIVATE_IP: $CMS_PRIVATE_IP. Updating env.ts."
   sed -i "s|http://localhost:1337|http://${CMS_PRIVATE_IP}:1337|g" apps/frontend-website/env.ts
 else
-  echo "Warning: CMS_PRIVATE_IP is not set. Skipping env update."
+  echo "Error: CMS_PRIVATE_IP is not set. Cannot update env.ts. Deployment will fail."
+  exit 1
 fi
 
 
