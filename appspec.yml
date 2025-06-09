@@ -5,6 +5,10 @@ files:
     destination: /home/ec2-user/repo
     overwrite: true
 hooks:
+  BeforeInstall:
+    - location: scripts/chown.sh
+      timeout: 30
+      runas: root
   AfterInstall:
     - location: scripts/deploy-frontend-website.sh
       timeout: 300
