@@ -9,6 +9,6 @@ hooks:
     - location: scripts/chown.sh
       timeout: 30
       runas: root
-    - location: scripts/deploy-frontend-website.sh
+    - location: scripts/deploy.sh
       timeout: 300
       runas: ec2-user
