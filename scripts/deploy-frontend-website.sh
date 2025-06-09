@@ -38,7 +38,7 @@ pnpm install
 echo "[DEBUG] Checking CMS_PRIVATE_IP: $CMS_PRIVATE_IP"
 if [ -n "$CMS_PRIVATE_IP" ]; then
   echo "[DEBUG] Found CMS_PRIVATE_IP: $CMS_PRIVATE_IP. Updating env.ts."
-  sed -i "s|http://localhost:1337|http://${CMS_PRIVATE_IP}:1337|g" apps/frontend-website/env.ts
+  sed -i "s|http://localhost:1337|http://${CMS_PRIVATE_IP}|g" apps/frontend-website/env.ts
 else
   echo "[ERROR] CMS_PRIVATE_IP is not set. Cannot update env.ts. Deployment will fail."
   exit 1
