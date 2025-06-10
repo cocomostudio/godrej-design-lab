@@ -28,11 +28,10 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
 			<div className="mt-4 md:w-7c-6g lg:w-10c-9g md:flex md:flex-col space-y-8 lg:space-y-10 ">
 				<div className="bg-[url(https://i.ibb.co/F459gzYq/Rectangle-16.png)] bg-center md:h-[400px] bg-no-repeat bg-cover rounded-[18px]">
 					<div className="bg-gradient-to-t from-transparent to-[#6B682E] rounded-[18px]">
-						<div className="px-3 py-5 md:p-6 lg:p-8 md:w-4c-3g lg:w-6c-5g flex flex-col justify-between h-[400px] ">
+						<div className="px-3 py-5 md:p-6 lg:p-8 md:w-3c-2g lg:w-5c-4g flex flex-col justify-between h-[400px] ">
 							<div>
 								<h1 className="text-h2 font-medium uppercase text-white">
-									INDIAN <br />
-									INTERVENTIONS IN <br /> THE VENICE BIENNALE
+									INDIAN INTERVENTIONS IN THE VENICE BIENNALE
 								</h1>
 							</div>
 							<div className=" md:w-3c-2g lg:w-4c-3g mb-15 md:mb-0">
@@ -46,17 +45,13 @@ function HeroSection({ className }: React.ComponentProps<"section">) {
 				</div>
 				<div className="mt-0 md:ml-3c-3g lg:ml-4c-4g md:w-4c-3g lg:w-6c-5g">
 					<div className="bg-[url(https://i.ibb.co/pjznmfJh/Vector.png)] w-full bg-no-repeat bg-contain -mt-20 md:-mt-48">
-						<h3 className="text-h3 text-white md:py-4 md:px-6 lg:py-6 lg:px-8">
-							<span className="font-bold">Godrej Desing Lab is platfrom</span>
-							<br />
-							<span>
-								{" "}
-								encourages and advances <br />
-								design excellence and exploration.
-							</span>
+						<h3 className="text-h5 md:text-h4 lg:text-h3 first-line:font-bold text-white md:py-4 md:px-6 lg:py-6 lg:px-8">
+							Godrej Design Lab is a platform 
+							which encourages and advances 
+							design excellence and exploration.
 						</h3>
 						<div className="flex justify-end md:py-6 md:px-6 lg:py-10 lg:px-8">
-							<button className="text-blue-500 bg-white px-3 py-3 md:px-4 md:py-3">
+							<button className="text-blue-500 text-xs lg:text-sm bg-white px-3 py-3 md:px-4 md:py-3 rounded-md">
 								Learn More
 							</button>
 						</div>
@@ -75,7 +70,7 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Fellowship
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -129,7 +124,7 @@ function ConsciousCollective({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Conscious collective
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -160,7 +155,7 @@ function Reports({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Reports
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -214,7 +209,7 @@ function DesignSeries({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase flex-1">
 					design series
 				</h2>
-				<button className="shrink-0 px-[13px] py-[11px] md:px-5 md:py-2.5 lg:px-6 lg:py-[15px] rounded-[9px] font-bold bg-dodger-blue text-xs md:text-sm lg:text-[20px] text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
