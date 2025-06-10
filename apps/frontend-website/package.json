@@ -14,6 +14,7 @@
 		"test": "vitest --config conf/vitest.ts"
 	},
 	"dependencies": {
+		"@fontsource/courier-prime": "^5.2.6",
 		"@react-router/node": "^7.5.1",
 		"@react-router/serve": "^7.5.1",
 		"@strapi/blocks-react-renderer": "^1.0.2",
