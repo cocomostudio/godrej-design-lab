@@ -44,10 +44,15 @@ else
   exit 1
 fi
 
+# Build the frontend app for production
+echo "[DEBUG] Building the frontend app for production..."
+pnpm -F few run build
+
 # Restart frontend (kill old, start new)
-echo "[DEBUG] Killing any existing frontend dev processes"
+echo "[DEBUG] Killing any existing frontend processes"
 pkill -f "pnpm -F few run dev" || true
-echo "[DEBUG] Starting frontend dev process"
-pnpm -F few run dev > $HOME/few.log 2>&1 &
+pkill -f "pnpm -F few run start" || true
+echo "[DEBUG] Starting frontend in production mode"
+pnpm -F few run start > $HOME/few.log 2>&1 &
 
 echo "[DEBUG] deploy-frontend-website.sh completed at $(date)"
