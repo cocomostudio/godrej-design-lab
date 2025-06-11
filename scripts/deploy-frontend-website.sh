@@ -31,6 +31,12 @@ else
     echo "[DEBUG] nvm.sh not found at $NVM_DIR/nvm.sh"
 fi
 
+# Set PNPM_HOME and add it to the PATH to resolve global bin directory issues
+echo "[DEBUG] Setting up PNPM_HOME"
+export PNPM_HOME="${HOME}/.pnpm"
+mkdir -p "$PNPM_HOME" # Ensure the directory exists
+export PATH="$PNPM_HOME:$PATH"
+
 echo "[DEBUG] Running pnpm install"
 pnpm install
 
