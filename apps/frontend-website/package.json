@@ -8,6 +8,8 @@
 		"dev:ec2": "react-router dev --port 80",
 		"dev": "react-router dev --port 9999",
 		"start": "react-router-serve ./build/server/index.js",
+		"start:prod": "pm2 start --name few 'pnpm start'",
+		"stop": "pm2 stop few",
 		"typecheck": "react-router typegen && tsc",
 		"test": "vitest --config conf/vitest.ts"
 	},

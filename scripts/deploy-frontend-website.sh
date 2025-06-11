@@ -50,9 +50,19 @@ pnpm -F few run build
 
 # Restart frontend (kill old, start new)
 echo "[DEBUG] Killing any existing frontend processes"
-pkill -f "pnpm -F few run dev" || true
-pkill -f "pnpm -F few run start" || true
-echo "[DEBUG] Starting frontend in production mode"
-pnpm -F few run start > $HOME/few.log 2>&1 &
+pnpm -F few run stop || true
+
+echo "[DEBUG] Checking for pm2"
+if ! command -v pm2 &> /dev/null
+then
+    echo "pm2 could not be found, installing..."
+    pnpm add -g pm2
+fi
+
+# update pm2 in-memory process list
+pm2 update
+
+echo "[DEBUG] Starting frontend in production mode with pm2"
+pnpm -F few run start:prod
 
 echo "[DEBUG] deploy-frontend-website.sh completed at $(date)"
