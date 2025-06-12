@@ -11,10 +11,11 @@ export default function ({ env }) {
 				provider: "local",
 				breakpoints: {
 					xl: 1920,
-					l: 1080,
-					m: 720,
-					sm: 360,
-					xs: 96,
+					lg: 1080,
+					md: 720,
+					sm: 480,
+					xs: 360,
+					xxs: 120,
 				},
 			}
 		}
