@@ -63,34 +63,46 @@
 	font-display: swap;
 }
 
-/* Your custom global styles */
-.hover-transition-one:hover ,
+.hover-transition-one,
+.hover-transition-two,
+.hover-transition-three,
+.hover-transition-four {
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 200%;
+  mask-size: 200%;
+  transition: mask-size 100ms ease-in-out, -webkit-mask-size 100ms ease-in-out;
+  display: block;
+
+}
+
+.hover-transition-one:hover,
 .hover-transition-two:hover,
 .hover-transition-three:hover,
- .hover-transition-four:hover{
-  mask-repeat: no-repeat;
-  mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-}
-
-.hover-transition-one:hover {
-  mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
-  -webkit-mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
-}
-.hover-transition-two:hover {
-  mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
-  -webkit-mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
-}
-.hover-transition-three:hover {
-  mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
-  -webkit-mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
-}
 .hover-transition-four:hover {
-  mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
-  -webkit-mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
 }
 
+/* Individual mask images */
+.hover-transition-one {
+  -webkit-mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+  mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+}
+.hover-transition-two {
+  -webkit-mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+  mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+}
+.hover-transition-three {
+  -webkit-mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+  mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+}
+.hover-transition-four {
+  -webkit-mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+  mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+}
 
 
 @tailwind base;
