@@ -70,7 +70,7 @@ function FellowShip({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Fellowship
 				</h2>
-				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs lg:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -124,7 +124,7 @@ function ConsciousCollective({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Conscious collective
 				</h2>
-				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs lg:text-sm text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -155,7 +155,7 @@ function Reports({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase text-midnight-blue flex-1">
 					Reports
 				</h2>
-				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs lg:text-sm  text-white uppercase">
 					See all
 				</button>
 			</div>
@@ -209,7 +209,7 @@ function DesignSeries({ className }: React.ComponentProps<"section">) {
 				<h2 className="text-h1 font-bold uppercase flex-1">
 					design series
 				</h2>
-				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs md:text-sm text-white uppercase">
+				<button className="shrink-0 px-3.25 py-2.75 md:px-5 md:py-2.5 lg:px-6 lg:py-3.75 rounded-md lg:rounded-lg font-bold bg-dodger-blue text-xs lg:text-sm  text-white uppercase">
 					See all
 				</button>
 			</div>
