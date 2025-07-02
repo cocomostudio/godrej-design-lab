@@ -77,6 +77,9 @@ DATABASE_PASSWORD=${DATABASE_PASSWORD}
 DATABASE_SSL=true
 CLIENT_URL=
 PREVIEW_SECRET=Zlx9EJFRSmJc0o0j8HanWeB==
+AWS_BUCKET_NAME=gdl-strapi-media-uploads
+CLOUDFRONT_URL=https://d2tkg1vqiim71t.cloudfront.net
+AWS_REGION=ap-south-1
 EOF
 
 else

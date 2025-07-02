@@ -1,14 +1,17 @@
-
 export default function ({ env }) {
 	return {
 		upload: {
 			config: {
+				provider: "aws-s3",
 				providerOptions: {
-					localServer: {
-						directory: "./environment/uploads"
-					}
+					url: env("CLOUDFRONT_URL"),
+					s3Options: {
+						region: env("AWS_REGION"),
+						params: {
+							Bucket: env("AWS_BUCKET_NAME"),
+						},
+					},
 				},
-				provider: "local",
 				breakpoints: {
 					xl: 1920,
 					l: 1080,
@@ -16,7 +19,7 @@ export default function ({ env }) {
 					sm: 360,
 					xs: 96,
 				},
-			}
-		}
-	}
+			},
+		},
+	};
 }
