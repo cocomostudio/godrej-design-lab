@@ -1,0 +1,19 @@
+diff --git a/dist/index.js b/dist/index.js
+@@
+-    config.params.ACL = fp.getOr(clientS3.ObjectCannedACL.public_read, [
+-        'params',
+-        'ACL'
+-    ], config);
++    // Godrej Design Lab patch: do NOT force a default ACL.
++    // If the user supplies params.ACL we keep it, otherwise we leave the property
++    // undefined so that AWS SDK omits the x-amz-acl header. This allows uploads to
++    // buckets that have Object Ownership set to "Bucket owner enforced" (ACLs disabled).
++    if (fp.has(['params','ACL'], config)) {
++        config.params.ACL = fp.get(['params','ACL'], config);
++    } else {
++        // Ensure we don't accidentally inherit the public-read default
++        delete config.params.ACL;
++    }
+@@
+-                    ACL: config.params.ACL,
++                    ...(config.params.ACL ? { ACL: config.params.ACL } : {}),

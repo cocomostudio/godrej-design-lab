@@ -4,7 +4,7 @@ export default function ({ env }) {
 			config: {
 				provider: "aws-s3",
 				providerOptions: {
-					url: env("CLOUDFRONT_URL"),
+					baseUrl: env("CLOUDFRONT_URL"),
 					s3Options: {
 						region: env("AWS_REGION"),
 						params: {
