@@ -19,7 +19,7 @@ export class WYSIWYG {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ({ font_family, content }) {
+	static Renderer ( { font_family, content }: { font_family?: string, content: unknown } ) {
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 
 		return <div className="mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0">
