@@ -16,6 +16,10 @@
 		"pnpm": ">=9.1.0"
 	},
 	"pnpm": {
+		"supportedArchitectures": {
+			"os":  ["linux"],
+			"cpu": ["arm64"]
+		},
 		"patchedDependencies": {
 			"strapi-plugin-webtools@1.4.1": "patches/strapi-plugin-webtools@1.4.1.patch",
 			"@strapi/provider-upload-aws-s3@5.17.0": "patches/@strapi__provider-upload-aws-s3@5.17.0.patch"
