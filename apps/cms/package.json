@@ -3,6 +3,14 @@
 	"version": "0.1.0",
 	"private": true,
 	"description": "A Strapi CMS application",
+	"exports": {
+		"./content-types": {
+			"types": "./types/generated/contentTypes.d.ts"
+		},
+		"./components": {
+			"types": "./types/generated/components.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "strapi build",
 		"console": "strapi console",
