@@ -17,13 +17,13 @@ export class ButtonLink {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ({ link }) {
-		const className = "[p+&]:mt-2"
+	static Renderer ( { link, className }: { link: unknown, className?: string } ) {
+		const classes = "[p+&]:mt-2"
 		let props = { }
 		if ( ! link.url.startsWith( "/" ) ) {
 			props.target = "_blank"
 		}
-		return <Link to={ link.url } className={ `${ className } inline-block rounded-md bg-secondary text-primary px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase` } { ...props }>
+		return <Link to={ link.url } className={ `${ classes } inline-block rounded-md bg-secondary text-primary px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase ${ className }` } { ...props }>
 			{ link.label }
 		</Link>
 	}
