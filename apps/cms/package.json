@@ -24,9 +24,9 @@
 		"fs-extra": "10.0.0",
 		"mime-types": "2.1.27",
 		"pg": "8.16.0",
-		"react": "18.0.0",
-		"react-dom": "18.0.0",
-		"react-router-dom": "6.0.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-router-dom": "6.23.0",
 		"strapi-plugin-required-relation-field": "0.3.0",
 		"strapi-plugin-webtools": "1.4.1",
 		"styled-components": "6.0.0"
