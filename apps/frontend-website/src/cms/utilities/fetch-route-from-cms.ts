@@ -44,6 +44,15 @@ function prepare_request_payload () {
 			]
 		},
 		"gdl.heading-and-content-list-v1": populate_all,
+		"gdl.image-and-content-list-v1": {
+			populate: {
+				content: {
+					populate: [
+						"image.file"
+					]
+				}
+			}
+		},
 	}
 	const populate_v1_section = {
 		populate: {

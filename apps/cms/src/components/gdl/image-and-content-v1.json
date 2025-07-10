@@ -1,0 +1,19 @@
+{
+	"collectionName": "components_gdl_image_and_content_v1",
+	"info": {
+		"displayName": "Image + Content",
+		"description": "Image on one-side, content on the other"
+	},
+	"options": { },
+	"attributes": {
+		"image": {
+			"type": "component",
+			"component": "media.image-v1",
+			"required": false
+		},
+		"content": {
+			"type": "blocks",
+			"required": true
+		}
+	}
+}

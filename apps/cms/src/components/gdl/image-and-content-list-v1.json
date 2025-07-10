@@ -1,0 +1,25 @@
+{
+	"collectionName": "components_gdl_image_and_content_list_v1",
+	"info": {
+		"displayName": "Image + Content (List)",
+		"description": "A list of sub-sections, each with the image on one-side, and content on the other"
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"image | content",
+				"content | image"
+			],
+			"default": "image | content",
+			"required": true
+		},
+		"content": {
+			"type": "component",
+			"component": "gdl.image-and-content-v1",
+			"required": true,
+			"repeatable": true
+		}
+	}
+}
