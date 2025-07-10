@@ -13,7 +13,6 @@ export default function ({ env }) {
 					},
 				},
 				sizeLimit: 20 * 1024 * 1024, // 20MB in bytes
-				allowedTypes: ["image/png", "image/jpg", "image/jpeg", "application/pdf"],
 				breakpoints: {
 					xl: 1920,
 					l: 1080,
