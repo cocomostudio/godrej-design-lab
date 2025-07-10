@@ -17,6 +17,7 @@ export default function ( { env } ) {
 			promoteEE: env.bool( "FLAG_PROMOTE_EE", false ),
 		},
 		autoOpen: false,
+		url: "/rootcanarywharf",
 		preview: {
 			enabled: true,
 			config: {
