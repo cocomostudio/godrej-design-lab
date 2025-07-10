@@ -1,3 +1,14 @@
+Make sure you have this in package.json under `pnpm`:
+
+
+```json
+		"supportedArchitectures": {
+			"os":  ["linux"],
+			"cpu": ["arm64"]
+		},
+```
+
+
 # In Local
 
 First
