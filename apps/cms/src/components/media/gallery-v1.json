@@ -2,13 +2,17 @@
 	"collectionName": "components_media_gallery_v1",
 	"info": {
 		"displayName": "Gallery",
-		"description": ""
+		"description": "A showcase of images."
 	},
 	"options": { },
 	"attributes": {
 		"content": {
 			"type": "dynamiczone",
-			"components": [ "media.gallery-1-image-row-v1", "media.gallery-2-image-row-v1", "media.gallery-3-image-row-v1" ]
+			"components": [
+				"media.gallery-1-image-set-v1",
+				"media.gallery-2-image-set-v1",
+				"media.gallery-3-image-set-v1"
+			]
 		}
 	}
 }

@@ -1,0 +1,108 @@
+
+.image-container {
+	padding: 0 calc( var( --gutter-width ) / 2 );
+}
+.image-container:first-of-type {
+	padding-left: 0;
+}
+.image-container:last-of-type {
+	padding-right: 0;
+}
+
+
+
+/**
+ |
+ | Ensure that the captions have a generous hover area,
+ | 	that extends beyond the boundaries of its content.
+ | 	This is to support graceful fade transitions that play on hover.
+ |
+ */
+.image-caption:before,
+.image-caption:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+.image-caption:before {
+	right: 100%;
+	width: 100%;
+}
+.image-caption:after {
+	left: 100%;
+	width: calc( 1 * var( --gutter-width ) );
+}
+
+/**
+ |
+ | When a caption list item is hovered over,
+ |	1. Fade all the other captions
+ |	2. Ensure the caption hovered over is not faded
+ |	3. Fade all the images in the associated image row
+ |	4. Ensure the corresponding image in the associated image row is not faded
+ |
+ |
+ */
+.image-context .image-container {
+	transition: opacity 0.15s ease-in;
+}
+.image-context:not( :has( .caption-list:hover ) ) .image-container {
+	transition-delay: 0.75s;
+}
+.image-caption {
+	transition: opacity 0.15s ease-in;
+}
+.caption-list:not(:hover) .image-caption {
+	transition-delay: 0.75s;
+}
+
+
+/* ( 1 ): Fade all the other captions */
+.caption-list:has( .image-caption:hover ) .image-caption {
+	transition-delay: 0.1s;
+	opacity: 0.25;
+}
+/* ( 2 ): Ensure the caption hovered over is not faded */
+.image-caption:hover {
+	opacity: 1 !important;
+}
+/* ( 3 ): Fade all the images in the associated image row */
+.image-context:has( .image-caption:hover ) .image-container {
+	transition-delay: 0.1s;
+	opacity: 0.25;
+}
+/* ( 4 ): Ensure the corresponding image in the associated image row is not faded */
+.image-context:has( .image-caption:nth-child( 1 ):hover ) .image-container:nth-of-type( 1 ) { opacity: 1 }
+.image-context:has( .image-caption:nth-child( 2 ):hover ) .image-container:nth-of-type( 2 ) { opacity: 1 }
+.image-context:has( .image-caption:nth-child( 3 ):hover ) .image-container:nth-of-type( 3 ) { opacity: 1 }
+
+
+/**
+ |
+ | When an image list item is hovered over,
+ |	1. Fade all the images in that row
+ |	2. Ensure the image being hovered over is not faded
+ |	3. Fade all the captions in the associated image row
+ |	4. However, ensure that the caption corresponding to the image is not faded.
+ |
+ |
+ */
+@media ( min-width: 120rem ) {
+	.image-context:has( .image-container:hover ) .image-caption {
+		transition-delay: 0s;
+		opacity: 0.25;
+	}
+	.image-context:has( .image-container:hover ) .image-container {
+		transition-delay: 0s;
+		opacity: 0.25;
+	}
+	.image-context .image-container:hover {
+		transition-delay: 0s;
+		opacity: 1 !important;
+	}
+	/* ( 4 ): However, ensure that the caption corresponding to the image is not faded. */
+	.image-context:has( .image-container:nth-of-type( 1 ):hover ) .image-caption:nth-child( 1 ) { opacity: 1 }
+	.image-context:has( .image-container:nth-of-type( 2 ):hover ) .image-caption:nth-child( 2 ) { opacity: 1 }
+	.image-context:has( .image-container:nth-of-type( 3 ):hover ) .image-caption:nth-child( 3 ) { opacity: 1 }
+}

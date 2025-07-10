@@ -9,7 +9,7 @@ import { OneColumnLayout } from "./components/1-column-layout"
 import { TwoColumnLayout } from "./components/2-column-layout"
 import { HorizontalRule } from "./components/horizontal-rule"
 import { Image } from "./components/image"
-import { Gallery, GalleryItem } from "./components/gallery"
+import { Gallery } from "./components/gallery"
 import { WYSIWYG } from "./components/wysiwyg"
 import { Heading } from "./components/heading"
 import { UnorderedList } from "./components/unordered-list"
@@ -33,7 +33,6 @@ export const component_map = {
 	"miscellaneous.horizontal-rule-v1": HorizontalRule,
 	"media.image-v1": Image,
 	"media.gallery-v1": Gallery,
-	"media.gallery-item-v1": GalleryItem,
 	"text.wysiwyg-v1": WYSIWYG,
 	"text.heading-v1": Heading,
 	"text.unordered-list-v1": UnorderedList,

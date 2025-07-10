@@ -1,8 +1,8 @@
 {
-	"collectionName": "components_media_gallery_2_image_row_v1",
+	"collectionName": "components_media_gallery_2_image_set_v1",
 	"info": {
-		"displayName": "2 Image Row",
-		"description": "Add a row with 2 images."
+		"displayName": "2-Image Set",
+		"description": "Add images. Each row will have 2 images."
 	},
 	"options": { },
 	"attributes": {
@@ -20,9 +20,7 @@
 			"allowedTypes": [ "images" ],
 			"type": "media",
 			"required": true,
-			"multiple": true,
-			"min": 2,
-			"max": 2
+			"multiple": true
 		}
 	}
 }

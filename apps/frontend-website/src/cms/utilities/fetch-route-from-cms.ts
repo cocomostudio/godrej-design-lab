@@ -26,9 +26,9 @@ function prepare_request_payload () {
 			populate: {
 				content: {
 					on: {
-						"media.gallery-1-image-row-v1": populate_all,
-						"media.gallery-2-image-row-v1": populate_all,
-						"media.gallery-3-image-row-v1": populate_all,
+						"media.gallery-1-image-set-v1": populate_all,
+						"media.gallery-2-image-set-v1": populate_all,
+						"media.gallery-3-image-set-v1": populate_all,
 					}
 				}
 			}

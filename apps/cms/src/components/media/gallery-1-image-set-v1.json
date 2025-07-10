@@ -1,0 +1,24 @@
+{
+	"collectionName": "components_media_gallery_1_image_set_v1",
+	"info": {
+		"displayName": "1 Image Set",
+		"description": "Add images. Each row will have just 1 image."
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"1"
+			],
+			"default": "1",
+			"required": true
+		},
+		"images": {
+			"allowedTypes": [ "images" ],
+			"type": "media",
+			"required": true,
+			"multiple": true
+		}
+	}
+}
