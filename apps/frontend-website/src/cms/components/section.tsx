@@ -8,6 +8,7 @@
 
 import { relocate_content_attribute } from "../utilities/relocate-content-attribute"
 import { Heading } from "./heading"
+import { HorizontalRule } from "./horizontal-rule"
 
 export class Section {
 	static id = "container.section-v1"
@@ -27,6 +28,7 @@ export class Section {
 		return <section className="mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0 container flex flex-col _max-md:flex-col flex-wrap" { ...attributes }>
 			{ heading && <Heading.Renderer { ...heading } /> }
 			{ children }
+			{ children.length > 0 && <HorizontalRule.Renderer shade="dark" /> }
 		</section>
 	}
 }
