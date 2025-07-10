@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_gdl_heading_and_content_v1",
+	"info": {
+		"displayName": "Heading + Content",
+		"description": "Heading on the left, content on the right"
+	},
+	"options": { },
+	"attributes": {
+		"heading": {
+			"type": "text",
+			"required": true
+		},
+		"content": {
+			"type": "blocks",
+			"required": true
+		}
+	}
+}

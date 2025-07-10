@@ -43,6 +43,7 @@ function prepare_request_payload () {
 				"image.file"
 			]
 		},
+		"gdl.heading-and-content-list-v1": populate_all,
 	}
 	const populate_v1_section = {
 		populate: {
