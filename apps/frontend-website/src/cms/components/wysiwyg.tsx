@@ -49,9 +49,11 @@ function Paragraph ({ font_family, children = null }) {
 }
 
 function List ({ format, font_family, children }) {
+	const layout_in_two_columns = children.length >= 10
+	const two_column_layout_classes = "columns-2 md:columns-2c-2g lg:columns-3c-1g"
 	const L = format === "ordered" ? "ol" : "ul"
 	const class_name = format === "ordered" ? "list-decimal list-inside" : "*:flex *:gap-2 *:before:content-['•'] *:before:mt-[0.25em] *:lg:before:mt-[0.5rem] *:before:text-2xs"
-	return <L className={ `first:mt-0 text-p ${ font_family } | ${ class_name }` }>
+	return <L className={ `first:mt-0 ${ layout_in_two_columns ? two_column_layout_classes : "" } text-p ${ font_family } | ${ class_name }` }>
 		{ children }
 	</L>
 }
