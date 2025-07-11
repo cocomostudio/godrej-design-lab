@@ -4,9 +4,6 @@ import { HeaderRegion } from "./components/header-region"
 import { SideRegion } from "./components/side-region"
 import { MainRegion } from "./components/main-region"
 import { Section } from "./components/section"
-import { Column } from "./components/column"
-import { OneColumnLayout } from "./components/1-column-layout"
-import { TwoColumnLayout } from "./components/2-column-layout"
 import { HorizontalRule } from "./components/horizontal-rule"
 import { Image } from "./components/image"
 import { Gallery } from "./components/gallery"
@@ -27,9 +24,6 @@ export const component_map = {
 	"container.main-region-v1": MainRegion,
 
 	"container.section-v1": Section,
-	"container.column-v1": Column,
-	"container.columns-1-v1": OneColumnLayout,
-	"container.columns-2-v1": TwoColumnLayout,
 
 	"miscellaneous.horizontal-rule-v1": HorizontalRule,
 	"media.image-v1": Image,
