@@ -11,7 +11,7 @@ export function render_strapi_component ( component ) {
 	}
 
 	if ( ! component_map[ component.__component ] ) {
-		console.log( "Doesn't exist: ", component )
+		console.log( "Component doesn't exist: ", component )
 		return null
 	}
 	const node_processor = component_map[ component.__component ].process_node
