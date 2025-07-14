@@ -16,6 +16,7 @@ import { Fellowship } from "./components/fellowship"
 
 import { HeadingAndContentList } from "./components/gdl/heading-and-content-list"
 import { ImageAndContentList } from "./components/gdl/image-and-content-list"
+import { Promo } from "./components/gdl/promo"
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
 
@@ -35,6 +36,7 @@ export const component_map = {
 	"navigation.image-link-v1": ImageLink,
 
 	"fellowships.fellowship-v1": Fellowship,
+	"gdl.promo-v1": Promo,
 	"gdl.heading-and-content-list-v1": HeadingAndContentList,
 	"gdl.image-and-content-list-v1": ImageAndContentList,
 }

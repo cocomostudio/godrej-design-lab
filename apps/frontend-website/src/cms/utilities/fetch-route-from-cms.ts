@@ -43,6 +43,13 @@ function prepare_request_payload () {
 				"image.file"
 			]
 		},
+
+		"gdl.promo-v1": {
+			populate: [
+				"link",
+				"image"
+			]
+		},
 		"gdl.heading-and-content-list-v1": populate_all,
 		"gdl.image-and-content-list-v1": {
 			populate: {

@@ -1,0 +1,28 @@
+{
+	"collectionName": "components_gdl_promo_v1",
+	"info": {
+		"displayName": "Promo",
+		"description": "A rectangular space to promote something"
+	},
+	"options": { },
+	"attributes": {
+		"heading": {
+			"type": "blocks",
+			"required": false
+		},
+		"image": {
+			"type": "media",
+			"allowedTypes": [ "images" ],
+			"multiple": false
+		},
+		"content": {
+			"type": "blocks",
+			"required": false
+		},
+		"link": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"required": false
+		}
+	}
+}
