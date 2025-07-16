@@ -25,22 +25,29 @@ export class Heading {
 	static Renderer ({ level, heading, pre_heading = "", font_family, className = null, children = null }) {
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 		const Heading = heading_levels_to_elements[ level ]
-		const classes = heading_levels_to_classes[ level ]
+		let classes = heading_levels_to_classes[ level ]
+
+		if ( className && className.includes( "normal-case" ) ) {
+
+		}
+		else {
+			classes += " uppercase"
+		}
 
 		if ( children ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } uppercase text-primary ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-primary ${ className }` }>
 				{ children }
 			</Heading>
 		}
 		else if ( pre_heading ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } uppercase ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } ${ className }` }>
 				<span className="text-primary">{ pre_heading }</span>
 				<br />
 				<span className="text-secondary">{ heading }</span>
 			</Heading>
 		}
 		else {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } uppercase text-secondary ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-secondary ${ className }` }>
 				{ heading }
 			</Heading>
 		}
