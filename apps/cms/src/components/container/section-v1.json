@@ -20,6 +20,15 @@
 			"component": "text.heading-v1",
 			"required": false
 		},
+		"collapsible": {
+			"type": "boolean",
+			"required": true,
+			"default": false
+		},
+		"collapsed_by_default": {
+			"type": "boolean",
+			"required": false
+		},
 		"content": {
 			"type": "dynamiczone",
 			"components": [

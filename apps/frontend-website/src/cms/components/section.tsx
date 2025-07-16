@@ -6,9 +6,15 @@
  |
  */
 
+import {
+	useState
+} from "react"
+
+import { PlusSymbol } from "~/__lib/this/ui/components/plus-symbol"
 import { relocate_content_attribute } from "../utilities/relocate-content-attribute"
 import { Heading } from "./heading"
 import { HorizontalRule } from "./horizontal-rule"
+import { MinusSymbol } from "~/__lib/this/ui/components/minus-symbol"
 
 export class Section {
 	static id = "container.section-v1"
@@ -17,7 +23,9 @@ export class Section {
 		return relocate_content_attribute( props )
 	}
 
-	static Renderer ({ register_with_toc, title, heading, children }) {
+	static Renderer ({ register_with_toc, title, heading, collapsible, collapsed_by_default, children }) {
+		const [ isOpen, setIsOpen ] = useState( ( ! collapsed_by_default ) || false )
+
 		let attributes = { }
 		if (
 			register_with_toc
@@ -26,9 +34,49 @@ export class Section {
 			attributes.id = title.replace( /\s+/g, "-" ).toLowerCase()
 		}
 		return <section className="mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0 container flex flex-col _max-md:flex-col flex-wrap" { ...attributes }>
-			{ heading && <Heading.Renderer { ...heading } /> }
-			{ children }
-			{ children.length > 0 && <HorizontalRule.Renderer shade="dark" /> }
+			{ heading && <>
+				{ collapsible && <HeadingWithCollapseToggle heading={ heading } isOpen={ isOpen } setIsOpen={ setIsOpen } /> }
+				{ ! collapsible && <Heading.Renderer style={{ marginTop: 0 }} { ...heading } /> }
+			</> }
+			<SectionBody is_collapsible={ collapsible } isOpen={ isOpen }>{ children }</SectionBody>
 		</section>
 	}
+}
+
+function HeadingWithCollapseToggle ({ heading, isOpen, setIsOpen }) {
+	return <div className="flex justify-between items-center">
+		<Heading.Renderer { ...heading } />
+		<button type="button" onClick={ () => setIsOpen( v => !v ) }>
+			{
+				isOpen
+				? <MinusSymbol className="md:mr-7 lg:mr-10" />
+				: <PlusSymbol className="md:mr-7 lg:mr-10" />
+			}
+		</button>
+	</div>
+}
+
+type SectionBodyProps = React.ComponentProps<"div"> & {
+	is_collapsible: boolean;
+	isOpen: boolean;
+	children: unknown;
+}
+function SectionBody ( { is_collapsible, isOpen, className, children, ...props }: SectionBodyProps ) {
+	if ( children.length === 0 ) {
+		return null
+	}
+
+	if ( ! is_collapsible ) {
+		return <>
+			{ children }
+			<HorizontalRule.Renderer shade="dark" />
+		</>
+	}
+
+	return <div className={ `not-interpolate:grid ${ isOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0 delay-250" } not-interpolate:transition-all interpolate:transition-[height] !duration-450 !ease-vaul` } { ...props }>
+		<div className={ `overflow-hidden ${ isOpen ? "delay-300" : "opacity-0 pointer-events-none" } transition-opacity duration-250` }>
+			{ children }
+			<HorizontalRule.Renderer shade="dark" />
+		</div>
+	</div>
 }
