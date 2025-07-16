@@ -60,6 +60,15 @@ function prepare_request_payload () {
 				}
 			}
 		},
+		"gdl.post-listing-v1": {
+			populate: {
+				content: {
+					populate: [
+						"image"
+					]
+				}
+			}
+		},
 	}
 	const populate_v1_section = {
 		populate: {

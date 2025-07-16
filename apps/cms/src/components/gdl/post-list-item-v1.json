@@ -1,0 +1,22 @@
+{
+	"collectionName": "components_gdl_a_post_card_v1",
+	"info": {
+		"displayName": "Post Card",
+		"description": "A post card"
+	},
+	"options": { },
+	"attributes": {
+		"image": {
+			"allowedTypes": [ "images" ],
+			"type": "media",
+			"multiple": false
+		},
+		"link": {
+			"type": "string",
+			"required": true
+		},
+		"content": {
+			"type": "blocks"
+		}
+	}
+}
