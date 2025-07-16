@@ -66,7 +66,7 @@ export class Gallery {
 }
 
 function ImageRow ({ images }) {
-	return <div className="image-context relative flex">
+	return <div className="image-context relative flex max-md:flex-wrap | max-md:gap-4">
 		<CaptionsPane images={ images } />
 		<ImageList images={ images } />
 	</div>
