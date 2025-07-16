@@ -1,7 +1,4 @@
 
-.image-container {
-	padding: 0 calc( var( --gutter-width ) / 2 );
-}
 .image-container:first-of-type {
 	padding-left: 0;
 }

@@ -85,7 +85,7 @@ function CaptionsPane ( { images } ) {
 function ImageList ( { images } ) {
 	return images.map( ( image, i ) => <Fragment key={ i }>
 		<li
-			className="image-container box-content max-md:!w-auto | [&>figure]:mt-0 md:[&_img]:w-full md:[&_img]:h-100 lg:[&_img]:h-150"
+			className="image-container box-content max-md:!w-auto md:px-[calc(var(--gutter-width)/2)] | [&>figure]:mt-0 md:[&_img]:w-full md:[&_img]:h-100 lg:[&_img]:h-150"
 			style={{
 				width: relative_width_map[ image.relative_width ],
 			}}
