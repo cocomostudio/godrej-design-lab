@@ -26,7 +26,7 @@ export class ImageAndContentList {
 					<Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" />
 				</div> }
 
-				<div className={ `${ imageIsLeftAligned ? "md:w-5c-4g lg:w-6c-5g" : "md:w-4c-3g lg:w-5c-4g" } [&>:first-child]:mt-0 max-md:empty:hidden` }>
+				<div className={ `${ imageIsLeftAligned ? "max-md:mt-4 md:w-5c-4g lg:w-6c-5g" : "md:w-4c-3g lg:w-5c-4g" } [&>:first-child]:mt-0 max-md:empty:hidden` }>
 					<WYSIWYG.Renderer font_family="sans-serif" content={ content } />
 				</div>
 
