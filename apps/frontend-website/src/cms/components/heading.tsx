@@ -53,6 +53,7 @@ const heading_levels_to_elements = {
 	h3: "h3",
 	h4: "h4",
 	h5: "h5",
+	h6: "h6",
 }
 const heading_levels_to_classes = {
 	h1: "text-h1 text-primary",
@@ -60,4 +61,5 @@ const heading_levels_to_classes = {
 	h3: "text-h4 md:text-h2 lg:text-h4 text-primary",
 	h4: "text-h5 md:text-h3 lg:text-h5 text-secondary",
 	h5: "text-p md:text-h4 lg:text-p text-secondary",
+	h6: "text-p text-secondary",
 }
