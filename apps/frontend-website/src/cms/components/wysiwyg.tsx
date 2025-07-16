@@ -26,7 +26,7 @@ export class WYSIWYG {
 			<BlocksRenderer
 				content={ content }
 				blocks={{
-					heading: ({ level, children }) => <Heading.Renderer level={ "h" + level } font_family={ font_family_class }>
+					heading: ({ level, children }) => <Heading.Renderer level={ "h" + level } font_family={ font_family_class } className="normal-case">
 						{ children }
 					</Heading.Renderer>,
 					paragraph: props => <Paragraph font_family={ font_family_class } { ...props } />,
