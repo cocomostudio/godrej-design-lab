@@ -28,19 +28,19 @@ export class Heading {
 		const classes = heading_levels_to_classes[ level ]
 
 		if ( children ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } font-bold uppercase text-primary ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } uppercase text-primary ${ className }` }>
 				{ children }
 			</Heading>
 		}
 		else if ( pre_heading ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } font-bold uppercase ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } uppercase ${ className }` }>
 				<span className="text-primary">{ pre_heading }</span>
 				<br />
 				<span className="text-secondary">{ heading }</span>
 			</Heading>
 		}
 		else {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } font-bold uppercase text-secondary ${ className }` }>
+			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } uppercase text-secondary ${ className }` }>
 				{ heading }
 			</Heading>
 		}
@@ -56,10 +56,10 @@ const heading_levels_to_elements = {
 	h6: "h6",
 }
 const heading_levels_to_classes = {
-	h1: "text-h1 text-primary",
-	h2: "text-h3 md:text-h2 lg:text-h3 text-primary",
-	h3: "text-h4 md:text-h2 lg:text-h4 text-primary",
-	h4: "text-h5 md:text-h3 lg:text-h5 text-secondary",
-	h5: "text-p md:text-h4 lg:text-p text-secondary",
+	h1: "text-h1 text-primary font-bold",
+	h2: "text-h3 md:text-h2 lg:text-h3 text-primary font-bold",
+	h3: "text-h4 md:text-h2 lg:text-h4 text-primary font-bold",
+	h4: "text-h5 md:text-h3 lg:text-h5 text-secondary font-bold",
+	h5: "text-p md:text-h4 lg:text-p text-secondary font-bold",
 	h6: "text-p text-secondary",
 }
