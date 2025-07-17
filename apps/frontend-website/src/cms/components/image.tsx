@@ -34,7 +34,7 @@ export class Image {
 		return <>
 			<link rel="stylesheet" href={ stylesheet } precedence="medium" />
 			<figure className={ `image mt-6 md:mt-8 lg:mt-10 _overflow-hidden ${ className }` }>
-				<img src={ src } alt={ file.alternativeText } className={ `${ aspect_ratio_to_class__map[ aspect_ratio ] } object-cover rounded-md` } loading="lazy" { ...rest_props } />
+				<img decoding="async" src={ src } alt={ file.alternativeText } className={ `${ aspect_ratio_to_class__map[ aspect_ratio ] } object-cover rounded-md` } loading="lazy" { ...rest_props } />
 				{ file.caption && <figcaption className="mt-2 font-mono text-xs">{ file.caption }</figcaption> }
 			</figure>
 		</>
