@@ -6,7 +6,9 @@
  |
  */
 
+import { Link } from "react-router"
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
+import { Button } from "~/__lib/react/button"
 
 export class Heading {
 	static id = "text.heading-v1"
@@ -22,7 +24,7 @@ export class Heading {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ({ level, heading, pre_heading = "", font_family, className = null, children = null }) {
+	static Renderer ({ level, heading, pre_heading = "", font_family, link, className = null, children = null }) {
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 		const Heading = heading_levels_to_elements[ level ]
 		let classes = heading_levels_to_classes[ level ]
@@ -35,23 +37,40 @@ export class Heading {
 		}
 
 		if ( children ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-primary ${ className }` }>
-				{ children }
-			</Heading>
+			return <HeadingContainer link={ link }>
+				<Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-primary ${ className }` }>
+					{ children }
+				</Heading>
+			</HeadingContainer>
 		}
 		else if ( pre_heading ) {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } ${ className }` }>
-				<span className="text-primary">{ pre_heading }</span>
-				<br />
-				<span className="text-secondary">{ heading }</span>
-			</Heading>
+			return <HeadingContainer link={ link }>
+				<Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } ${ className }` }>
+					<span className="text-primary">{ pre_heading }</span>
+					<br />
+					<span className="text-secondary">{ heading }</span>
+				</Heading>
+			</HeadingContainer>
 		}
 		else {
-			return <Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-secondary ${ className }` }>
-				{ heading }
-			</Heading>
+			return <HeadingContainer link={ link }>
+				<Heading className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-secondary ${ className }` }>
+					{ heading }
+				</Heading>
+			</HeadingContainer>
 		}
 	}
+}
+
+function HeadingContainer ( { children, link } ) {
+	if ( ! link ) {
+		return children
+	}
+
+	return <Link to={ link.url } className="flex w-full justify-between items-center">
+		{ children }
+		<Button>{ link.label }</Button>
+	</Link>
 }
 
 const heading_levels_to_elements = {

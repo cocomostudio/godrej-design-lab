@@ -34,6 +34,11 @@
 			],
 			"default": "sans-serif",
 			"required": true
+		},
+		"link": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"required": false
 		}
 	}
 }

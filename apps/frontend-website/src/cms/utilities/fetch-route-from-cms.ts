@@ -72,7 +72,7 @@ function prepare_request_payload () {
 	}
 	const populate_v1_section = {
 		populate: {
-			heading: "*",
+			heading: populate_all,
 			content: {
 				on: {
 					...populate_v1_attributes
