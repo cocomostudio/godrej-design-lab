@@ -14,7 +14,7 @@ import { GodrejLogo } from "~/__lib/this/ui/components/godrej-logo"
 
 
 
-export default function ThisLayout () {
+export default function StaticLayout () {
 	return <div className="bg-white" style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
 		<Header />
 		<Outlet />
