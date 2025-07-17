@@ -46,11 +46,11 @@ export class Section {
 function HeadingWithCollapseToggle ({ heading, isOpen, setIsOpen }) {
 	return <div className="flex justify-between items-center">
 		<Heading.Renderer { ...heading } />
-		<button type="button" onClick={ () => setIsOpen( v => !v ) }>
+		<button type="button" onClick={ () => setIsOpen( v => !v ) } className="pl-4 md:pr-7 lg:pr-10 self-stretch">
 			{
 				isOpen
-				? <MinusSymbol className="md:mr-7 lg:mr-10" />
-				: <PlusSymbol className="md:mr-7 lg:mr-10" />
+				? <MinusSymbol />
+				: <PlusSymbol />
 			}
 		</button>
 	</div>
