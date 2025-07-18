@@ -21,7 +21,7 @@ export class HeadingAndContentList {
 
 	static Renderer ({ content }) {
 		return <ul className="!mt-8">
-			{ content.map( ({ heading, content }, i ) => <li key={ i } className="mt-6 md:mt-8 lg:mt-10 md:flex md:gap-1g border-b border-black/30 pb-6 md:pb-8 lg:pb-10">
+			{ content.map( ({ heading, content }, i ) => <li key={ i } className="mt-6 md:mt-8 lg:mt-10 md:flex md:gap-1g [&:not(:last-child)]:border-b border-black/30 pb-6 md:pb-8 lg:pb-10">
 				<H className="md:w-2c-1g lg:w-3c-2g text-h4 font-bold uppercase text-secondary" dangerouslySetInnerHTML={{ __html: heading.replace( NEW_LINES_REGEX, html_line_break ) }}></H>
 
 				<div className="md:ml-1g md:w-5c-4g lg:w-6c-5g [&>:first-child]:mt-0 max-md:empty:hidden">
