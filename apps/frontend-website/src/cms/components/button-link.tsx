@@ -9,6 +9,7 @@
 import { Link } from "react-router"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
+import { Button } from "~/__lib/react/button"
 
 export class ButtonLink {
 	static id = "navigation.button-link-v1"
@@ -27,8 +28,8 @@ export class ButtonLink {
 			props.target = "_blank"
 		}
 
-		return <Link to={ link.url } className={ `${ classes } inline-block rounded-md bg-secondary text-primary px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase ${ className }` } { ...props }>
+		return <Button as={ Link } to={ link.url } className={ classes } { ...props }>
 			{ link.label }
-		</Link>
+		</Button>
 	}
 }
