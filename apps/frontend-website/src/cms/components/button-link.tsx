@@ -19,7 +19,7 @@ export class ButtonLink {
 	}
 
 	static Renderer ( { link, target, className }: { link: unknown, target?: Parameters<typeof Link>[ 0 ][ "target" ], className?: string } ) {
-		const classes = "[p+&]:mt-2"
+		const classes = "mt-2 self-start"
 		let props = { }
 		if ( target ) {
 			props.target = target
