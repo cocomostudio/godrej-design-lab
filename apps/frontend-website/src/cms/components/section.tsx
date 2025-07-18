@@ -46,7 +46,7 @@ export class Section {
 
 function HeadingWithCollapseToggle ({ heading, isOpen, setIsOpen }) {
 	return <div className="flex justify-between items-center">
-		<Heading.Renderer { ...heading } />
+		<Heading.Renderer style={{ marginTop: 0 }} { ...heading } />
 		<button type="button" onClick={ () => setIsOpen( v => !v ) } className="pl-4 md:pr-7 lg:pr-10 self-stretch">
 			{
 				isOpen
