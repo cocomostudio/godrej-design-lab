@@ -9,6 +9,7 @@
 import {
 	useState
 } from "react"
+import { Level } from "react-accessible-headings"
 
 import { PlusSymbol } from "~/__lib/this/ui/components/plus-symbol"
 import { relocate_content_attribute } from "../utilities/relocate-content-attribute"
@@ -67,16 +68,18 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 	}
 
 	if ( ! is_collapsible ) {
-		return <>
+		return <Level>
 			{ children }
 			<HorizontalRule.Renderer shade="dark" />
-		</>
+		</Level>
 	}
 
-	return <div className={ `not-interpolate:grid ${ isOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0 delay-250" } not-interpolate:transition-all interpolate:transition-[height] !duration-450 !ease-vaul` } { ...props }>
-		<div className={ `overflow-hidden ${ isOpen ? "delay-300" : "opacity-0 pointer-events-none" } transition-opacity duration-250` }>
-			{ children }
-			<HorizontalRule.Renderer shade="dark" />
+	return <Level>
+		<div className={ `not-interpolate:grid ${ isOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0 delay-250" } not-interpolate:transition-all interpolate:transition-[height] !duration-450 !ease-vaul` } { ...props }>
+			<div className={ `overflow-hidden ${ isOpen ? "delay-300" : "opacity-0 pointer-events-none" } transition-opacity duration-250` }>
+				{ children }
+				<HorizontalRule.Renderer shade="dark" />
+			</div>
 		</div>
-	</div>
+	</Level>
 }
