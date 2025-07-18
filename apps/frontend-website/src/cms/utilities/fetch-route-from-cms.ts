@@ -69,6 +69,14 @@ function prepare_request_payload () {
 				}
 			}
 		},
+		"gdl.fellowship-v1": {
+			populate: [
+				"projects",
+				"projects.cover.file",
+				"projects.fellows",
+				"projects.link",
+			]
+		}
 	}
 	const populate_v1_section = {
 		populate: {
@@ -113,14 +121,6 @@ function prepare_request_payload () {
 				content: {
 					on: {
 						"container.section-v1": populate_v1_section,
-						"fellowships.fellowship-v1": {
-							populate: [
-								"projects",
-								"projects.cover.file",
-								"projects.fellows",
-								"projects.link",
-							]
-						}
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 {
-	"collectionName": "components_fellowships_fellowship_project_v1",
+	"collectionName": "components_gdl_fellowship_project_v1",
 	"info": {
 		"displayName": "Fellowship Project",
 		"description": ""
@@ -20,7 +20,7 @@
 		},
 		"fellows": {
 			"type": "component",
-			"component": "fellowships.fellow-v1",
+			"component": "gdl.fellow-v1",
 			"repeatable": true,
 			"min": 1
 		},

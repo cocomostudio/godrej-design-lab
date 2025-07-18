@@ -36,7 +36,7 @@ export const component_map = {
 	"navigation.button-link-v1": ButtonLink,
 	"navigation.image-link-v1": ImageLink,
 
-	"fellowships.fellowship-v1": Fellowship,
+	"gdl.fellowship-v1": Fellowship,
 	"gdl.promo-v1": Promo,
 	"gdl.heading-and-content-list-v1": HeadingAndContentList,
 	"gdl.image-and-content-list-v1": ImageAndContentList,

@@ -9,8 +9,7 @@
 		"content": {
 			"type": "dynamiczone",
 			"components": [
-				"container.section-v1",
-				"fellowships.fellowship-v1"
+				"container.section-v1"
 			]
 		}
 	}
