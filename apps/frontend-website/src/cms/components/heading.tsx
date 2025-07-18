@@ -26,7 +26,7 @@ export class Heading {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ({ level, heading, pre_heading = "", font_family, link, className = null, children = null }) {
+	static Renderer ({ level, heading, pre_heading = "", font_family, link, className = null, children = null, style }) {
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 		let classes = heading_levels_to_classes[ level ]
 
@@ -39,14 +39,14 @@ export class Heading {
 
 		if ( children ) {
 			return <HeadingContainer link={ link }>
-				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-primary ${ className }` }>
+				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-primary ${ className }` } style={ style }>
 					{ children }
 				</H>
 			</HeadingContainer>
 		}
 		else if ( pre_heading ) {
 			return <HeadingContainer link={ link }>
-				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } ${ className }` }>
+				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } ${ font_family_class } ${ className }` } style={ style }>
 					<span className="text-primary">{ pre_heading }</span>
 					<br />
 					<span className="text-secondary">{ heading }</span>
@@ -55,7 +55,7 @@ export class Heading {
 		}
 		else {
 			return <HeadingContainer link={ link }>
-				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-secondary ${ className }` }>
+				<H className={ `h mt-6 md:mt-8 lg:mt-10 ${ classes } text-secondary ${ className }` } style={ style }>
 					{ heading }
 				</H>
 			</HeadingContainer>
