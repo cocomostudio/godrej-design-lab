@@ -23,7 +23,7 @@ export class ImageAndContentList {
 		return <ul className="mt-6 md:mt-8 lg:mt-10 space-y-6 md:space-y-8 lg:space-y-10">
 			{ content.map( ({ image, content }, i ) => <li key={ i } className="md:flex md:gap-1g [&:not(:last-child)]:border-b border-black/30 pb-6 md:pb-8 lg:pb-10">
 				{ imageIsLeftAligned && <div className="md:w-2c-1g lg:w-3c-2g">
-					<Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" />
+					{ image?.file && <Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" /> }
 				</div> }
 
 				<div className={ `${ imageIsLeftAligned ? "max-md:mt-4 md:w-5c-4g lg:w-6c-5g" : "md:w-4c-3g lg:w-5c-4g" } [&>:first-child]:mt-0 max-md:empty:hidden` }>
@@ -31,7 +31,7 @@ export class ImageAndContentList {
 				</div>
 
 				{ !imageIsLeftAligned && <div className="md:ml-1c-1g md:w-2c-1g lg:w-3c-2g">
-					<Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" />
+					{ image?.file && <Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" /> }
 				</div> }
 			</li> ) }
 		</ul>
