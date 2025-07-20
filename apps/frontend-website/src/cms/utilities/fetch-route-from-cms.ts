@@ -35,7 +35,6 @@ function prepare_request_payload () {
 		},
 		"text.wysiwyg-v1": populate_all,
 		"text.heading-v1": populate_all,
-		"text.unordered-list-v1": populate_all,
 		"navigation.button-link-v1": populate_all,
 		"navigation.image-link-v1": {
 			populate: [
