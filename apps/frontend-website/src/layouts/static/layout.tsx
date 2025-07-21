@@ -18,7 +18,7 @@ export default function StaticLayout () {
 	return <div className="bg-white" style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
 		<Header />
 		<Outlet />
-		<Footer className="mt-22" />
+		<Footer className="mt-10 md:mt-22" />
 	</div>
 }
 

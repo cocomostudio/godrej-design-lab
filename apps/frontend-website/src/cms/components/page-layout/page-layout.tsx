@@ -61,7 +61,7 @@ export class PageLayout {
 					{ children }
 				</div>
 
-				<Footer navigation={ page_context.navigation } className="mt-22" />
+				<Footer navigation={ page_context.navigation } className="mt-10 md:mt-22" />
 			</div>
 		</>
 	}
