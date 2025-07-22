@@ -48,7 +48,7 @@ export class SideRegion {
 	static Renderer ({ toc, toc_content, children }) {
 		return <div className="side-region empty:hidden md:absolute top-0 left-0 md:w-1c lg:w-2c-1g h-full | _[&>:last-child]:mt-0">
 			<Level>
-				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky top-8 left-0" /> }
+				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky top-8 left-0 z-10" /> }
 				<aside className="empty:hidden max-md:mt-6 [&>:first-child]:mt-0">
 					{ children }
 				</aside>
