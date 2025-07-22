@@ -9,7 +9,8 @@
 		"image": {
 			"allowedTypes": [ "images" ],
 			"type": "media",
-			"multiple": false
+			"multiple": false,
+			"required": true
 		},
 		"link": {
 			"type": "string",
