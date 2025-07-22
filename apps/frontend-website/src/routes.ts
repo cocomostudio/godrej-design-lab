@@ -10,7 +10,7 @@ import {
 export default [
 	index( "routes/home.tsx" ),
 	layout( "./layouts/primary/layout.tsx", [
-		route( "*", "cms/cms-route-handler.tsx" ),
+		route( "*", "cms/cms-route-handler.tsx", { id: "cms" } ),
 	] ),
 	layout( "./layouts/static/layout.tsx", [
 		route( "fellows/rahul-bhusan", "routes/fellow-single.tsx" ),
