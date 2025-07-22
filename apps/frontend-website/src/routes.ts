@@ -17,6 +17,6 @@ export default [
 		route( "kitchen-sink", "routes/kitchen-sink.tsx" ),
 		route( "about", "routes/about.tsx" ),
 		route( "about-fellowship", "routes/about-fellowship.tsx" ),
-		route( "home", "routes/home-dev.tsx" ),
+		route( "home-dev", "routes/home-dev.tsx" ),
 	] ),
 ] satisfies RouteConfig
