@@ -10,10 +10,6 @@
 			"type": "string",
 			"required": true
 		},
-		"description": {
-			"type": "text",
-			"required": false
-		},
 		"projects": {
 			"type": "component",
 			"component": "gdl.fellowship-project-v1",
