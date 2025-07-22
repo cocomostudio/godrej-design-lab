@@ -11,6 +11,7 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 import { Heading } from "./heading"
+import { Quote } from "~/__lib/react/quote"
 
 export class WYSIWYG {
 	static id = "text.wysiwyg-v1"
@@ -32,6 +33,7 @@ export class WYSIWYG {
 					</Heading.Renderer>,
 					paragraph: props => <Paragraph font_family={ font_family_class } { ...props } />,
 					link: ({ children, url }) => <Link to={ url }>{ children }</Link>,
+					quote: ({ children }) => <Quote className={ font_family_class }>{ children }</Quote>,
 					code: props => <Paragraph font_family="font-mono" { ...props } />,
 						// ^ In this specific case, code blocks are not supported
 						// 		and are rendered as paragraphs (with a monospaced font) instead.
