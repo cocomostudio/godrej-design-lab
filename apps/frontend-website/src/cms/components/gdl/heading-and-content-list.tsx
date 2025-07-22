@@ -11,6 +11,7 @@ import { H } from "react-accessible-headings"
 import { NEW_LINES_REGEX } from "~/__lib/strings/regular-expressions"
 import { shallow_clone_props } from "../../utilities/shallow-clone-props"
 import { WYSIWYG } from "../wysiwyg"
+import { html_line_break } from "~/__lib/html/line-break"
 
 export class HeadingAndContentList {
 	static id = "gdl.heading-and-content-list-v1"
@@ -31,5 +32,3 @@ export class HeadingAndContentList {
 		</ul>
 	}
 }
-
-const html_line_break = "<br/>"
