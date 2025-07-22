@@ -1,28 +1,35 @@
 {
-	"name": "godrej-design-lab",
-	"private": true,
-	"version": "0.0.1",
-	"description": "",
-	"main": "",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
 	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@9.1.0",
+	"description": "",
 	"engines": {
 		"node": ">=20.14.0",
 		"pnpm": ">=9.1.0"
 	},
+	"keywords": [],
+	"license": "ISC",
+	"main": "",
+	"name": "godrej-design-lab",
+	"packageManager": "pnpm@9.1.0",
 	"pnpm": {
-		"supportedArchitectures": {
-			"os":  ["linux"],
-			"cpu": ["arm64"]
-		},
 		"patchedDependencies": {
-			"strapi-plugin-webtools@1.4.1": "patches/strapi-plugin-webtools@1.4.1.patch",
-			"@strapi/provider-upload-aws-s3@5.17.0": "patches/@strapi__provider-upload-aws-s3@5.17.0.patch"
+			"@strapi/provider-upload-aws-s3@5.17.0": "patches/@strapi__provider-upload-aws-s3@5.17.0.patch",
+			"strapi-plugin-webtools@1.4.1": "patches/strapi-plugin-webtools@1.4.1.patch"
+		},
+		"supportedArchitectures": {
+			"cpu": [
+				"x64",
+				"arm64",
+				"current"
+			],
+			"os": [
+				"linux",
+				"darwin"
+			]
 		}
-	}
+	},
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"version": "0.0.1"
 }
