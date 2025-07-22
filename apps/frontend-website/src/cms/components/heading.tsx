@@ -70,7 +70,7 @@ function HeadingContainer ( { children, link } ) {
 
 	return <Link to={ link.url } className="flex w-full justify-between items-center">
 		{ children }
-		<Button>{ link.label }</Button>
+		<Button className="whitespace-nowrap">{ link.label }</Button>
 	</Link>
 }
 
