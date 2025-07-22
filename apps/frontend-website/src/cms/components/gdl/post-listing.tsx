@@ -34,10 +34,10 @@ export class PostListing {
 			[ first_post, ...posts ] = content
 		}
 
-		return <ul className={ `mt-6 md:mt-8 lg:mt-10 flex flex-wrap flex-col md:flex-row gap-1g ${ layout_classes }` }>
+		return <ul className={ `mt-6 md:mt-8 lg:mt-10 flex flex-wrap flex-col md:flex-row gap-x-1g gap-y-2g ${ layout_classes }` }>
 			{ first_post && <FeaturedPost { ...first_post } /> }
-			{ posts.map( ({ image, content, link }, i ) => <li key={ i }>
-				<Link to={ link }>
+			{ posts.map( ({ image, content, link, open_in_new_tab }, i ) => <li key={ i }>
+				<Link to={ link } target={ open_in_new_tab ? "_blank" : "_self" } className="[&:hover_.h]:underline">
 					<Image.Renderer file={ image } className="!m-0 h-64 md:h-88 lg:h-122 [&_img]:size-full [&_figcaption]:hidden" />
 
 					<WYSIWYG.Renderer font_family="sans-serif" content={ content } className="!mt-4 lg:!mt-6 | space-y-3.5 md:space-y-4" />
@@ -48,9 +48,9 @@ export class PostListing {
 }
 
 
-function FeaturedPost ({ image, content, link }) {
+function FeaturedPost ({ image, content, link, open_in_new_tab }) {
 	return <li style={{ width: "100%" }}>
-		<Link to={ link }>
+		<Link to={ link } target={ open_in_new_tab ? "_blank" : "_self" } className="[&:hover_.h]:underline">
 			<Image.Renderer file={ image } className="!m-0 h-64 md:h-150 lg:h-214 [&_img]:size-full [&_figcaption]:hidden" />
 
 			<WYSIWYG.Renderer font_family="sans-serif" content={ content } className="!mt-4 lg:!mt-6 md:ml-[calc((100%/2)+(var(--gutter-width)/2))] | space-y-3.5 md:space-y-4" />
