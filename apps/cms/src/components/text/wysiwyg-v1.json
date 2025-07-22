@@ -9,6 +9,15 @@
 		"content": {
 			"type": "blocks"
 		},
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"normal",
+				"full-width"
+			],
+			"default": "normal",
+			"required": true
+		},
 		"font_family": {
 			"type": "enumeration",
 			"enum": [

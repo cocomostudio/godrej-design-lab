@@ -19,10 +19,11 @@ export class WYSIWYG {
 		return shallow_clone_props( props )
 	}
 
-	static Renderer ( { font_family, content, className }: { font_family?: string, content: unknown, className?: string } ) {
+	static Renderer ( { layout, font_family, content, className }: { layout: string, font_family?: string, content: unknown, className?: string } ) {
+		const layout_class = layout === "full-width" ? "full-width" : ""
 		const font_family_class = font_family === "monospace" ? "font-mono" : "font-sans"
 
-		return <div className={ `mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0 ${ className }` }>
+		return <div className={ `mt-6 md:mt-8 lg:mt-10 ${ layout_class } [&>:first-child]:mt-0 ${ className }` }>
 			<BlocksRenderer
 				content={ content }
 				blocks={{
