@@ -26,7 +26,7 @@ export class MainRegion {
 
 	static Renderer ({ children }) {
 		return <Level>
-			<div className="main-region empty:hidden mt-8 md:mt-9 lg:mt-10 md:ml-1c-1g lg:ml-2c-2g [&>:first-child]:mt-0 lg:w-9c-8g | [&>section:last-child_hr]:hidden">
+			<div className="main-region empty:hidden mt-6 md:mt-8 lg:mt-10 md:ml-1c-1g lg:ml-2c-2g [&>:first-child]:mt-0 lg:w-9c-8g | [&>section:last-child_hr]:hidden">
 				{ children }
 			</div>
 		</Level>
