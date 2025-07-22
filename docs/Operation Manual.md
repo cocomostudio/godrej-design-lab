@@ -162,6 +162,7 @@ For the audit trail, and in academic interest, we simply used SCP to transfer al
 
 Before we proceed to step 3, it makes sense for the admin operating this system to have a brief understanding of the directory structure and organisation of the repository. We do not ever foresee that the admin will have to make code changes or understand this repo any further. However, a brief look at the organisation of the project will help in having a birds eye view of what is going on under the hood.
 
+```
 ├── apps  
 │   ├── cms  
 │   │   ├── config  
@@ -190,6 +191,7 @@ Before we proceed to step 3, it makes sense for the admin operating this system 
 ├── pnpm-lock.yaml  
 ├── pnpm-workspace.yaml  
 ├── README.md
+```
 
 As one can see, the first thing to understand about this is that this is a pnpm workspace. The workspace has two applications, named very aptly, under the root apps folder, as cms and frontend-website, which contains the primary business logic.
 
