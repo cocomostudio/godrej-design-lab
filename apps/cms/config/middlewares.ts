@@ -1,12 +1,47 @@
-
-export default [
+export default ({ env }) => [
 	"strapi::logger",
 	"strapi::errors",
-	"strapi::security",
+	// Conditional security configuration based on AWS deployment
+	env("IS_ON_AWS") === "true" ? {
+		name: "strapi::security",
+		config: {
+			contentSecurityPolicy: {
+				useDefaults: true,
+				directives: {
+					"connect-src": ["'self'", "https:", "http:"],
+					"img-src": [
+						"'self'",
+						"data:",
+						"blob:",
+						`${env("AWS_BUCKET_NAME")}.s3.${env("AWS_REGION")}.amazonaws.com`,
+						env("CLOUDFRONT_URL"),
+					],
+					"media-src": [
+						"'self'",
+						"data:",
+						"blob:",
+						`${env("AWS_BUCKET_NAME")}.s3.${env("AWS_REGION")}.amazonaws.com`,
+						env("CLOUDFRONT_URL"),
+					],
+					"frame-src": ["'self'"],
+				},
+			},
+		},
+	} : "strapi::security",
 	"strapi::cors",
 	"strapi::poweredBy",
 	"strapi::query",
-	"strapi::body",
+	{
+		name: "strapi::body",
+		config: {
+			formLimit: "20mb",
+			jsonLimit: "20mb", 
+			textLimit: "20mb",
+			formidable: {
+				maxFileSize: 20 * 1024 * 1024, // 20MB in bytes
+			},
+		},
+	},
 	"strapi::session",
 	"strapi::favicon",
 	"strapi::public",

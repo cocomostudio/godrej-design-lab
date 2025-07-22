@@ -1,0 +1,34 @@
+diff --git a/dist/index.js b/dist/index.js
+index 61421cae8f6c9e8a4fd65d8cd86c941888afa149..3a7625ea4aa4886cc1ebfaa1fbfab1e5f26e9687 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -25,10 +25,16 @@ const getConfig = ({ baseUrl, rootPath, s3Options, ...legacyS3Options })=>{
+             credentials
+         } : {}
+     };
+-    config.params.ACL = fp.getOr(clientS3.ObjectCannedACL.public_read, [
+-        'params',
+-        'ACL'
+-    ], config);
++    // Godrej Design Lab patch: do NOT force a default ACL.
++    // If the user supplies params.ACL we keep it, otherwise we leave the property
++    // undefined so that AWS SDK omits the x-amz-acl header. This allows uploads to
++    // buckets that have Object Ownership set to "Bucket owner enforced" (ACLs disabled).
++    if (fp.has(['params','ACL'], config)) {
++        config.params.ACL = fp.get(['params','ACL'], config);
++    } else {
++        // Ensure we don't accidentally inherit the public-read default
++        delete config.params.ACL;
++    }
+     return config;
+ };
+ var index = {
+@@ -54,7 +60,7 @@ var index = {
+                     Bucket: config.params.Bucket,
+                     Key: fileKey,
+                     Body: file.stream || Buffer.from(file.buffer, 'binary'),
+-                    ACL: config.params.ACL,
++                    ...(config.params.ACL ? { ACL: config.params.ACL } : {}),
+                     ContentType: file.mime,
+                     ...customParams
+                 }
