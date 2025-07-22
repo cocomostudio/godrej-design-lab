@@ -38,6 +38,8 @@ export class WYSIWYG {
 				modifiers={{
 					bold: ({ children }) => <strong className="font-bold">{ children }</strong>,
 					italic: ({ children }) => <em className="italic">{ children }</em>,
+					code: ({ children }) => <span className="font-mono">{ children }</span>,
+					underline: ({ children }) => <u>{ children }</u>,
 				}}
 			/>
 		</div>
