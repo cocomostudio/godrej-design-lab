@@ -14,6 +14,7 @@ import { ImageLink } from "./components/image-link"
 import { Fellowship } from "./components/fellowship"
 
 import { HeadingAndContentList } from "./components/gdl/heading-and-content-list"
+import { ImageAndContent } from "./components/gdl/image-and-content"
 import { ImageAndContentList } from "./components/gdl/image-and-content-list"
 import { Promo } from "./components/gdl/promo"
 import { PostListing } from "./components/gdl/post-listing"
@@ -37,6 +38,7 @@ export const component_map = {
 	"gdl.fellowship-v1": Fellowship,
 	"gdl.promo-v1": Promo,
 	"gdl.heading-and-content-list-v1": HeadingAndContentList,
+	"gdl.image-and-content-v1": ImageAndContent,
 	"gdl.image-and-content-list-v1": ImageAndContentList,
 	"gdl.post-listing-v1": PostListing,
 }

@@ -59,6 +59,11 @@ function prepare_request_payload () {
 				}
 			}
 		},
+		"gdl.image-and-content-v1": {
+			populate: [
+				"image.file"
+			]
+		},
 		"gdl.post-listing-v1": {
 			populate: {
 				content: {
