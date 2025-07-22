@@ -33,6 +33,7 @@
 			"type": "dynamiczone",
 			"components": [
 				"gdl.heading-and-content-list-v1",
+				"gdl.image-and-content-v1",
 				"gdl.image-and-content-list-v1",
 				"gdl.promo-v1",
 				"gdl.post-listing-v1",
