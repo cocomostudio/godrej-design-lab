@@ -16,6 +16,10 @@
 			"type": "string",
 			"required": true
 		},
+		"open_in_new_tab": {
+			"type": "boolean",
+			"default": false
+		},
 		"content": {
 			"type": "blocks"
 		}
