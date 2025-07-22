@@ -18,12 +18,12 @@
 			"default": "h1",
 			"required": true
 		},
-		"heading": {
-			"type": "string",
+		"line_1": {
+			"type": "text",
 			"required": false
 		},
-		"pre_heading": {
-			"type": "string",
+		"line_2": {
+			"type": "text",
 			"required": false
 		},
 		"font_family": {
