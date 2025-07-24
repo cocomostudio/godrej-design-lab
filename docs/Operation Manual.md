@@ -213,6 +213,10 @@ cat <<'EOF' | sudo tee /etc/nginx/conf.d/cms.conf
 server {
   listen 80;
   server_name _;
+  client_max_body_size 50M;
+  client_body_timeout 600s;
+  keepalive_timeout  600s;
+  send_timeout       600s;
 
   location / {
     proxy_pass http://localhost:1337/;
