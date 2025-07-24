@@ -2,17 +2,24 @@
 import {
 	Link,
 } from "react-router"
-import { useState } from "react"
+import {
+	useState,
+	useEffect,
+	useRef
+} from "react"
 
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo"
 
 export function Header ({ navigation, featured_links }) {
+	const nav_header_container_ref = useRef<HTMLDivElement>( null )
 	const [ isNavOpen, setIsNavOpen ] = useState( false )
-	return <header>
-		<div className={ `relative z-10 grid ${ isNavOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0" } not-interpolate:transition-all interpolate:transition-[height] not-interpolate:will-change-[grid-rows] interpolate:will-change-[height] !duration-450 !ease-vaul` }>
-			<div className="overflow-hidden">
-				<HeaderNavigation navigation={ navigation } featured_links={ featured_links } isVisible={ isNavOpen } className={ `w-full transition-transform duration-450 ease-vaul ${ isNavOpen ? "translate-y-0" : "-translate-y-full pointer-events-none" }` } />
-			</div>
+
+	useToggleHeaderNav( isNavOpen, nav_header_container_ref )
+	useUpdateHeaderNavContainerHeightOnWindowResize( isNavOpen, nav_header_container_ref )
+
+	return <header className="relative">
+		<div className="absolute top-0 left-0 w-full -translate-y-full z-10 grid" ref={ nav_header_container_ref }>
+			<HeaderNavigation navigation={ navigation } featured_links={ featured_links } isVisible={ isNavOpen } className={ `w-full duration-450 ease-vaul` } />
 		</div>
 		<div className="relative container flex justify-between items-start pt-8">
 			<Link to={ "/" } className={ `transition-opacity duration-150 ease-in ${ isNavOpen ? "opacity-0 pointer-events-none" : "" }` }>
@@ -24,6 +31,46 @@ export function Header ({ navigation, featured_links }) {
 			</button>
 		</div>
 	</header>
+}
+
+function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
+	useEffect( () => {
+		if ( ! isNavOpen ) {
+			document.body.style.setProperty( "--nav-header-height", "0px" )
+		}
+		else /* if ( isNavOpen ) */ {
+			if ( ! nav_header_container_ref.current ) {
+				return
+			}
+			const nav_header_container_height = nav_header_container_ref.current.offsetHeight
+			document.body.style.setProperty(
+				"--nav-header-height",
+				`${ nav_header_container_height }px`
+			)
+		}
+	}, [ isNavOpen ] )
+}
+
+function useUpdateHeaderNavContainerHeightOnWindowResize ( isNavOpen, nav_header_container_ref ) {
+	useEffect( function () {
+		const handleResize = () => {
+			console.log( "resizing." )
+			if (
+				! isNavOpen
+				|| ! nav_header_container_ref.current
+			) {
+				return
+			}
+
+			document.body.style.setProperty(
+				"--nav-header-height",
+				`${ nav_header_container_ref.current.clientHeight }px`
+			)
+		}
+
+		window.addEventListener( "resize", handleResize, { passive: true } )
+		return () => window.removeEventListener( "resize", handleResize, { passive: true } )
+	}, [ isNavOpen ] )
 }
 
 
