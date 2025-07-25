@@ -66,14 +66,10 @@ function useImageURLs ( ...[ data, variant, fallback ]: UseImageURLsArgs ) {
 	let images = [ ]
 	if ( data ) {
 		if ( data?.provider === "local" ) {
-			for ( let currrent_variant in data.formats ) {
-				const image = data.formats[ currrent_variant ]
-				images.push( {
-					variant: currrent_variant.toUpperCase(),
-					url: CMS_PUBLIC_DIR_URL + image.url,
-					w: image.width
-				} )
-			}
+			images = getConstructedImageURLList( data.formats, CMS_PUBLIC_DIR_URL )
+		}
+		else if ( data?.provider === "aws-s3" ) {
+			images = getConstructedImageURLList( data.formats )
 		}
 	}
 
@@ -108,6 +104,20 @@ function useImageURLs ( ...[ data, variant, fallback ]: UseImageURLsArgs ) {
 				.map( ({ url, w }) => `${ url } ${ w }w` )
 				.join( ", " ),
 	}
+}
+
+function getConstructedImageURLList ( formats, base_url = "" ) {
+	const images = [ ]
+	for ( let currrent_variant in formats ) {
+		const image = formats[ currrent_variant ]
+		images.push( {
+			variant: currrent_variant.toUpperCase(),
+			url: base_url + image.url,
+			w: image.width
+		} )
+	}
+
+	return images
 }
 
 const FALLBACK_IMAGE = "/media/backgrounds/background-texture.jpg"
