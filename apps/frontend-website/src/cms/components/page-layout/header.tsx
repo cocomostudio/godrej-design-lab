@@ -45,6 +45,13 @@ export function Header ({ navigation, featured_links }) {
 	</header>
 }
 
+/*
+ |
+ | Computes and sets the Y-offset on the #primary-layout element,
+ | 	in order to expand or close the navigation header.
+ |
+ |
+ */
 function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 	useLayoutEffect( () => {
 		if ( ! isNavOpen ) {
