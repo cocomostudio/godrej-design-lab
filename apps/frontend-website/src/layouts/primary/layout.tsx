@@ -12,7 +12,7 @@ import { Favicons } from "./favicons/favicons.js"
 export default function PrimaryLayout () {
 	return <>
 		<Favicons />
-		<div className="bg-white" style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
+		<div className="bg-white">
 			<Outlet />
 		</div>
 	</>
