@@ -55,7 +55,7 @@ export function Header ({ navigation, featured_links }) {
 function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 	useLayoutEffect( () => {
 		if ( ! isNavOpen ) {
-			document.getElementById( "primary-layout" )!.style.setProperty( "--nav-header-height", "0px" )
+			document.documentElement.style.setProperty( "--nav-header-height", "0px" )
 
 			if ( ! nav_header_container_ref.current ) {
 				return
@@ -69,7 +69,7 @@ function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 				return
 			}
 			const nav_header_container_height = nav_header_container_ref.current.offsetHeight
-			document.getElementById( "primary-layout" )!.style.setProperty(
+			document.documentElement.style.setProperty(
 				"--nav-header-height",
 				`${ nav_header_container_height }px`
 			)
@@ -90,7 +90,7 @@ function useUpdateHeaderNavContainerHeightOnWindowResize ( isNavOpen, nav_header
 				return
 			}
 
-			document.getElementById( "primary-layout" )!.style.setProperty(
+			document.documentElement.style.setProperty(
 				"--nav-header-height",
 				`${ nav_header_container_ref.current.clientHeight }px`
 			)
