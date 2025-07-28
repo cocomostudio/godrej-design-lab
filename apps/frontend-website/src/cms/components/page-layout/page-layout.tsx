@@ -54,7 +54,7 @@ export class PageLayout {
 				cover={ meta.cover || page_context.cover }
 			/>
 
-			<div className="bg-white" style={ color_scheme_styles }>
+			<div style={ color_scheme_styles }>
 				<Header navigation={ page_context.navigation } featured_links={ page_context.featured_links } />
 
 				<div className="relative container max-md:flex flex-col">
