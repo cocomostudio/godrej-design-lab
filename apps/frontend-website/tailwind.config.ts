@@ -446,8 +446,8 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			"--yellow": "255, 217, 0",
 
 			// Semantic
-			"--primary-color": "var( --dodger-blue )",
-			"--secondary-color": "var( --midnight-blue )",
+			"--primary-color": "white",
+			"--secondary-color": "black",
 			// "--primary": "var( -- )",
 			// "--secondary": "var( -- )",
 		}
