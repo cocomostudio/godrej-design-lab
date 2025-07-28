@@ -6,6 +6,8 @@
  |
  */
 
+import { useLayoutEffect } from "react"
+
 import { HeaderRegion } from "../header-region"
 import { SideRegion } from "../side-region"
 import { MainRegion } from "../main-region"
@@ -45,6 +47,12 @@ export class PageLayout {
 
 	static Renderer ({ meta, page_context, color_scheme, children }) {
 		const color_scheme_styles = useColorSchemeStyles( color_scheme )
+
+		useLayoutEffect( function () {
+			for ( const color in color_scheme_styles ) {
+				document.documentElement.style.setProperty( color, color_scheme_styles[ color ] )
+			}
+		}, [ ] )
 
 		return <>
 			<DocumentMeta
