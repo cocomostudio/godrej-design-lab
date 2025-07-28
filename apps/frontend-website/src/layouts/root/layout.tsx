@@ -16,7 +16,7 @@ export function RootLayout ( { children }: { children: React.ReactNode } ) {
 			<Meta />
 			<Links />
 		</head>
-		<body className="font-sans duration-450 ease-vaul translate-y-[--nav-header-height]">
+		<body className="font-sans">
 			{ children }
 			<DesignInspector enabled={ false } />
 			<ScrollRestoration />

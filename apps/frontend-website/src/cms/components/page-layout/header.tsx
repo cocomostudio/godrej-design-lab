@@ -34,16 +34,16 @@ export function Header ({ navigation, featured_links }) {
 }
 
 function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
-	useEffect( () => {
+	useLayoutEffect( () => {
 		if ( ! isNavOpen ) {
-			document.body.style.setProperty( "--nav-header-height", "0px" )
+			document.getElementById( "primary-layout" )!.style.setProperty( "--nav-header-height", "0px" )
 		}
 		else /* if ( isNavOpen ) */ {
 			if ( ! nav_header_container_ref.current ) {
 				return
 			}
 			const nav_header_container_height = nav_header_container_ref.current.offsetHeight
-			document.body.style.setProperty(
+			document.getElementById( "primary-layout" )!.style.setProperty(
 				"--nav-header-height",
 				`${ nav_header_container_height }px`
 			)
@@ -54,7 +54,6 @@ function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 function useUpdateHeaderNavContainerHeightOnWindowResize ( isNavOpen, nav_header_container_ref ) {
 	useEffect( function () {
 		const handleResize = () => {
-			console.log( "resizing." )
 			if (
 				! isNavOpen
 				|| ! nav_header_container_ref.current
@@ -62,7 +61,7 @@ function useUpdateHeaderNavContainerHeightOnWindowResize ( isNavOpen, nav_header
 				return
 			}
 
-			document.body.style.setProperty(
+			document.getElementById( "primary-layout" )!.style.setProperty(
 				"--nav-header-height",
 				`${ nav_header_container_ref.current.clientHeight }px`
 			)
