@@ -48,7 +48,7 @@ export class SideRegion {
 	static Renderer ({ toc, toc_content, children }) {
 		return <div className="side-region empty:hidden md:absolute top-0 left-0 md:w-1c lg:w-2c-1g h-full | _[&>:last-child]:mt-0">
 			<Level>
-				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky top-8 left-0 z-10" /> }
+				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky md:top-48 lg:top-68 left-0 translate-y-0 z-10 transition-transform ease-vaul duration-750" /> }
 				<aside className="empty:hidden max-md:mt-6 [&>:first-child]:mt-0">
 					{ children }
 				</aside>
@@ -58,7 +58,7 @@ export class SideRegion {
 }
 
 function TableOfContents ( { toc_content, className = null }: React.ComponentProps<"nav"> ) {
-	return <nav className={ `${ className } md:w-1c lg:w-2c-1g -mt-8 py-8 bg-white` }>
+	return <nav className={ `${ className } md:w-1c lg:w-2c-1g pb-8 bg-white` } id="toc">
 		<ol className="text-xs text-secondary border-t border-primary">
 			{ toc_content.map( ( { label, slug }, i ) => <li key={ i } className="py-3 border-b border-primary">
 				<a className="block" href={ "#" + slug }>{ label }</a>

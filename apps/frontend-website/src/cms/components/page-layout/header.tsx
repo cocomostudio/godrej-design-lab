@@ -16,6 +16,7 @@ export function Header ({ navigation, featured_links }) {
 
 	useToggleHeaderNav( isNavOpen, nav_header_container_ref )
 	useUpdateHeaderNavContainerHeightOnWindowResize( isNavOpen, nav_header_container_ref )
+	useMoveTableOfContents( isNavOpen )
 
 	return <header className="relative">
 		<div className="absolute top-0 left-0 w-full -translate-y-full z-10 grid" ref={ nav_header_container_ref }>
@@ -69,6 +70,26 @@ function useUpdateHeaderNavContainerHeightOnWindowResize ( isNavOpen, nav_header
 
 		window.addEventListener( "resize", handleResize, { passive: true } )
 		return () => window.removeEventListener( "resize", handleResize, { passive: true } )
+	}, [ isNavOpen ] )
+}
+
+function useMoveTableOfContents ( isNavOpen ) {
+	useLayoutEffect( function () {
+		const toc_dom = document.getElementById( "toc" )
+		if ( ! toc_dom ) {
+			return
+		}
+
+		if ( isNavOpen ) {
+			toc_dom.classList.remove( "translate-y-0" )
+			toc_dom.classList.add( "md:-translate-y-[7.3rem]" )
+			toc_dom.classList.add( "lg:-translate-y-44" )
+		}
+		else {
+			toc_dom.classList.remove( "md:-translate-y-[7.3rem]" )
+			toc_dom.classList.remove( "lg:-translate-y-44" )
+			toc_dom.classList.add( "translate-y-0" )
+		}
 	}, [ isNavOpen ] )
 }
 
