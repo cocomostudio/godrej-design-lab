@@ -13,6 +13,11 @@ import no_op from "~/__lib/functions/no-op"
 
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo"
 
+const OFFSET_FOR_NAVIGATION_WHEN_CLOSED__CLASS = `-translate-y-[calc(100%+5rem)]`
+	// ^ sometimes the navigation bleeds out momentarily;
+	// 		the extra 5rem ensures that it doesn't
+
+
 export function Header ({ navigation, featured_links }) {
 	const nav_header_container_ref = useRef<HTMLDivElement>( null )
 	const [ isNavOpen, setIsNavOpen ] = useState( false )
@@ -25,7 +30,7 @@ export function Header ({ navigation, featured_links }) {
 	useMoveTableOfContents( isNavOpen )
 
 	return <header className="relative">
-		<div className="absolute top-0 left-0 w-full -translate-y-full z-10 grid" ref={ nav_header_container_ref }>
+		<div className={ `absolute top-0 left-0 w-full z-10 grid ${ OFFSET_FOR_NAVIGATION_WHEN_CLOSED__CLASS }` } ref={ nav_header_container_ref }>
 			<HeaderNavigation navigation={ navigation } featured_links={ featured_links } isVisible={ isNavOpen } onClose={ () => setIsNavOpen( false ) } className={ `w-full duration-450 ease-vaul` } />
 		</div>
 		<div className="relative container flex justify-between items-start pt-8">
@@ -44,6 +49,13 @@ function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 	useLayoutEffect( () => {
 		if ( ! isNavOpen ) {
 			document.getElementById( "primary-layout" )!.style.setProperty( "--nav-header-height", "0px" )
+
+			if ( ! nav_header_container_ref.current ) {
+				return
+			}
+
+			nav_header_container_ref.current.classList.add( OFFSET_FOR_NAVIGATION_WHEN_CLOSED__CLASS )
+			nav_header_container_ref.current.classList.remove( "-translate-y-full" )
 		}
 		else /* if ( isNavOpen ) */ {
 			if ( ! nav_header_container_ref.current ) {
@@ -54,6 +66,9 @@ function useToggleHeaderNav ( isNavOpen, nav_header_container_ref ) {
 				"--nav-header-height",
 				`${ nav_header_container_height }px`
 			)
+
+			nav_header_container_ref.current.classList.remove( OFFSET_FOR_NAVIGATION_WHEN_CLOSED__CLASS )
+			nav_header_container_ref.current.classList.add( "-translate-y-full" )
 		}
 	}, [ isNavOpen ] )
 }
