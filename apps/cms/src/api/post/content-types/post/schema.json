@@ -20,7 +20,7 @@
 			"type": "relation",
 			"relation": "manyToOne",
 			"target": "api::page-context.page-context",
-			"required": true
+			"required": false
 		},
 		"color_scheme": {
 			"type": "component",
