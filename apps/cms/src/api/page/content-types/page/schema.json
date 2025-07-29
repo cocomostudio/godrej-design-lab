@@ -23,8 +23,10 @@
 			"required": false
 		},
 		"color_scheme": {
-			"type": "component",
-			"component": "miscellaneous.color-scheme-v1"
+			"type": "relation",
+			"relation": "manyToOne",
+			"target": "api::color-scheme.color-scheme",
+			"required": false
 		},
 		"toc": {
 			"type": "boolean",
