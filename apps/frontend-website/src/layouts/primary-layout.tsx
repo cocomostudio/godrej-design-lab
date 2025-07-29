@@ -9,14 +9,13 @@ import {
 
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo"
 import { GodrejLogo } from "~/__lib/this/ui/components/godrej-logo"
-
-
-
+import { ScrollProgressBar } from "~/__lib/this/ui/components/PageScrollProgressIndicator"
 
 
 export default function ThisLayout () {
 	return <div className="bg-white" style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
 		<Header />
+		<ScrollProgressBar />
 		<Outlet />
 		<Footer className="mt-22" />
 	</div>
