@@ -71,17 +71,17 @@ const spacingPlugin = plugin( ({ addBase }) => {
 const viewportSizes = [
 	{
 		name: "sm",
-		width: 390,
+		breakpoint: 390,
 		contentWidth: 358,
 	},
 	{
 		name: "md",
-		width: 1194,
+		breakpoint: 1194,
 		contentWidth: 1146,
 	},
 	{
 		name: "lg",
-		width: 1920,
+		breakpoint: 1920,
 		contentWidth: 1824,
 	},
 ] as const
@@ -97,9 +97,9 @@ const viewportSizes__asRecord = viewportSizes.reduce( function ( acc, size ) {
 const viewportSizesInPixels = viewportSizes.reduce( function ( acc, size ) {
 	return {
 		...acc,
-		[ size.name ]: size.width + "px",
+		[ size.name ]: size.breakpoint + "px",
 	}
-}, { } as Record<ViewportSizes[ number ][ "name" ], `${ ViewportSizes[ number ][ "width" ] }px`> )
+}, { } as Record<ViewportSizes[ number ][ "name" ], `${ ViewportSizes[ number ][ "breakpoint" ] }px`> )
 
 
 /**
