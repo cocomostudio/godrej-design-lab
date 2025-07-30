@@ -20,9 +20,6 @@ export class Fellowship {
 
 	static Renderer ({ description, projects }) {
 		return <div className="full-width fellowship-programme mt-4 [.fellowship-programme:first-child]:mt-0">
-			{/* <p className="mt-3.5 text-p text-black">{ description }</p> */}
-			{/* <hr className="mt-4 border-black" /> */}
-
 			{ projects.map( ( { description, cover, fellows, link }, i ) => <div key={ i } className="fellowship-project mt-3.5 md:mt-4 flex flex-wrap md:border-b border-black md:last:border-none md:pb-4">
 				<figure className="w-2c-1g md:w-1c lg:w-1c-2g h-full rounded-md overflow-hidden">
 					<img src={ CMS_PUBLIC_DIR_URL + cover.file.url } className="aspect-square object-cover" />
