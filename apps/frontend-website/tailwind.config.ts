@@ -433,17 +433,17 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			"--black": "0, 0, 0",
 
 			// Brand
-			"--blue-gray": "189, 207, 218",
-			"--dodger-blue": "0, 119, 255",
-			"--midnight-blue": "27, 49, 104",
-			"--indigo": "83, 22, 156",
-			"--lime-green": "0, 218, 0",
-			"--umber-brown": "117, 66, 21",
-			"--brown-green": "107, 106, 11",
-			"--maroon-red": "133, 0, 0",
-			"--red": "255, 0, 0",
-			"--orange-red": "255, 59, 0",
-			"--yellow": "255, 217, 0",
+			"--blue-gray": "189, 207, 218",	// #bdcfda
+			"--dodger-blue": "0, 119, 255",	// #0077ff
+			"--midnight-blue": "27, 49, 104",	// #1b3168
+			"--indigo": "83, 22, 156",	// #53169c
+			"--lime-green": "0, 218, 0",	// #00da00
+			"--umber-brown": "117, 66, 21",	// #754215
+			"--brown-green": "107, 106, 11",	// #6b6a0b
+			"--maroon-red": "133, 0, 0",	// #850000
+			"--red": "255, 0, 0",	// #ff0000
+			"--orange-red": "255, 59, 0",	// #ff3b00
+			"--yellow": "255, 217, 0",	// #ffd900
 
 			// Semantic
 			"--primary-color": "var( --white )",
