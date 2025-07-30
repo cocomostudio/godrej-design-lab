@@ -72,17 +72,20 @@ const viewportSizes = [
 	{
 		name: "sm",
 		breakpoint: 390,
-		contentWidth: 358,
+		contentWidth: ( ( 358 / 390 ) * 100 ) + "vw",
+		contentMaxWidth: "540px",
 	},
 	{
 		name: "md",
-		breakpoint: 1194,
-		contentWidth: 1146,
+		breakpoint: 720,
+		contentWidth: ( ( 1146 / 1194 ) * 100 ) + "vw",
+		contentMaxWidth: "1146px",
 	},
 	{
 		name: "lg",
 		breakpoint: 1920,
-		contentWidth: 1824,
+		contentWidth: "1824px",
+		contentMaxWidth: "1824px",
 	},
 ] as const
 type ViewportSizes = typeof viewportSizes
@@ -119,13 +122,16 @@ const layoutAndContainersPlugin = plugin( ({ addUtilities, matchUtilities, addBa
 			"--content-width": "300px",
 			// ^ this number has just been plucked out of thin air
 			"@media screen( sm )": {
-				"--content-width": `${ viewportSizes__asRecord.sm.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.sm.contentWidth }, ${ viewportSizes__asRecord.sm.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.sm.contentMaxWidth,
 			},
 			"@media screen( md )": {
-				"--content-width": `${ viewportSizes__asRecord.md.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.md.contentWidth }, ${ viewportSizes__asRecord.md.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.md.contentMaxWidth,
 			},
 			"@media screen( lg )": {
-				"--content-width": `${ viewportSizes__asRecord.lg.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.lg.contentWidth }, ${ viewportSizes__asRecord.lg.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.lg.contentMaxWidth,
 			},
 		},
 	} )
@@ -144,9 +150,8 @@ const layoutAndContainersPlugin = plugin( ({ addUtilities, matchUtilities, addBa
 	addComponents( {
 		".container": {
 			boxSizing: "border-box",
-			// position: "relative",
-			width: "100%",
-			maxWidth: "var( --content-width )",
+			width: "var( --content-width )",
+			maxWidth: "var( --content-max-width )",
 			marginLeft: "auto",
 			marginRight: "auto",
 			"& > *": {
