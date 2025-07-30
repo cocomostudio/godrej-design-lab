@@ -1,11 +1,11 @@
 
 import { CMS_PUBLIC_DIR_URL } from "env"
 
-export function fetch_route_from_cms ( slug: string ) {
+export function fetch_route_from_cms ( slug: string, search_params: URLSearchParams ) {
 	const url = prepare_url( slug )
 	return make_http_request(
 		url.href,
-		prepare_request_payload()
+		prepare_request_payload( search_params )
 	)
 }
 
@@ -15,7 +15,7 @@ function prepare_url ( slug: string ): URL {
 	return new URL( api_path, CMS_PUBLIC_DIR_URL )
 }
 
-function prepare_request_payload () {
+function prepare_request_payload ( search_params: URLSearchParams ) {
 	const populate_all = { populate: "*" }
 	const populate_v1_attributes = {
 		"miscellaneous.horizontal-rule-v1": populate_all,
@@ -132,7 +132,8 @@ function prepare_request_payload () {
 	}
 
 	return {
-		populate
+		populate,
+		status: search_params.get( "status" ) || "published"
 	}
 }
 

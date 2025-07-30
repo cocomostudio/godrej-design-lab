@@ -39,7 +39,9 @@ export default function ( { env } ) {
 						return null
 					}
 
-					return env( "CLIENT_URL" ) + url_path
+					const status_query_param_string = `?status=${ status }`
+
+					return env( "CLIENT_URL" ) + url_path + status_query_param_string
 				}
 			}
 		},

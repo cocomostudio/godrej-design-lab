@@ -11,11 +11,12 @@ import { render_strapi_component } from "./strapi-component-renderer"
 import { fetch_route_from_cms } from "./utilities/fetch-route-from-cms"
 import { isRouteErrorResponse } from "react-router"
 
-export async function loader ( { params }: Route.LoaderArgs ) {
+export async function loader ( { request, params }: Route.LoaderArgs ) {
 	const slug = params[ "*" ]
+	const url = new URL( request.url )
 	let response
 	try {
-		response = await fetch_route_from_cms( slug )
+		response = await fetch_route_from_cms( slug, url.searchParams )
 		if ( response.error ) {
 			if ( response.error.status === 404 ) {
 				throw data( { slug }, 404 )
