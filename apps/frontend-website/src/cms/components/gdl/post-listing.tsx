@@ -34,7 +34,7 @@ export class PostListing {
 			[ first_post, ...posts ] = content
 		}
 
-		return <ul className={ `mt-6 md:mt-8 lg:mt-10 flex flex-wrap flex-col md:flex-row gap-x-1g gap-y-2g ${ layout_classes }` }>
+		return <ul className={ `full-width mt-6 md:mt-8 lg:mt-10 flex flex-wrap flex-col md:flex-row gap-x-1g gap-y-2g ${ layout_classes }` }>
 			{ first_post && <FeaturedPost { ...first_post } /> }
 			{ posts.map( ({ image, content, link, open_in_new_tab }, i ) => <li key={ i }>
 				<Link to={ link } target={ open_in_new_tab ? "_blank" : "_self" } className="[&:hover_.h]:underline">

@@ -58,7 +58,7 @@ export class Gallery {
 	static Renderer ({ content }) {
 		return <>
 			<link rel="stylesheet" href={ stylesheet } precedence="medium" />
-			<ul className="mt-6 md:mt-8 lg:mt-10 | space-y-1g">
+			<ul className="full-width mt-6 md:mt-8 lg:mt-10 | space-y-1g">
 				{ content.map( ( row, i ) => <ImageRow key={ i } images={ row } /> ) }
 			</ul>
 		</>

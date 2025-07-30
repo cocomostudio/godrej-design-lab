@@ -21,7 +21,7 @@ export class HeadingAndContentList {
 	}
 
 	static Renderer ({ content }) {
-		return <ul className="!mt-8">
+		return <ul className="full-width">
 			{ content.map( ({ heading, content }, i ) => <li key={ i } className="mt-6 md:mt-8 lg:mt-10 first:mt-0 md:flex md:gap-1g border-b border-black/30 last:border-0 pb-6 md:pb-8 lg:pb-10 last:pb-0">
 				<H className="md:w-2c-1g lg:w-3c-2g text-h4 font-bold uppercase text-secondary" dangerouslySetInnerHTML={{ __html: heading.replace( NEW_LINES_REGEX, html_line_break ) }}></H>
 

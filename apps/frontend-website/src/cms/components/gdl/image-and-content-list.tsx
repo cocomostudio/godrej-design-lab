@@ -20,7 +20,7 @@ export class ImageAndContentList {
 
 	static Renderer ({ layout, content }) {
 		const imageIsLeftAligned = layout === "image | content"
-		return <ul className="mt-6 md:mt-8 lg:mt-10 space-y-6 md:space-y-8 lg:space-y-10">
+		return <ul className="full-width mt-6 md:mt-8 lg:mt-10 space-y-6 md:space-y-8 lg:space-y-10">
 			{ content.map( ({ image, content }, i ) => <li key={ i } className="md:flex md:gap-1g border-b border-black/30 last:border-0 pb-6 md:pb-8 lg:pb-10 last:pb-0">
 				{ imageIsLeftAligned && <div className="md:w-2c-1g lg:w-3c-2g">
 					{ image?.file && <Image.Renderer file={ image.file } aspect_ratio={ image.aspect_ratio } className="!m-0" /> }
