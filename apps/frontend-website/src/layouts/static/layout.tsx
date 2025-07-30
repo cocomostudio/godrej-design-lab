@@ -9,14 +9,14 @@ import {
 
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo"
 import { GodrejLogo } from "~/__lib/this/ui/components/godrej-logo"
+import { ScrollProgressBar } from "~/__lib/this/ui/components/PageScrollProgressIndicator"
 
 
-
-
-
-export default function StaticLayout () {
+export default function ThisLayout () {
+	const [ isNavOpen, setIsNavOpen ] = useState( false )
 	return <div className="bg-white" style={{ "--primary-color": "var( --yellow )", "--secondary-color": "var( --umber-brown )" }}>
-		<Header />
+		<Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+		<ScrollProgressBar hide={isNavOpen} />
 		<Outlet />
 		<Footer className="mt-10 md:mt-22" />
 	</div>
@@ -26,8 +26,13 @@ export default function StaticLayout () {
 
 
 
-function Header () {
-	const [ isNavOpen, setIsNavOpen ] = useState( false )
+function Header({
+	isNavOpen,
+	setIsNavOpen,
+  }: {
+	isNavOpen: boolean;
+	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }) {
 	return <header>
 		<div className={ `relative z-10 grid ${ isNavOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0" } not-interpolate:transition-all interpolate:transition-[height] not-interpolate:will-change-[grid-rows] interpolate:will-change-[height] !duration-450 !ease-vaul` }>
 			<div className="overflow-hidden">
