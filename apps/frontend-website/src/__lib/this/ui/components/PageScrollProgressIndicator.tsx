@@ -24,7 +24,7 @@ export const ScrollProgressBar = ({ hide = false }: { hide?: boolean }) => {
 	return (
 		<div className="fixed top-0 left-0 w-full h-1 bg-transparent z-50">
 			<div
-				className="h-full bg-blue-500 origin-left transition-transform duration-200 ease-out"
+				className="h-full bg-secondary origin-left transition-transform duration-200 ease-out"
 				style={{
 					transform: `scaleX(${scrollProgress})`,
 				}}
