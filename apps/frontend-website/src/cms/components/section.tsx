@@ -34,7 +34,7 @@ export class Section {
 		) {
 			attributes.id = title.replace( /\s+/g, "-" ).toLowerCase()
 		}
-		return <section className="mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0 container flex flex-col _max-md:flex-col flex-wrap scroll-mt-4" { ...attributes }>
+		return <section className="mt-6 md:mt-8 lg:mt-10 [&>:first-child]:mt-0 container flex flex-col _max-md:flex-col flex-wrap scroll-mt-4" { ...attributes } data-toc={ !! attributes.id }>
 			{ heading && <>
 				{ collapsible && <HeadingWithCollapseToggle heading={ heading } isOpen={ isOpen } setIsOpen={ setIsOpen } /> }
 				{ ! collapsible && <Heading.Renderer style={{ marginTop: 0 }} { ...heading } /> }
