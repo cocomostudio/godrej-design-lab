@@ -20,6 +20,8 @@ export class Fellowship {
 
 	static Renderer ({ description, projects }) {
 		return <div className="full-width fellowship-programme mt-4 [.fellowship-programme:first-child]:mt-0">
+			<TableHeader />
+
 			{ projects.map( ( { description, cover, fellows, link }, i ) => <div key={ i } className="fellowship-project mt-3.5 md:mt-4 flex flex-wrap md:border-b border-black md:last:border-none md:pb-4">
 				<figure className="w-2c-1g md:w-1c lg:w-1c-2g h-full rounded-md overflow-hidden">
 					<img src={ CMS_PUBLIC_DIR_URL + cover.file.url } className="aspect-square object-cover" />
@@ -37,4 +39,19 @@ export class Fellowship {
 			</div> ) }
 		</div>
 	}
+}
+
+function TableHeader () {
+	return <div className="max-md:hidden flex border-t border-b border-black py-4">
+		{/* Yes this structure is a bit unusual. */}
+		{/* The first two columns are nested within one container. */}
+		{/* The structure mimics how the content in the table is actually laid out. */}
+		<div className="flex gap-1g md:ml-1c-1g md:w-4c-3g lg:ml-1c-4g lg:w-5c-4g">
+			<p className="w-2c-1g text-p font-bold text-black uppercase">Name</p>
+			<p className="w-3c-2g text-p font-bold text-black uppercase">Discipline</p>
+		</div>
+		<div className="md:ml-1g md:w-2c-1g lg:ml-2g lg:w-2c-4g">
+			<p className="text-p font-bold text-black uppercase">Description</p>
+		</div>
+	</div>
 }
