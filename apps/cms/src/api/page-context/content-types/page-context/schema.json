@@ -33,10 +33,6 @@
 			"allowedTypes": [ "images" ],
 			"multiple": false
 		},
-		"favicon": {
-			"type": "media",
-			"allowedTypes": [ "images" ],
-			"multiple": false
 		},
 		"navigation": {
 			"type": "component",
