@@ -79,7 +79,7 @@ export function ErrorBoundary ( { error }: Route.ErrorBoundaryProps ) {
 			<h2 className="text-h1 font-sans font-bold uppercase" dangerouslySetInnerHTML={{ __html: heading }}></h2>
 			<h3 className="mt-4 md:mt-8 lg:mt-10 text-h3">{ message }</h3>
 			{ details && <p className="mt-2 text-p">{ details }</p> }
-			<Link className="mt-6 md:mt-8 lg:mt-10 inline-block rounded-md bg-secondary text-primary px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase" to="/">Go back</Link>
+			<Link className="mt-6 md:mt-8 lg:mt-10 inline-block rounded-md bg-secondary text-white px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase" to="/">Go back</Link>
 			{ stack && <>
 				<pre className="mt-2 w-full p-4 overflow-x-auto">
 					<code>{ stack }</code>
