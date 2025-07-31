@@ -436,6 +436,7 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			// Grayscale/Neutral
 			"--white": "255, 255, 255",
 			"--black": "0, 0, 0",
+			"--silver-chalice": "175, 175, 175",
 
 			// Brand
 			"--blue-gray": "189, 207, 218",	// #bdcfda
@@ -451,10 +452,8 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			"--yellow": "255, 217, 0",	// #ffd900
 
 			// Semantic
-			"--primary-color": "var( --white )",
+			"--primary-color": "var( --silver-chalice )",
 			"--secondary-color": "var( --black )",
-			// "--primary": "var( -- )",
-			// "--secondary": "var( -- )",
 		}
 	} )
 } )

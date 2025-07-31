@@ -1,0 +1,11 @@
+
+.wysiwyg {
+	.h.text-h6 + p,
+	.h.text-p + p {
+		margin-top: 4px;
+	}
+
+	p + .h.text-p {
+		margin-top: 16px;
+	}
+}
