@@ -20,7 +20,6 @@ function prepare_request_payload ( search_params: URLSearchParams ) {
 	const populate_v1_attributes = {
 		"miscellaneous.horizontal-rule-v1": populate_all,
 		"text.plain-string-v1": populate_all,
-		"text.quote-v1": populate_all,
 		"media.image-v1": populate_all,
 		"media.gallery-v1": {
 			populate: {
