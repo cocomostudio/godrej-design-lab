@@ -1,0 +1,53 @@
+{
+	"kind": "collectionType",
+	"collectionName": "page_contexts_v1",
+	"info": {
+		"singularName": "page-context",
+		"pluralName": "page-contexts",
+		"displayName": "Page contexts",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": false
+	},
+	"pluginOptions": {
+		"webtools": {
+			"enabled": false
+		}
+	},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"site_title": {
+			"type": "string",
+			"required": true
+		},
+		"site_description": {
+			"type": "text",
+			"required": false
+		},
+		"cover": {
+			"type": "media",
+			"allowedTypes": [ "images" ],
+			"multiple": false
+		},
+		"favicon": {
+			"type": "media",
+			"allowedTypes": [ "images" ],
+			"multiple": false
+		},
+		"navigation": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"repeatable": true
+		},
+		"featured_links": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"repeatable": true,
+			"max": 2
+		}
+	}
+}

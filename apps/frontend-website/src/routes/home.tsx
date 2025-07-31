@@ -13,7 +13,7 @@ export default function ThisPage () {
 		<ul className="mt-8 container | text-h5 space-y-4">
 			{ get_routes().map( ({ text, path }) => (
 				<li key={ path }>
-					<Link to={ path } className="hover:underline">{ text }</Link>
+					<Link to={ path } target="_blank" className="hover:underline">{ text }</Link>
 				</li>
 			))}
 		</ul>
@@ -22,7 +22,12 @@ export default function ThisPage () {
 
 function get_routes () {
 	return [
-		{ text: "Single Fellow", path: "/fellows/rahul-bhusan" },
-		{ text: "Kitchen Sink", path: "/kitchen-sink" },
+		{ text: "About the Fellowship Program", path: "/about-the-fellowship-program" },
+		{ text: "Fellowships", path: "/fellowships" },
+		{ text: "North: Rahul Bhusan", path: "/posts/north-rahul-bhusan" },
+		{ text: "Murubi: Jaymin Panchasara & Shwetha Iyengar", path: "/posts/murubi-jaymin-panchasara-shwetha-iyengar" },
+		{ text: "Privacy Policy", path: "/privacy-policy" },
+		// { text: "Single Fellow", path: "/fellows/rahul-bhusan" },
+		// { text: "Kitchen Sink", path: "/kitchen-sink" },
 	]
 }

@@ -1,0 +1,68 @@
+{
+	"kind": "collectionType",
+	"collectionName": "pages_v1",
+	"info": {
+		"singularName": "page",
+		"pluralName": "pages",
+		"displayName": "Page",
+		"description": "Pages"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {
+		"webtools": {
+			"enabled": true
+		}
+	},
+	"attributes": {
+		"page_context": {
+			"type": "relation",
+			"relation": "manyToOne",
+			"target": "api::page-context.page-context",
+			"required": false
+		},
+		"color_scheme": {
+			"type": "relation",
+			"relation": "manyToOne",
+			"target": "api::color-scheme.color-scheme",
+			"required": false
+		},
+		"toc": {
+			"type": "boolean",
+			"default": false,
+			"required": true
+		},
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "media",
+			"allowedTypes": [ "images" ],
+			"multiple": false
+		},
+		"header_region": {
+			"type": "component",
+			"component": "container.header-region-v1"
+		},
+		"main_region": {
+			"type": "component",
+			"component": "container.main-region-v1"
+		},
+		"side_region": {
+			"type": "component",
+			"component": "container.side-region-v1"
+		},
+		"url_alias": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "plugin::webtools.url-alias",
+			"writable": true,
+			"configurable": false,
+			"editable": false,
+			"visible": false,
+			"unique": true
+		}
+	}
+}

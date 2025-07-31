@@ -26,7 +26,7 @@ function GridOverlay ( { enabled = false } ) {
 		return () => document.removeEventListener( "keydown", toggle )
 	}, [ ] )
 
-	return <div className={ `${ enabled ? "" : "hidden" } fixed top-0 inset-0 opacity-50 pointer-events-none` } id="js_grid_overlay" style={{ zIndex: 2147483647 }} ref={ ref }>
+	return <div className={ `${ enabled ? "" : "hidden" } fixed top-0 inset-0 opacity-25 pointer-events-none` } id="js_grid_overlay" style={{ zIndex: 2147483647 }} ref={ ref }>
 		<div className="container h-full grid grid-rows-1 grid-cols-5 md:grid-cols-8 lg:grid-cols-12 gap-x-4 lg:gap-x-5 *:bg-orange-red text-h1 font-sans text-white text-center">
 			<div className="flex flex-col justify-between py-2 md:py-4"><span>1</span><span>1</span></div>
 			<div className="flex flex-col justify-between py-2 md:py-4"><span>2</span><span>2</span></div>

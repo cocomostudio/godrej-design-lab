@@ -71,18 +71,21 @@ const spacingPlugin = plugin( ({ addBase }) => {
 const viewportSizes = [
 	{
 		name: "sm",
-		width: 390,
-		contentWidth: 358,
+		breakpoint: 390,
+		contentWidth: ( ( 358 / 390 ) * 100 ) + "vw",
+		contentMaxWidth: "540px",
 	},
 	{
 		name: "md",
-		width: 1194,
-		contentWidth: 1146,
+		breakpoint: 720,
+		contentWidth: ( ( 1146 / 1194 ) * 100 ) + "vw",
+		contentMaxWidth: "1146px",
 	},
 	{
 		name: "lg",
-		width: 1920,
-		contentWidth: 1824,
+		breakpoint: 1920,
+		contentWidth: "1824px",
+		contentMaxWidth: "1824px",
 	},
 ] as const
 type ViewportSizes = typeof viewportSizes
@@ -97,9 +100,9 @@ const viewportSizes__asRecord = viewportSizes.reduce( function ( acc, size ) {
 const viewportSizesInPixels = viewportSizes.reduce( function ( acc, size ) {
 	return {
 		...acc,
-		[ size.name ]: size.width + "px",
+		[ size.name ]: size.breakpoint + "px",
 	}
-}, { } as Record<ViewportSizes[ number ][ "name" ], `${ ViewportSizes[ number ][ "width" ] }px`> )
+}, { } as Record<ViewportSizes[ number ][ "name" ], `${ ViewportSizes[ number ][ "breakpoint" ] }px`> )
 
 
 /**
@@ -119,13 +122,16 @@ const layoutAndContainersPlugin = plugin( ({ addUtilities, matchUtilities, addBa
 			"--content-width": "300px",
 			// ^ this number has just been plucked out of thin air
 			"@media screen( sm )": {
-				"--content-width": `${ viewportSizes__asRecord.sm.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.sm.contentWidth }, ${ viewportSizes__asRecord.sm.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.sm.contentMaxWidth,
 			},
 			"@media screen( md )": {
-				"--content-width": `${ viewportSizes__asRecord.md.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.md.contentWidth }, ${ viewportSizes__asRecord.md.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.md.contentMaxWidth,
 			},
 			"@media screen( lg )": {
-				"--content-width": `${ viewportSizes__asRecord.lg.contentWidth }px`,
+				"--content-width": `min( ${ viewportSizes__asRecord.lg.contentWidth }, ${ viewportSizes__asRecord.lg.contentMaxWidth } )`,
+				"--content-max-width": viewportSizes__asRecord.lg.contentMaxWidth,
 			},
 		},
 	} )
@@ -144,9 +150,8 @@ const layoutAndContainersPlugin = plugin( ({ addUtilities, matchUtilities, addBa
 	addComponents( {
 		".container": {
 			boxSizing: "border-box",
-			// position: "relative",
-			width: "100%",
-			maxWidth: "var( --content-width )",
+			width: "var( --content-width )",
+			maxWidth: "var( --content-max-width )",
 			marginLeft: "auto",
 			marginRight: "auto",
 			"& > *": {
@@ -433,21 +438,21 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			"--black": "0, 0, 0",
 
 			// Brand
-			"--blue-gray": "189, 207, 218",
-			"--dodger-blue": "0, 119, 255",
-			"--midnight-blue": "27, 49, 104",
-			"--indigo": "83, 22, 156",
-			"--lime-green": "0, 218, 0",
-			"--umber-brown": "117, 66, 21",
-			"--brown-green": "107, 106, 11",
-			"--maroon-red": "133, 0, 0",
-			"--red": "255, 0, 0",
-			"--orange-red": "255, 59, 0",
-			"--yellow": "255, 217, 0",
+			"--blue-gray": "189, 207, 218",	// #bdcfda
+			"--dodger-blue": "0, 119, 255",	// #0077ff
+			"--midnight-blue": "27, 49, 104",	// #1b3168
+			"--indigo": "83, 22, 156",	// #53169c
+			"--lime-green": "0, 218, 0",	// #00da00
+			"--umber-brown": "117, 66, 21",	// #754215
+			"--brown-green": "107, 106, 11",	// #6b6a0b
+			"--maroon-red": "133, 0, 0",	// #850000
+			"--red": "255, 0, 0",	// #ff0000
+			"--orange-red": "255, 59, 0",	// #ff3b00
+			"--yellow": "255, 217, 0",	// #ffd900
 
 			// Semantic
-			"--primary-color": "var( --dodger-blue )",
-			"--secondary-color": "var( --midnight-blue )",
+			"--primary-color": "var( --white )",
+			"--secondary-color": "var( --black )",
 			// "--primary": "var( -- )",
 			// "--secondary": "var( -- )",
 		}
@@ -573,6 +578,12 @@ const transitionsAndAnimations = plugin( () => {}, {
 				"450": "450ms",
 				"750": "750ms",
 			},
+			transitionDelay: {
+				"250": "250ms",
+				"400": "400ms",
+				"450": "450ms",
+				"750": "750ms",
+			},
 			transitionTimingFunction: {
 				"ease-in-quad": "cubic-bezier( .55, .085, .68, .53 )",
 				"ease-in-cubic": "cubic-bezier( .550, .055, .675, .19 )",
@@ -599,6 +610,18 @@ const transitionsAndAnimations = plugin( () => {}, {
 			}
 		}
 	}
+} )
+
+/**
+ |
+ | Variants
+ |
+ |
+ */
+const variantsPlugin = plugin( ({ addVariant }) => {
+	addVariant( "webkit", "@supports ( background: -webkit-named-image(i) )" )
+	addVariant( "interpolate", "@supports ( interpolate-size: allow-keywords )" )
+	addVariant( "not-interpolate", "@supports ( not ( interpolate-size: allow-keywords ) )" )
 } )
 
 
@@ -663,7 +686,6 @@ export default {
 		typographyPlugin,
 		colorsPlugin,
 		transitionsAndAnimations,
+		variantsPlugin,
 	],
 } satisfies Config
-
-

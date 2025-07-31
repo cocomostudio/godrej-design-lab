@@ -1,0 +1,30 @@
+{
+	"collectionName": "components_gdl_post_listing_v1",
+	"info": {
+		"displayName": "Post Listing",
+		"description": "A list of posts"
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"2-column",
+				"3-column"
+			],
+			"default": "2-column",
+			"required": true
+		},
+		"feature_first_post": {
+			"type": "boolean",
+			"default": false,
+			"required": false
+		},
+		"content": {
+			"type": "component",
+			"component": "gdl.post-list-item-v1",
+			"required": true,
+			"repeatable": true
+		}
+	}
+}

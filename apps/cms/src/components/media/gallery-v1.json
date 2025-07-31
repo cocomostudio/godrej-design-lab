@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_media_gallery_v1",
+	"info": {
+		"displayName": "Gallery",
+		"description": "A showcase of images."
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"media.gallery-1-image-set-v1",
+				"media.gallery-2-image-set-v1",
+				"media.gallery-3-image-set-v1"
+			]
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"collectionName": "components_text_wysiwyg_v1",
+	"info": {
+		"displayName": "WYSIWYG",
+		"description": "Any kind of text content — paragraphs, headings, lists and more"
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "blocks"
+		},
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"normal",
+				"full-width"
+			],
+			"default": "normal",
+			"required": true
+		},
+		"font_family": {
+			"type": "enumeration",
+			"enum": [
+				"sans-serif",
+				"monospace"
+			],
+			"default": "sans-serif",
+			"required": true
+		}
+	}
+}

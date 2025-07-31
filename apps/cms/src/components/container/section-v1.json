@@ -1,0 +1,52 @@
+{
+	"collectionName": "components_container_section_v1",
+	"info": {
+		"displayName": "Section",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"register_with_toc": {
+			"type": "boolean",
+			"required": true,
+			"default": false
+		},
+		"title": {
+			"type": "string",
+			"required": false
+		},
+		"heading": {
+			"type": "component",
+			"component": "text.heading-v1",
+			"required": false
+		},
+		"collapsible": {
+			"type": "boolean",
+			"required": true,
+			"default": false
+		},
+		"collapsed_by_default": {
+			"type": "boolean",
+			"required": false
+		},
+		"content": {
+			"type": "dynamiczone",
+			"components": [
+				"gdl.heading-and-content-list-v1",
+				"gdl.image-and-content-v1",
+				"gdl.image-and-content-list-v1",
+				"gdl.promo-v1",
+				"gdl.post-listing-v1",
+				"gdl.fellowship-v1",
+				"text.heading-v1",
+				"text.wysiwyg-v1",
+				"media.image-v1",
+				"media.gallery-v1",
+				"text.quote-v1",
+				"navigation.button-link-v1",
+				"navigation.image-link-v1",
+				"miscellaneous.horizontal-rule-v1"
+			]
+		}
+	}
+}

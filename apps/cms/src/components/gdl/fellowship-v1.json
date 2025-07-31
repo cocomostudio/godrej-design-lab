@@ -1,0 +1,20 @@
+{
+	"collectionName": "components_gdl_fellowship_v1",
+	"info": {
+		"displayName": "Fellowship",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"projects": {
+			"type": "component",
+			"component": "gdl.fellowship-project-v1",
+			"repeatable": true,
+			"min": 1
+		}
+	}
+}

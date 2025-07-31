@@ -1,0 +1,44 @@
+{
+	"collectionName": "components_text_heading_v1",
+	"info": {
+		"displayName": "Heading",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"level": {
+			"type": "enumeration",
+			"enum": [
+				"h1",
+				"h2",
+				"h3",
+				"h4",
+				"h5"
+			],
+			"default": "h1",
+			"required": true
+		},
+		"line_1": {
+			"type": "text",
+			"required": false
+		},
+		"line_2": {
+			"type": "text",
+			"required": false
+		},
+		"font_family": {
+			"type": "enumeration",
+			"enum": [
+				"sans-serif",
+				"monospace"
+			],
+			"default": "sans-serif",
+			"required": true
+		},
+		"link": {
+			"type": "component",
+			"component": "navigation.link-v1",
+			"required": false
+		}
+	}
+}

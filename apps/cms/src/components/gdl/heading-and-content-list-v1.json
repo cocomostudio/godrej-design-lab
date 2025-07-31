@@ -1,0 +1,16 @@
+{
+	"collectionName": "components_gdl_heading_and_content_list_v1",
+	"info": {
+		"displayName": "Heading + Content (List)",
+		"description": "A list of sub-sections, each with the heading on the left, and content on the right"
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "component",
+			"component": "gdl.heading-and-content-v1",
+			"required": true,
+			"repeatable": true
+		}
+	}
+}

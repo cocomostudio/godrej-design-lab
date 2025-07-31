@@ -1,0 +1,13 @@
+{
+	"collectionName": "components_text_plain_string_v1",
+	"info": {
+		"displayName": "Plain string",
+		"description": ""
+	},
+	"options": { },
+	"attributes": {
+		"content": {
+			"type": "string"
+		}
+	}
+}

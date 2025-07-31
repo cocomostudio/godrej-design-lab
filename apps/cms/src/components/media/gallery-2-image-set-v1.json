@@ -1,0 +1,26 @@
+{
+	"collectionName": "components_media_gallery_2_image_set_v1",
+	"info": {
+		"displayName": "2-Image Set",
+		"description": "Add images. Each row will have 2 images."
+	},
+	"options": { },
+	"attributes": {
+		"layout": {
+			"type": "enumeration",
+			"enum": [
+				"1:1",
+				"1:2",
+				"2:1"
+			],
+			"default": "1:2",
+			"required": true
+		},
+		"images": {
+			"allowedTypes": [ "images" ],
+			"type": "media",
+			"required": true,
+			"multiple": true
+		}
+	}
+}

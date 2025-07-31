@@ -1,0 +1,44 @@
+{
+	"kind": "collectionType",
+	"collectionName": "color_schemes_v1",
+	"info": {
+		"singularName": "color-scheme",
+		"pluralName": "color-schemes",
+		"displayName": "Color Scheme",
+		"description": "Color pairings to theme the frontend"
+	},
+	"options": {
+		"draftAndPublish": false
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"unique": true
+		},
+		"description": {
+			"type": "text"
+		},
+		"primary_color_hex": {
+			"type": "customField",
+			"customField": "plugin::color-picker.color",
+			"required": true,
+			"regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+		},
+		"primary_color_rgb": {
+			"type": "string",
+			"required": false
+		},
+		"secondary_color_hex": {
+			"type": "customField",
+			"customField": "plugin::color-picker.color",
+			"required": true,
+			"regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+		},
+		"secondary_color_rgb": {
+			"type": "string",
+			"required": false
+		}
+	}
+}

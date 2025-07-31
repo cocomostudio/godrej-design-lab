@@ -46,7 +46,7 @@ function IntroSection ( { className }: React.ComponentProps<"section"> ) {
 	return <section className={ className }>
 		<div>
 			<figure className="max-md:size-[--content-width] rounded-md overflow-hidden">
-				<img src="/media/rahul-bhusan.png" alt="Rahul Bhusan" className="md:w-2c-1g lg:w-3c-2g md:aspect-square object-cover" />
+				<img src="/media/fellows/rahul-bhusan.png" alt="Rahul Bhusan" className="md:w-2c-1g lg:w-3c-2g md:aspect-square object-cover" />
 			</figure>
 		</div>
 
