@@ -69,7 +69,7 @@ export class PageLayout {
 					{ children }
 				</div>
 
-				<Footer navigation={ page_context.navigation } className="mt-10 md:mt-22" />
+				<Footer blurb={ page_context?.blurb } navigation={ page_context.navigation } className="mt-10 md:mt-22" />
 			</div>
 		</>
 	}

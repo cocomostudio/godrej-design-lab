@@ -33,6 +33,9 @@
 			"allowedTypes": [ "images" ],
 			"multiple": false
 		},
+		"blurb": {
+			"type": "blocks",
+			"required": false
 		},
 		"navigation": {
 			"type": "component",
