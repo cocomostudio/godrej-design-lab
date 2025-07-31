@@ -53,7 +53,7 @@ export class SideRegion {
 		return <div className="side-region empty:hidden md:absolute top-0 left-0 md:w-1c lg:w-2c-1g h-full | _[&>:last-child]:mt-0">
 			<Level>
 				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky md:top-48 lg:top-68 left-0 translate-y-0 z-10 transition-transform ease-vaul duration-750" /> }
-				<aside className="empty:hidden max-md:mt-6 [&>:first-child]:mt-0">
+				<aside className="empty:hidden max-md:mt-6 [&>:first-child]:mt-0 | [&>section:last-child_hr]:hidden" style={{ marginTop: `${ 2 + ( toc_content.length * 3 ) }rem` }}>
 					{ children }
 				</aside>
 			</Level>
