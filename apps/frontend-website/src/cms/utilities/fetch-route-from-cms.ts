@@ -18,7 +18,6 @@ function prepare_url ( slug: string ): URL {
 function prepare_request_payload ( search_params: URLSearchParams ) {
 	const populate_all = { populate: "*" }
 	const populate_v1_attributes = {
-		"miscellaneous.horizontal-rule-v1": populate_all,
 		"text.plain-string-v1": populate_all,
 		"media.image-v1": populate_all,
 		"media.gallery-v1": {

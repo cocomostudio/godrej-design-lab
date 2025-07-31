@@ -14,7 +14,7 @@ import { Level } from "react-accessible-headings"
 import { PlusSymbol } from "~/__lib/this/ui/components/plus-symbol"
 import { relocate_content_attribute } from "../utilities/relocate-content-attribute"
 import { Heading } from "./heading"
-import { HorizontalRule } from "./horizontal-rule"
+import { HorizontalRule } from "~/__lib/react/horizontal-rule"
 import { MinusSymbol } from "~/__lib/this/ui/components/minus-symbol"
 
 export class Section {
@@ -74,7 +74,7 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 			<div className={ classes_for_section_body }>
 				{ children }
 			</div>
-			<HorizontalRule.Renderer shade="dark" />
+			<HorizontalRule shade="dark" />
 		</Level>
 	}
 
@@ -84,6 +84,6 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 				{ children }
 			</div>
 		</div>
-		<HorizontalRule.Renderer shade="dark" />
+		<HorizontalRule shade="dark" />
 	</Level>
 }

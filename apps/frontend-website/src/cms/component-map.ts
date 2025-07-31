@@ -4,7 +4,6 @@ import { HeaderRegion } from "./components/header-region"
 import { SideRegion } from "./components/side-region"
 import { MainRegion } from "./components/main-region"
 import { Section } from "./components/section"
-import { HorizontalRule } from "./components/horizontal-rule"
 import { Image } from "./components/image"
 import { Gallery } from "./components/gallery"
 import { WYSIWYG } from "./components/wysiwyg"
@@ -28,7 +27,6 @@ export const component_map = {
 
 	"container.section-v1": Section,
 
-	"miscellaneous.horizontal-rule-v1": HorizontalRule,
 	"media.image-v1": Image,
 	"media.gallery-v1": Gallery,
 	"text.wysiwyg-v1": WYSIWYG,
