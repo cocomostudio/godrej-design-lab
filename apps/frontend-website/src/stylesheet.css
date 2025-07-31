@@ -113,3 +113,46 @@
 		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 	}
 }
+
+
+.hover-transition-one,
+.hover-transition-two,
+.hover-transition-three,
+.hover-transition-four {
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 200%;
+  mask-size: 200%;
+  transition: mask-size 100ms ease-in-out, -webkit-mask-size 100ms ease-in-out;
+  display: block;
+
+}
+
+.hover-transition-one:hover,
+.hover-transition-two:hover,
+.hover-transition-three:hover,
+.hover-transition-four:hover {
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+}
+
+/* Individual mask images */
+.hover-transition-one {
+  -webkit-mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+  mask-image: url('https://i.postimg.cc/s2VBMNgc/effect-one.png');
+}
+.hover-transition-two {
+  -webkit-mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+  mask-image: url('https://i.postimg.cc/ydghDQVk/hover-three.png');
+}
+.hover-transition-three {
+  -webkit-mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+  mask-image: url('https://i.postimg.cc/9Fv4Lmtg/hover-two.png');
+}
+.hover-transition-four {
+  -webkit-mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+  mask-image: url('https://i.postimg.cc/1tkGwGtM/hover-four.png');
+}
+
