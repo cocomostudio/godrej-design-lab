@@ -65,7 +65,7 @@ function TableOfContents ( { toc_content, className = null }: React.ComponentPro
 	const current_section_id = useCurrentSectionId()
 
 	return <nav className={ `${ className } md:w-1c lg:w-2c-1g pb-8 bg-white` } id="toc">
-		<ol className="text-xs text-secondary border-t border-primary">
+		<ol className="text-xs text-secondary border-t border-primary empty:hidden">
 			{ toc_content.map( ( { label, slug }, i ) => <li key={ i } className="py-3 border-b border-primary">
 				<a className={ `block ${ current_section_id === slug ? "font-bold" : "" }` } href={ "#" + slug }>{ label }</a>
 			</li> ) }
