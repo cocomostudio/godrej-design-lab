@@ -36,7 +36,7 @@ function Header () {
 		</div>
 		<div className="relative container flex justify-between items-start pt-8">
 			<Link to={ "/" } className={ `transition-opacity duration-150 ease-in ${ isNavOpen ? "opacity-0 pointer-events-none" : "" }` }>
-				<GDLLogo className="w-1c md:w-[calc(var(--column-width)/2)] lg:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
+				<GDLLogo className="w-1c md:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
 			</Link>
 			<button type="button" className="text-sm font-bold uppercase" onClick={ () => setIsNavOpen( v => !v ) }>
 				{ !isNavOpen && "Menu" }
@@ -56,7 +56,7 @@ function HeaderNavigation ( { isVisible = false, className = "" }: HeaderNavigat
 			<div className="end-col-1 text-secondary">
 				<div className="container flex justify-between items-start pt-8">
 					<Link to={ "/" } className={ `transition-opacity duration-250 ease-out ${ isVisible ? 'opacity-100 delay-300' : 'opacity-0' }` }>
-						<GDLLogo className="w-1c md:w-[calc(var(--column-width)/2)] lg:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
+						<GDLLogo className="w-1c md:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
 					</Link>
 					<div className={ `absolute top-full left-0 w-full transition-opacity duration-150 ease-out ${ isVisible ? "opacity-100 delay-300" : "opacity-0" }` }>
 						<div className="container text-right">

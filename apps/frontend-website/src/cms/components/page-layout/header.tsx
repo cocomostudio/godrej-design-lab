@@ -29,13 +29,13 @@ export function Header ({ navigation, featured_links }) {
 	useUpdateHeaderNavContainerHeightOnWindowResize( isNavOpen, nav_header_container_ref )
 	useMoveTableOfContents( isNavOpen )
 
-	return <header className="relative">
+	return <header className={ `relative ${ isNavOpen ? "" : "mb-16" } transition-[margin-bottom] duration-450 ease-vaul` }>
 		<div className={ `absolute top-0 left-0 w-full z-10 grid ${ OFFSET_FOR_NAVIGATION_WHEN_CLOSED__CLASS }` } ref={ nav_header_container_ref }>
 			<HeaderNavigation navigation={ navigation } featured_links={ featured_links } isVisible={ isNavOpen } onClose={ () => setIsNavOpen( false ) } className={ `w-full duration-450 ease-vaul` } />
 		</div>
 		<div className="relative container flex justify-between items-start pt-8">
 			<Link to={ "/" } className={ `md:invisible transition-opacity ease-in ${ isNavOpen ? "opacity-0 pointer-events-none duration-150" : "duration-450" }` }>
-				<GDLLogo className="fixed w-1c md:w-[calc(var(--column-width)/2)] lg:w-[calc(3*(var(--column-width)/4))] h-auto" />
+				<GDLLogo className="fixed w-1c md:w-[calc(3*(var(--column-width)/4))] h-auto" />
 			</Link>
 			<button type="button" className={ `text-sm font-bold uppercase transition-opacity ease-in ${ isNavOpen ? "max-md:opacity-0 max-md:pointer-events-none duration-150" : "duration-450" }` } onClick={ () => setIsNavOpen( v => !v ) }>
 				{ !isNavOpen && "Menu" }
@@ -134,7 +134,7 @@ function HeaderNavigation ( { navigation, featured_links, isVisible = false, onC
 			<div className="md:hidden end-col-1 text-secondary">
 				<div className="flex justify-between items-start pt-8">
 					<Link to={ "/" } className={ `transition-opacity duration-250 ease-out ${ isVisible ? 'opacity-100 delay-300' : 'opacity-0' }` }>
-						<GDLLogo className="w-1c md:w-[calc(var(--column-width)/2)] lg:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
+						<GDLLogo className="w-1c md:w-[calc(3*(var(--column-width)/4))] h-auto fill-secondary" />
 					</Link>
 					<div className={ `w-full transition-opacity duration-150 ease-out ${ isVisible ? "opacity-100 delay-300" : "opacity-0" }` }>
 						<div className="text-right">
