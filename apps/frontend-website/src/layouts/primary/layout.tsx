@@ -7,6 +7,7 @@ import {
 import { GDLLogo } from "~/__lib/this/ui/components/gdl-logo.js"
 
 import { Favicons } from "./favicons/favicons.js"
+import { PageScrollProgressIndicator } from "~/__lib/this/react/PageScrollProgressIndicator.js"
 
 
 
@@ -20,6 +21,8 @@ export default function PrimaryLayout () {
 		</div>
 
 		<LogoThatSticksToTheTop />
+
+		<PageScrollProgressIndicator />
 	</>
 }
 
