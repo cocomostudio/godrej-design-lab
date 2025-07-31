@@ -1,13 +1,16 @@
 import type React from "react";
 
+import stylesheet from "./home-dev.css?url"
+
 export default function ThisPage() {
-	return (
+	return <>
+		<link rel="stylesheet" href={ stylesheet } precedence="medium" />
 		<div className="container md:grid-layout">
 			<div className="start-col-2 end-col-last lg:start-col-3">
 				<Content className="mt-4 md:mt-8 lg:mt-10 lg:w-9c-8g" />
 			</div>
 		</div>
-	);
+	</>
 }
 
 function Content({ className }: React.ComponentProps<"main">) {
