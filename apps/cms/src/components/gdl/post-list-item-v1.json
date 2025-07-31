@@ -20,6 +20,17 @@
 			"type": "boolean",
 			"default": false
 		},
+		"effect": {
+			"type": "enumeration",
+			"enum": [
+				"dog-ears",
+				"cylinder",
+				"octagon",
+				"hourglass"
+			],
+			"default": "dog-ears",
+			"required": true
+		},
 		"content": {
 			"type": "blocks"
 		}

@@ -17,7 +17,8 @@ import { HeadingAndContentList } from "./components/gdl/heading-and-content-list
 import { ImageAndContent } from "./components/gdl/image-and-content"
 import { ImageAndContentList } from "./components/gdl/image-and-content-list"
 import { Promo } from "./components/gdl/promo"
-import { PostListing } from "./components/gdl/post-listing"
+import { PostListing } from "./components/gdl/post-listing/post-listing"
+
 export const component_map = {
 	"container.page-layout-v1": PageLayout,
 

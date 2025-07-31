@@ -1,0 +1,55 @@
+
+.mask-scale-effect {
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center center;
+	mask-position: center center;
+	-webkit-mask-size: 200%;
+	mask-size: 200%;
+
+	transition-duration: 4100ms;
+	transition-delay: 750ms;
+	transition-timing-function: ease-out;
+}
+
+.mask-scale-effect {
+	transition-property: -webkit-mask-size;
+}
+
+@supports ( mask-size: contain ) {
+	.mask-scale-effect {
+		transition-property: mask-size;
+	}
+}
+
+.mask-scale-effect img {
+	aspect-ratio: 749 / 488;
+}
+
+.mask-scale-effect-trigger:hover .mask-scale-effect {
+	transition-duration: 500ms;
+	transition-delay: 0ms;
+
+	-webkit-mask-size: 100%;
+	mask-size: 100%;
+}
+
+.mask--cylinder {
+	-webkit-mask-image: url( "./cylinder.png" );
+	mask-image: url( "./cylinder.png" );
+}
+
+.mask--dog-ears {
+	-webkit-mask-image: url( "./dog-ears.png" );
+	mask-image: url( "./dog-ears.png" );
+}
+
+.mask--octagon {
+	-webkit-mask-image: url( "./octagon.png" );
+	mask-image: url( "./octagon.png" );
+}
+
+.mask--hourglass {
+	-webkit-mask-image: url( "./plump-hourglass.png" );
+	mask-image: url( "./plump-hourglass.png" );
+}
