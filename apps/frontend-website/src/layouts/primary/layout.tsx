@@ -16,7 +16,7 @@ import { PageScrollProgressIndicator } from "~/__lib/this/react/PageScrollProgre
 export default function PrimaryLayout () {
 	return <>
 		<Favicons />
-		<div className="bg-white duration-450 ease-vaul translate-y-[--nav-header-height]" id="primary-layout">
+		<div className="h-full bg-white duration-450 ease-vaul translate-y-[--nav-header-height]" id="primary-layout">
 			<Outlet />
 		</div>
 

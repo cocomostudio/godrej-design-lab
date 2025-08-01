@@ -21,7 +21,7 @@ export function RootLayout ( { children }: { children: React.ReactNode } ) {
 			<Links />
 			{ arbitrary_code?.before_head_closing && <ArbitraryHTML tree={ arbitrary_code.before_head_closing } /> }
 		</head>
-		<body className="font-sans">
+		<body className="h-full font-sans">
 			{ arbitrary_code?.after_body_opening && <ArbitraryHTML tree={ arbitrary_code.after_body_opening } /> }
 			{ children }
 			<DesignInspector enabled={ false } />

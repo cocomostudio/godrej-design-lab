@@ -62,14 +62,14 @@ export class PageLayout {
 				cover={ meta.cover || page_context.cover }
 			/>
 
-			<div style={ color_scheme_styles }>
+			<div className="h-full flex flex-col" style={ color_scheme_styles }>
 				<Header navigation={ page_context.navigation } featured_links={ page_context.featured_links } />
 
-				<div className="relative container max-md:flex flex-col">
+				<div className="relative container max-md:flex flex-col mb-10 md:mb-22">
 					{ children }
 				</div>
 
-				<Footer blurb={ page_context?.blurb } navigation={ page_context.navigation } className="mt-10 md:mt-22" />
+				<Footer blurb={ page_context?.blurb } navigation={ page_context.navigation } className="mt-auto mb-0" />
 			</div>
 		</>
 	}
