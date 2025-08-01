@@ -10,7 +10,7 @@ export function fetch_route_from_cms ( slug: string, search_params: URLSearchPar
 }
 
 function prepare_url ( slug: string ): URL {
-	const path = "/" + slug
+	const path = "/" + ( slug || "" )
 	const api_path = `/api/webtools/router?path=${ path }&pull_query_from_body=true`
 	return new URL( api_path, CMS_PUBLIC_DIR_URL )
 }
