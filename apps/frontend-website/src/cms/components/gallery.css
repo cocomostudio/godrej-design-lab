@@ -85,7 +85,7 @@
  |
  |
  */
-@media ( min-width: 120rem ) {
+@media ( min-width: 720px ) {
 	.image-context:has( .image-container:hover ) .image-caption {
 		transition-delay: 0s;
 		opacity: 0.25;
