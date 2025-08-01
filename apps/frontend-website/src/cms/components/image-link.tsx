@@ -20,7 +20,15 @@ export class ImageLink {
 	}
 
 	static Renderer ({ image, link }) {
-		return <Link to={ link.url } className="rounded-md overflow-hidden">
+		let props = { }
+		if ( link.target ) {
+			props.target = link.target
+		}
+		else if ( ! link.url.startsWith( "/" ) ) {
+			props.target = "_blank"
+		}
+
+		return <Link to={ link.url } className="rounded-md overflow-hidden" { ...props }>
 			<img src={ CMS_PUBLIC_DIR_URL + image.file.url } alt={ image.file.alternativeText } className="object-cover" />
 		</Link>
 	}
