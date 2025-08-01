@@ -47,6 +47,10 @@
 			"component": "navigation.link-v1",
 			"repeatable": true,
 			"max": 2
+		},
+		"arbitrary_code": {
+			"type": "component",
+			"component": "code.html-document-hooks-v1"
 		}
 	}
 }

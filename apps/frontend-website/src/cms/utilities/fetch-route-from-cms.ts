@@ -92,7 +92,18 @@ function prepare_request_payload ( search_params: URLSearchParams ) {
 	}
 	let populate = {
 		page_context: {
-			populate: "*",
+			populate: {
+				cover: populate_all,
+				navigation: populate_all,
+				featured_links: populate_all,
+				arbitrary_code: {
+					populate: {
+						before_head_closing: populate_all,
+						after_body_opening: populate_all,
+						before_body_closing: populate_all
+					}
+				}
+			}
 		},
 		color_scheme: {
 			populate: "*"

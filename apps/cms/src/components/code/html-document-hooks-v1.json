@@ -1,0 +1,28 @@
+{
+	"collectionName": "components_code_html_document_hooks_v1",
+	"info": {
+		"displayName": "HTML Document Code Hooks",
+		"description": "Inject arbitrary code at various points in the HTML document."
+	},
+	"options": { },
+	"attributes": {
+		"before_head_closing": {
+			"type": "dynamiczone",
+			"components": [
+				"code.script-v1"
+			]
+		},
+		"after_body_opening": {
+			"type": "dynamiczone",
+			"components": [
+				"code.script-v1"
+			]
+		},
+		"before_body_closing": {
+			"type": "dynamiczone",
+			"components": [
+				"code.script-v1"
+			]
+		}
+	}
+}

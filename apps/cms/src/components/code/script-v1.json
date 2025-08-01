@@ -1,0 +1,68 @@
+{
+	"collectionName": "components_code_script_v1",
+	"info": {
+		"displayName": "<script/>",
+		"description": "Render a <script/> tag"
+	},
+	"options": { },
+	"attributes": {
+		"type": {
+			"type": "enumeration",
+			"enum": [
+				"text/javascript",
+				"module",
+				"importmap"
+			],
+			"required": true,
+			"default": "text/javascript"
+		},
+		"src": {
+			"type": "string",
+			"required": false
+		},
+		"code": {
+			"type": "text",
+			"required": false
+		},
+		"async": {
+			"type": "boolean",
+			"required": false
+		},
+		"defer": {
+			"type": "boolean",
+			"required": false
+		},
+		"cross_origin": {
+			"type": "enumeration",
+			"enum": [
+				"anonymous",
+				"use-credentials"
+			],
+			"required": true,
+			"default": "anonymous"
+		},
+		"integrity": {
+			"type": "string",
+			"required": false
+		},
+		"nonce": {
+			"type": "string",
+			"required": false
+		},
+		"referrer_policy": {
+			"type": "enumeration",
+			"enum": [
+				"no-referrer",
+				"no-referrer-when-downgrade",
+				"origin",
+				"origin-when-cross-origin",
+				"same-origin",
+				"strict-origin",
+				"strict-origin-when-cross-origin",
+				"unsafe-url"
+			],
+			"required": true,
+			"default": "strict-origin-when-cross-origin"
+		}
+	}
+}
