@@ -144,8 +144,8 @@ function HeaderNavigation ( { navigation, featured_links, isVisible = false, onC
 				</div>
 			</div>
 			<div className={ `start-col-2 end-gutter-5 lg:end-col-7 text-secondary transition-opacity duration-250 ease-out ${ isVisible ? "opacity-100 delay-300" : "opacity-0" }` }>
-				<ul className="mt-8 flex flex-col md:flex-row flex-wrap gap-6 pb-6 md:gap-3 lg:gap-1g md:pb-0">
-					{ navigation.map( ( { label, url }, i ) => <li key={ i } className="md:w-1c-3g lg:w-2c-1g border-t border-secondary border-solid pt-6 md:pt-3"><Link to={ url } className="text-p md:text-sm font-bold uppercase">{ label }</Link></li> ) }
+				<ul className="mt-8 flex flex-col md:grid grid-cols-3 gap-3 pb-6 lg:gap-1g md:pb-0">
+					{ navigation.map( ( { label, url }, i ) => <li key={ i } className="border-t border-secondary border-solid pt-3 overflow-hidden text-ellipsis"><Link to={ url } className="text-p md:text-sm font-bold uppercase whitespace-nowrap">{ label }</Link></li> ) }
 				</ul>
 			</div>
 			<div className="start-col-6 end-col-last md:ml-1g md:pl-6 lg:start-col-8 lg:ml-[calc(var(--column-width)/2)] bg-secondary text-primary z-10">
