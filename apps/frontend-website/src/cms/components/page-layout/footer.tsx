@@ -24,7 +24,7 @@ export function Footer ( { blurb = [ ], navigation, className }: FooterNavigatio
 						</ul>
 					</div>
 				</div>
-				<div className="relative start-gutter-5 lg:start-gutter-7 end-col-last lg:ml-0 py-4.5 md:pl-8 md:py-6 lg:pl-12 lg:py-10 bg-secondary text-white z-10 | before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-secondary md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-secondary md:after:hidden">
+				<div className="relative start-gutter-5 lg:start-gutter-7 end-col-last lg:ml-0 py-4.5 md:pl-8 md:py-6 lg:pl-12 lg:py-10 bg-secondary text-white z-10 | before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-secondary md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-secondary">
 					<div className="md:flex flex-col justify-between h-full bg-secondary">
 						<Link to={ "/" }>
 							<GodrejLogo className="md:w-1c h-auto fill-white" />
