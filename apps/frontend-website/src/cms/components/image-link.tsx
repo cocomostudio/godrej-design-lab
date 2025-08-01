@@ -21,7 +21,7 @@ export class ImageLink {
 
 	static Renderer ({ image, link }) {
 		return <Link to={ link.url } className="rounded-md overflow-hidden">
-			<img src={ CMS_PUBLIC_DIR_URL + image.file.url } alt={ image.file.alternativeText } className="_md:aspect-square object-cover" />
+			<img src={ CMS_PUBLIC_DIR_URL + image.file.url } alt={ image.file.alternativeText } className="object-cover" />
 		</Link>
 	}
 }
