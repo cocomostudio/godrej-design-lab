@@ -16,5 +16,39 @@
 			"repeatable": true,
 			"min": 1
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"name": {
+				"edit": {
+					"label": "Name",
+					"description": "The name of the fellowship programme; typically it will just be the year."
+				},
+				"list": {
+					"label": "Name"
+				}
+			},
+			"projects": {
+				"edit": {
+					"label": "Projects",
+					"description": ""
+				},
+				"list": {
+					"label": "Projects"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "name", "size": 12 }
+				],
+				[
+					{ "name": "projects", "size": 12 }
+				]
+			]
+		}
 	}
 }

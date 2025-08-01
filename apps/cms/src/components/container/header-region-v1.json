@@ -12,5 +12,27 @@
 				"container.section-v1"
 			]
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": "The header region is for the introductory content of the page. Do not place the entirety of the page's content here."
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

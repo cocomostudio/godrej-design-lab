@@ -27,5 +27,49 @@
 			"default": "sans-serif",
 			"required": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": ""
+				},
+				"list": {
+					"label": "Content"
+				}
+			},
+			"layout": {
+				"edit": {
+					"label": "Layout",
+					"description": "Should this span the entire content area width, or just a **normal** (narrow) column?"
+				},
+				"list": {
+					"label": "Layout"
+				}
+			},
+			"font_family": {
+				"edit": {
+					"label": "Font Family",
+					"description": ""
+				},
+				"list": {
+					"label": "Font Family"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "layout", "size": 6 },
+					{ "name": "font_family", "size": 6 }
+				],
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

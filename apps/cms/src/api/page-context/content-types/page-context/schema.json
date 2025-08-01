@@ -52,5 +52,109 @@
 			"type": "component",
 			"component": "code.html-document-hooks-v1"
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"name": {
+				"edit": {
+					"label": "Name",
+					"description": "A name to identify this context by"
+				},
+				"list": {
+					"label": "Name"
+				}
+			},
+			"site_title": {
+				"edit": {
+					"label": "Site Title",
+					"description": "This is visible when sharing links on social media"
+				},
+				"list": {
+					"label": "Site Title"
+				}
+			},
+			"site_description": {
+				"edit": {
+					"label": "Site Description",
+					"description": "This is visible when sharing links on social media"
+				},
+				"list": {
+					"label": "Site Description"
+				}
+			},
+			"cover": {
+				"edit": {
+					"label": "Cover",
+					"description": "This image is shown when links are shared on social media, in case the cover image is not set for page/post being shared"
+				},
+				"list": {
+					"label": "Cover"
+				}
+			},
+			"blurb": {
+				"edit": {
+					"label": "Footer Blurb",
+					"description": "This goes on the footer"
+				},
+				"list": {
+					"label": "Footer Blurb"
+				}
+			},
+			"navigation": {
+				"edit": {
+					"label": "Navigation",
+					"description": "Navigation links that show up both on the header and footer"
+				},
+				"list": {
+					"label": "Navigation"
+				}
+			},
+			"featured_links": {
+				"edit": {
+					"label": "Featured Links",
+					"description": "Navigation links that show up only on the header; for highlighting recent posts"
+				},
+				"list": {
+					"label": "Featured Links"
+				}
+			},
+			"arbitrary_code": {
+				"edit": {
+					"label": "Arbitrary Code",
+					"description": "Some services such as Google Analytics, Facebook Pixel, HotJar need their code to be embedded in page. This is how it can be done."
+				},
+				"list": {
+					"label": "Arbitrary Code"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "name", "size": 6 }
+				],
+				[
+					{ "name": "site_title", "size": 6 },
+					{ "name": "site_description", "size": 6 }
+				],
+				[
+					{ "name": "cover", "size": 12 }
+				],
+				[
+					{ "name": "blurb", "size": 12 }
+				],
+				[
+					{ "name": "navigation", "size": 12 }
+				],
+				[
+					{ "name": "featured_links", "size": 12 }
+				],
+				[
+					{ "name": "arbitrary_code", "size": 12 }
+				]
+			]
+		}
 	}
 }

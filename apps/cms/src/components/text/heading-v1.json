@@ -40,5 +40,71 @@
 			"component": "navigation.link-v1",
 			"required": false
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"level": {
+				"edit": {
+					"label": "Level",
+					"description": "This determines the font-size of the heading"
+				},
+				"list": {
+					"label": "Level"
+				}
+			},
+			"line_1": {
+				"edit": {
+					"label": "Line 1",
+					"description": ""
+				},
+				"list": {
+					"label": "Line 1"
+				}
+			},
+			"line_2": {
+				"edit": {
+					"label": "Line 2",
+					"description": ""
+				},
+				"list": {
+					"label": "Line 2"
+				}
+			},
+			"font_family": {
+				"edit": {
+					"label": "Font Family",
+					"description": ""
+				},
+				"list": {
+					"label": "Font Family"
+				}
+			},
+			"link": {
+				"edit": {
+					"label": "Link",
+					"description": "If you want to add a button that links to another page, put in a link here"
+				},
+				"list": {
+					"label": "Link"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "level", "size": 6 },
+					{ "name": "font_family", "size": 6 }
+				],
+				[
+					{ "name": "line_1", "size": 6 },
+					{ "name": "line_2", "size": 6 }
+				],
+				[
+					{ "name": "link", "size": 12 }
+				]
+			]
+		}
 	}
 }

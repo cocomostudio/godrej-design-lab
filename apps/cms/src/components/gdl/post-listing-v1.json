@@ -26,5 +26,49 @@
 			"required": true,
 			"repeatable": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"layout": {
+				"edit": {
+					"label": "Layout",
+					"description": ""
+				},
+				"list": {
+					"label": "Layout"
+				}
+			},
+			"feature_first_post": {
+				"edit": {
+					"label": "Feature First Post",
+					"description": "If toggled on, the first post will be full-width"
+				},
+				"list": {
+					"label": "Feature First Post"
+				}
+			},
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": ""
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "layout", "size": 6 },
+					{ "name": "feature_first_post", "size": 6 }
+				],
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

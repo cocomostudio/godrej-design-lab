@@ -20,5 +20,37 @@
 			"required": true,
 			"default": "natural"
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"file": {
+				"edit": {
+					"label": "Image File",
+					"description": ""
+				},
+				"list": {
+					"label": "Image File"
+				}
+			},
+			"aspect_ratio": {
+				"edit": {
+					"label": "Aspect Ratio",
+					"description": ""
+				},
+				"list": {
+					"label": "Aspect Ratio"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "file", "size": 6 },
+					{ "name": "aspect_ratio", "size": 6 }
+				]
+			]
+		}
 	}
 }

@@ -24,5 +24,63 @@
 			"component": "navigation.link-v1",
 			"required": false
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"heading": {
+				"edit": {
+					"label": "Heading",
+					"description": ""
+				},
+				"list": {
+					"label": "Heading"
+				}
+			},
+			"image": {
+				"edit": {
+					"label": "Image",
+					"description": ""
+				},
+				"list": {
+					"label": "Image"
+				}
+			},
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": ""
+				},
+				"list": {
+					"label": "Content"
+				}
+			},
+			"link": {
+				"edit": {
+					"label": "Link",
+					"description": ""
+				},
+				"list": {
+					"label": "Link"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "heading", "size": 12 }
+				],
+				[
+					{ "name": "image", "size": 12 }
+				],
+				[
+					{ "name": "content", "size": 12 }
+				],
+				[
+					{ "name": "link", "size": 12 }
+				]
+			]
+		}
 	}
 }

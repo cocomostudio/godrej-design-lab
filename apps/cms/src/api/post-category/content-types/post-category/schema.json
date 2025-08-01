@@ -26,5 +26,39 @@
 			"target": "api::post.post",
 			"mappedBy": "category"
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"title": {
+				"edit": {
+					"label": "Title",
+					"description": ""
+				},
+				"list": {
+					"label": "Title"
+				}
+			},
+			"posts": {
+				"edit": {
+					"label": "Posts",
+					"description": "Posts that associated with this category"
+				},
+				"list": {
+					"label": "Posts"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "title", "size": 12 }
+				],
+				[
+					{ "name": "posts", "size": 12 }
+				]
+			]
+		}
 	}
 }

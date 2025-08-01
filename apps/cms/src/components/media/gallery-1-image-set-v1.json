@@ -20,5 +20,37 @@
 			"required": true,
 			"multiple": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"layout": {
+				"edit": {
+					"label": "Layout",
+					"description": "",
+					"visible": false
+				},
+				"list": {
+					"label": "Layout"
+				}
+			},
+			"images": {
+				"edit": {
+					"label": "Images",
+					"description": ""
+				},
+				"list": {
+					"label": "Images"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "images", "size": 12 }
+				]
+			]
+		}
 	}
 }

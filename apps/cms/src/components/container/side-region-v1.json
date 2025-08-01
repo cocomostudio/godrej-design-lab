@@ -12,5 +12,27 @@
 				"container.section-v1"
 			]
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": "The side region is for content that is only indirectly related to the document's main content. Content is this region is tucked away to the side of the page. However, on mobile, they slide in between the header and main regions."
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

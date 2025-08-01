@@ -24,5 +24,51 @@
 				"code.script-v1"
 			]
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"before_head_closing": {
+				"edit": {
+					"label": "Before the closing </head> tag",
+					"description": ""
+				},
+				"list": {
+					"label": "Before the closing </head> tag"
+				}
+			},
+			"after_body_opening": {
+				"edit": {
+					"label": "After the opening <body> tag",
+					"description": ""
+				},
+				"list": {
+					"label": "After the opening <body> tag"
+				}
+			},
+			"before_body_closing": {
+				"edit": {
+					"label": "Before the closing </body> tag",
+					"description": ""
+				},
+				"list": {
+					"label": "Before the closing </body> tag"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "before_head_closing", "size": 12 }
+				],
+				[
+					{ "name": "after_body_opening", "size": 12 }
+				],
+				[
+					{ "name": "before_body_closing", "size": 12 }
+				]
+			]
+		}
 	}
 }

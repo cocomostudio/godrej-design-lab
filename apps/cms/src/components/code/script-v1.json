@@ -64,5 +64,115 @@
 			"required": true,
 			"default": "strict-origin-when-cross-origin"
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"type": {
+				"edit": {
+					"label": "Type",
+					"description": "The type of script represented by the element: a classic script, an import map, a JavaScript module, speculation rules, or a data block"
+				},
+				"list": {
+					"label": "Type"
+				}
+			},
+			"src": {
+				"edit": {
+					"label": "Script URL",
+					"description": "Specifies the URI of an external script"
+				},
+				"list": {
+					"label": "Script URL"
+				}
+			},
+			"code": {
+				"edit": {
+					"label": "Code",
+					"description": "The code for this script; leave this empty if you've filled in the \"Script URL\""
+				},
+				"list": {
+					"label": "Code"
+				}
+			},
+			"async": {
+				"edit": {
+					"label": "Async",
+					"description": ""
+				},
+				"list": {
+					"label": "Async"
+				}
+			},
+			"defer": {
+				"edit": {
+					"label": "Defer",
+					"description": ""
+				},
+				"list": {
+					"label": "Defer"
+				}
+			},
+			"cross_origin": {
+				"edit": {
+					"label": "Cross Origin",
+					"description": ""
+				},
+				"list": {
+					"label": "Cross Origin"
+				}
+			},
+			"integrity": {
+				"edit": {
+					"label": "Integrity",
+					"description": ""
+				},
+				"list": {
+					"label": "Integrity"
+				}
+			},
+			"nonce": {
+				"edit": {
+					"label": "Nonce",
+					"description": ""
+				},
+				"list": {
+					"label": "Nonce"
+				}
+			},
+			"referrer_policy": {
+				"edit": {
+					"label": "Referrer Policy",
+					"description": ""
+				},
+				"list": {
+					"label": "Referrer Policy"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "type", "size": 6 },
+					{ "name": "src", "size": 6 }
+				],
+				[
+					{ "name": "code", "size": 12 }
+				],
+				[
+					{ "name": "async", "size": 6 },
+					{ "name": "defer", "size": 6 }
+				],
+				[
+					{ "name": "integrity", "size": 6 },
+					{ "name": "nonce", "size": 6 }
+				],
+				[
+					{ "name": "cross_origin", "size": 6 },
+					{ "name": "referrer_policy", "size": 6 }
+				]
+			]
+		}
 	}
 }

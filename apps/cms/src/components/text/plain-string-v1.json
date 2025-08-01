@@ -9,5 +9,27 @@
 		"content": {
 			"type": "string"
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": ""
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

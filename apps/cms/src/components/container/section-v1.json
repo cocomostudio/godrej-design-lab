@@ -2,7 +2,7 @@
 	"collectionName": "components_container_section_v1",
 	"info": {
 		"displayName": "Section",
-		"description": ""
+		"description": "A standalone section of the page."
 	},
 	"options": { },
 	"attributes": {
@@ -44,6 +44,84 @@
 				"media.gallery-v1",
 				"navigation.button-link-v1",
 				"navigation.image-link-v1"
+			]
+		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"register_with_toc": {
+				"edit": {
+					"label": "Show on \"Table of Contents\"?",
+					"description": "Toggling this will feature this section on the Table of Contents"
+				},
+				"list": {
+					"label": "Show on \"Table of Contents\"?"
+				}
+			},
+			"title": {
+				"edit": {
+					"label": "Title",
+					"description": "The title as it will appear on the Table of Contents (and not in the main content area)"
+				},
+				"list": {
+					"label": "Title"
+				}
+			},
+			"heading": {
+				"edit": {
+					"label": "Heading",
+					"description": "This will be displayed at the top of the section"
+				},
+				"list": {
+					"label": "Heading"
+				}
+			},
+			"collapsible": {
+				"edit": {
+					"label": "Collapsible",
+					"description": "Toggling this will allow users to collapse/expand this section"
+				},
+				"list": {
+					"label": "Collapsible"
+				}
+			},
+			"collapsed_by_default": {
+				"edit": {
+					"label": "Collapsed by default?",
+					"description": "Should the section be in a collapsed state by default?"
+				},
+				"list": {
+					"label": "Collapsed by default?"
+				}
+			},
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": "The content of the section goes here"
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "title", "size": 6 },
+					{ "name": "register_with_toc", "size": 6 }
+				],
+				[
+					{ "name": "heading", "size": 12 }
+				],
+				[
+					{ "name": "collapsible", "size": 6 },
+					{ "name": "collapsed_by_default", "size": 6 }
+				],
+				[
+					{ "name": "content", "size": 12 }
+				]
 			]
 		}
 	}

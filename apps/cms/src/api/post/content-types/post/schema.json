@@ -70,5 +70,118 @@
 			"visible": false,
 			"unique": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"page_context": {
+				"edit": {
+					"label": "Page Context",
+					"description": "This comprises of the header and footer sections for the post"
+				},
+				"list": {
+					"label": "Page Context"
+				}
+			},
+			"color_scheme": {
+				"edit": {
+					"label": "Color Scheme",
+					"description": "Pair of colors that'll be used throughout the post."
+				},
+				"list": {
+					"label": "Color Scheme"
+				}
+			},
+			"toc": {
+				"edit": {
+					"label": "Table of Contents",
+					"description": "Should a table of contents be enabled for this post?"
+				},
+				"list": {
+					"label": "Table of Contents"
+				}
+			},
+			"title": {
+				"edit": {
+					"label": "Title",
+					"description": ""
+				},
+				"list": {
+					"label": "Title"
+				}
+			},
+			"cover": {
+				"edit": {
+					"label": "Cover",
+					"description": "Image that'll be shown when this post is shared on social media"
+				},
+				"list": {
+					"label": "Cover"
+				}
+			},
+			"category": {
+				"edit": {
+					"label": "Category",
+					"description": "Currently only serves as an aid when filtering through posts here on Strapi"
+				},
+				"list": {
+					"label": "Category"
+				}
+			},
+			"header_region": {
+				"edit": {
+					"label": "Header Region",
+				},
+				"list": {
+					"label": "Header Region"
+				}
+			},
+			"main_region": {
+				"edit": {
+					"label": "Main Region",
+				},
+				"list": {
+					"label": "Main Region"
+				}
+			},
+			"side_region": {
+				"edit": {
+					"label": "Side Region",
+				},
+				"list": {
+					"label": "Side Region"
+				}
+			},
+			"url_alias": {
+				"editable": false,
+				"visible": false
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "title", "size": 6 },
+					{ "name": "toc", "size": 6 }
+				],
+				[
+					{ "name": "page_context", "size": 6 },
+					{ "name": "color_scheme", "size": 6 }
+				],
+				[
+					{ "name": "cover", "size": 6 },
+					{ "name": "category", "size": 6 }
+				],
+				[
+					{ "name": "header_region", "size": 12 }
+				],
+				[
+					{ "name": "main_region", "size": 12 }
+				],
+				[
+					{ "name": "side_region", "size": 12 }
+				]
+			]
+		}
 	}
 }

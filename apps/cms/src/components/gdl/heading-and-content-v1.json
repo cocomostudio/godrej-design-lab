@@ -14,5 +14,39 @@
 			"type": "blocks",
 			"required": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"heading": {
+				"edit": {
+					"label": "Heading",
+					"description": ""
+				},
+				"list": {
+					"label": "Heading"
+				}
+			},
+			"content": {
+				"edit": {
+					"label": "Content",
+					"description": ""
+				},
+				"list": {
+					"label": "Content"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "heading", "size": 12 }
+				],
+				[
+					{ "name": "content", "size": 12 }
+				]
+			]
+		}
 	}
 }

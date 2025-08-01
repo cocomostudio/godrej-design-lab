@@ -64,5 +64,108 @@
 			"visible": false,
 			"unique": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"page_context": {
+				"edit": {
+					"label": "Page Context",
+					"description": "This comprises of the header and footer sections for the page"
+				},
+				"list": {
+					"label": "Page Context"
+				}
+			},
+			"color_scheme": {
+				"edit": {
+					"label": "Color Scheme",
+					"description": "Pair of colors that'll be used throughout the page."
+				},
+				"list": {
+					"label": "Color Scheme"
+				}
+			},
+			"toc": {
+				"edit": {
+					"label": "Table of Contents",
+					"description": "Should a table of contents be enabled for this page?"
+				},
+				"list": {
+					"label": "Table of Contents"
+				}
+			},
+			"title": {
+				"edit": {
+					"label": "Title",
+					"description": ""
+				},
+				"list": {
+					"label": "Title"
+				}
+			},
+			"cover": {
+				"edit": {
+					"label": "Cover",
+					"description": "Image that'll be shown when this page is shared on social media"
+				},
+				"list": {
+					"label": "Cover"
+				}
+			},
+			"header_region": {
+				"edit": {
+					"label": "Header Region",
+				},
+				"list": {
+					"label": "Header Region"
+				}
+			},
+			"main_region": {
+				"edit": {
+					"label": "Main Region",
+				},
+				"list": {
+					"label": "Main Region"
+				}
+			},
+			"side_region": {
+				"edit": {
+					"label": "Side Region",
+				},
+				"list": {
+					"label": "Side Region"
+				}
+			},
+			"url_alias": {
+				"editable": false,
+				"visible": false
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "title", "size": 6 },
+					{ "name": "toc", "size": 6 }
+				],
+				[
+					{ "name": "page_context", "size": 6 },
+					{ "name": "color_scheme", "size": 6 }
+				],
+				[
+					{ "name": "cover", "size": 12 }
+				],
+				[
+					{ "name": "header_region", "size": 12 }
+				],
+				[
+					{ "name": "main_region", "size": 12 }
+				],
+				[
+					{ "name": "side_region", "size": 12 }
+				]
+			]
+		}
 	}
 }

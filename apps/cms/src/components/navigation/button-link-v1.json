@@ -11,5 +11,27 @@
 			"component": "navigation.link-v1",
 			"required": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"link": {
+				"edit": {
+					"label": "Link",
+					"description": ""
+				},
+				"list": {
+					"label": "Link"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "link", "size": 12 }
+				]
+			]
+		}
 	}
 }

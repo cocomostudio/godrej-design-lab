@@ -40,5 +40,67 @@
 			"type": "string",
 			"required": false
 		}
+	},
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"name": {
+				"edit": {
+					"label": "Name",
+					"placeholder": "Primary Color | Secondary Color",
+					"description": "A descriptive label to identify the color pair"
+				},
+				"list": {
+					"label": "Name"
+				}
+			},
+			"description": {
+				"edit": {
+					"label": "Description",
+					"description": "Additional context like the purpose behind this color scheme or its original intent (optional)"
+				},
+				"list": {
+					"label": "Description"
+				}
+			},
+			"primary_color_hex": {
+				"edit": {
+					"label": "Primary Color",
+					"placeholder": "#FFFFFF"
+				},
+				"list": {
+					"label": "Primary Color"
+				}
+			},
+			"primary_color_rgb": {
+				"editable": false,
+				"visible": false
+			},
+			"secondary_color_hex": {
+				"edit": {
+					"label": "Secondary Color",
+					"placeholder": "#FFFFFF"
+				},
+				"list": {
+					"label": "Secondary Color"
+				}
+			},
+			"secondary_color_rgb": {
+				"editable": false,
+				"visible": false
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "name", "size": 6 },
+					{ "name": "description", "size": 6 }
+				],
+				[
+					{ "name": "primary_color_hex", "size": 6 },
+					{ "name": "secondary_color_hex", "size": 6 }
+				]
+			]
+		}
 	}
 }

@@ -22,5 +22,39 @@
 			"required": true,
 			"multiple": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"layout": {
+				"edit": {
+					"label": "Layout",
+					"description": "The relative ratios of the image widths in the set"
+				},
+				"list": {
+					"label": "Layout"
+				}
+			},
+			"images": {
+				"edit": {
+					"label": "Images",
+					"description": ""
+				},
+				"list": {
+					"label": "Images"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "layout", "size": 12 }
+				],
+				[
+					{ "name": "images", "size": 12 }
+				]
+			]
+		}
 	}
 }
