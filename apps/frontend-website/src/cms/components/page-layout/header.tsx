@@ -149,7 +149,7 @@ function HeaderNavigation ( { navigation, featured_links, isVisible = false, onC
 				</ul>
 			</div>
 			<div className="start-col-6 end-col-last md:ml-1g md:pl-6 lg:start-col-8 lg:ml-[calc(var(--column-width)/2)] bg-secondary text-primary z-10">
-				<div className="relative py-8 bg-secondary before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-secondary md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-secondary md:after:hidden">
+				<div className="relative py-8 bg-secondary before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-secondary md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-secondary">
 					<h2 className={ `border-t border-primary border-solid md:border-none pt-4 md:pt-0 text-p font-bold uppercase transition-opacity duration-250 ease-out ${ isVisible ? "opacity-100 delay-300" : "opacity-0" }` }>Latest</h2>
 					<ul className={ `mt-6 space-y-3 transition-opacity duration-250 ease-out ${ isVisible ? "opacity-100 delay-300" : "opacity-0" }` }>
 						{ featured_links.map( ( { label, url }, i ) => <li key={ i } className=""><Link to={ url } className="text-sm">{ label }</Link></li> ) }
