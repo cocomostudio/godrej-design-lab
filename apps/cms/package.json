@@ -24,6 +24,7 @@
 		"upgrade:dry": "npx @strapi/upgrade latest --dry"
 	},
 	"dependencies": {
+		"@fastify/deepmerge": "^3.1.0",
 		"@strapi/plugin-cloud": "5.12.7",
 		"@strapi/plugin-color-picker": "5.19.0",
 		"@strapi/plugin-users-permissions": "5.12.7",
