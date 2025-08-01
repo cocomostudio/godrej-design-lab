@@ -27,7 +27,7 @@ export default function PrimaryLayout () {
 }
 
 function LogoThatSticksToTheTop () {
-	return <div className="max-md:hidden fixed top-0 left-0 w-full pt-8 pointer-events-none">
+	return <div className="max-md:hidden fixed top-0 left-0 w-full pt-8 md:pt-6 lg:pt-12 pointer-events-none">
 		<div className="container">
 			<Link to={ "/" } className="inline-block pointer-events-auto">
 				<GDLLogo className="w-1c md:w-[calc(3*(var(--column-width)/4))] h-auto fill-black [[data-nav-open=true]_&]:fill-secondary transition-colors duration-450 ease-in" />
