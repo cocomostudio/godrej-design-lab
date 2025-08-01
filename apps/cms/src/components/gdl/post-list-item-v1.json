@@ -69,7 +69,7 @@
 			"effect": {
 				"edit": {
 					"label": "Hover Effect",
-					"description": "Choose from a variety of shapes that the post images will morph into them when hovered over."
+					"description": "Choose from a variety of shapes that the post images will morph into when hovered over."
 				},
 				"list": {
 					"label": "Effect"
