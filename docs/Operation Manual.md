@@ -291,7 +291,7 @@ $ sudo chmod 644 /etc/profile.d/node-extra-ca.sh
 
 **Environment variables for Strapi in the CMS box**
 
-Finally, and again only on the CMS box, we wire up all the environment variables necessary for the CMS to run (essentially informing the CMS about the database and the CDN)
+Here, we wire up all the environment variables necessary for the CMS to run (essentially informing the CMS about the database and the CDN)
 
 ```bash
 cat > apps/cms/.env <<EOF
