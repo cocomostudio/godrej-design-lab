@@ -19,7 +19,7 @@
 		"metadatas": {
 			"content": {
 				"edit": {
-					"label": "Content",
+					"label": "Main region",
 					"description": "This region represents the dominant content of the page. It consists of content that is directly related to or expands upon the central topic of the page."
 				},
 				"list": {
