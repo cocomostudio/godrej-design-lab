@@ -30,11 +30,11 @@
 			},
 			"description": {
 				"edit": {
-					"label": "Description",
+					"label": "Role/Designation",
 					"description": ""
 				},
 				"list": {
-					"label": "Description"
+					"label": "Role/Designation"
 				}
 			}
 		},
