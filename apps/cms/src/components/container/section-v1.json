@@ -98,7 +98,7 @@
 			},
 			"content": {
 				"edit": {
-					"label": "Content",
+					"label": "Section",
 					"description": "The content of the section goes here"
 				},
 				"list": {
