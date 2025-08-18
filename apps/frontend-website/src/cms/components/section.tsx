@@ -67,7 +67,7 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 		return null
 	}
 
-	const classes_for_section_body = "md:[&>:not(.full-width)]:md:ml-2c-2g lg:[&>:not(.full-width)]:md:ml-3c-3g w-full"
+	const classes_for_section_body = "md:[&>:not(.full-width)]:md:ml-2c-2g lg:[&>:not(.full-width)]:md:ml-3c-3g w-full | [&>*:first-child]:mt-0"
 
 	if ( ! is_collapsible ) {
 		return <Level>
@@ -80,7 +80,7 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 
 	return <Level>
 		<div className={ `not-interpolate:grid ${ isOpen ? "not-interpolate:grid-rows-[1fr] interpolate:h-auto" : "not-interpolate:grid-rows-[0fr] interpolate:h-0 delay-250" } interpolate:overflow-hidden not-interpolate:transition-all interpolate:transition-[height] !duration-450 !ease-vaul` } { ...props }>
-			<div className={ `not-interpolate:overflow-hidden ${ isOpen ? "delay-300" : "opacity-0 pointer-events-none" } transition-opacity duration-250 | ${ classes_for_section_body }` }>
+			<div className={ `mt-6 md:mt-8 lg:mt-10 not-interpolate:overflow-hidden ${ isOpen ? "delay-300" : "opacity-0 pointer-events-none" } transition-opacity duration-250 | ${ classes_for_section_body }` }>
 				{ children }
 			</div>
 		</div>
