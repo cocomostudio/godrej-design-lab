@@ -19,7 +19,7 @@ export class Fellowship {
 	}
 
 	static Renderer ({ description, projects }) {
-		return <div className="full-width fellowship-programme mt-4 [.fellowship-programme:first-child]:mt-0">
+		return <div className="full-width fellowship-programme mt-6 md:mt-8 lg:mt-10 [.fellowship-programme:first-child]:mt-0">
 			<TableHeader />
 
 			{ projects.map( ( { description, cover, fellows, link }, i ) => <div key={ i } className="fellowship-project mt-3.5 md:mt-4 flex flex-wrap md:border-b border-black md:last:border-none md:pb-4">
