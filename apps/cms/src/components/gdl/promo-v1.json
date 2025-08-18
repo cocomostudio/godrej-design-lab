@@ -13,7 +13,8 @@
 		"image": {
 			"type": "media",
 			"allowedTypes": [ "images" ],
-			"multiple": false
+			"multiple": false,
+			"required": true
 		},
 		"content": {
 			"type": "blocks",
