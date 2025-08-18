@@ -11,6 +11,7 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 import { Heading } from "./heading"
+import { Image } from "./image"
 import { Quote } from "~/__lib/react/quote"
 
 import stylesheet from "./wysiwyg.css?url"
@@ -42,7 +43,7 @@ export class WYSIWYG {
 						code: props => <Paragraph font_family="font-mono" { ...props } />,
 							// ^ In this specific case, code blocks are not supported
 							// 		and are rendered as paragraphs (with a monospaced font) instead.
-						image: () => null,
+						image: ({ image }) => <Image.Renderer file={ image } aspect_ratio={ image.aspect_ratio } />,
 						list: props => <List font_family={ font_family_class } { ...props } />,
 					}}
 					modifiers={{
