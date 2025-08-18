@@ -39,9 +39,10 @@ export default function ( { env } ) {
 						return null
 					}
 
+					const url_base = env( "IS_ON_AWS" ) === "true" ? `https://${ env( "CLIENT_URL" ) }` : env( "CLIENT_URL" );
 					const status_query_param_string = `?status=${ status }`
 
-					return env( "CLIENT_URL" ) + url_path + status_query_param_string
+					return url_base + url_path + status_query_param_string
 				}
 			}
 		},
