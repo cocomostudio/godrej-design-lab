@@ -9,7 +9,7 @@
 import { Link } from "react-router"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
-import { CMS_PUBLIC_DIR_URL } from "env"
+import { Image } from "./image"
 
 export class Fellowship {
 	static id = "gdl.fellowship-v1"
@@ -24,7 +24,7 @@ export class Fellowship {
 
 			{ projects.map( ( { description, cover, fellows, link }, i ) => <div key={ i } className="fellowship-project mt-3.5 md:mt-4 flex flex-wrap md:border-b border-black md:last:border-none md:pb-4">
 				<figure className="w-2c-1g md:w-1c lg:w-1c-2g h-full rounded-md overflow-hidden">
-					<img src={ CMS_PUBLIC_DIR_URL + cover.file.url } className="aspect-square object-cover" />
+					{ cover?.file && <Image.Renderer file={ cover.file } aspect_ratio={ cover.aspect_ratio } className="!m-0" /> }
 				</figure>
 				<div className="md:order-1 ml-1g w-3c-2g md:w-2c-1g lg:ml-2g lg:w-2c-4g">
 					<p className="text-p max-md:font-bold text-black">{ description }</p>
