@@ -67,7 +67,7 @@ function SectionBody ( { is_collapsible, isOpen, className, children, ...props }
 		return null
 	}
 
-	const classes_for_section_body = "md:[&>:not(.full-width)]:md:ml-2c-2g lg:[&>:not(.full-width)]:md:ml-3c-3g w-full | [&>*:first-child]:mt-0"
+	const classes_for_section_body = "mt-6 md:mt-8 lg:mt-10 md:[&>:not(.full-width)]:md:ml-2c-2g lg:[&>:not(.full-width)]:md:ml-3c-3g w-full | [&>*:first-child]:mt-0"
 
 	if ( ! is_collapsible ) {
 		return <Level>
