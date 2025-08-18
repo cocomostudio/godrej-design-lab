@@ -1,3 +1,5 @@
 
 # Public directory
-public/
+public/*
+!public/fonts/
+!public/fonts/**
