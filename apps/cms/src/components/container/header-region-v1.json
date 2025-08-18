@@ -19,7 +19,7 @@
 		"metadatas": {
 			"content": {
 				"edit": {
-					"label": "Content",
+					"label": "Header region",
 					"description": "The header region is for the introductory content of the page. Do not place the entirety of the page's content here."
 				},
 				"list": {
