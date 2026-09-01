@@ -65,7 +65,7 @@ export class PageLayout {
 			<div className="h-full flex flex-col" style={ color_scheme_styles }>
 				<Header navigation={ page_context.navigation } featured_links={ page_context.featured_links } />
 
-				<div className="relative container max-md:flex flex-col mb-10 md:mb-22">
+				<div className="relative container nav-open:pt-8 max-md:flex flex-col mb-10 md:mb-22">
 					{ children }
 				</div>
 
