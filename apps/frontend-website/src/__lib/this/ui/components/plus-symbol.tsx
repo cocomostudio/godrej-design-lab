@@ -1,5 +1,4 @@
 
-
 import type React from "react"
 
 export function PlusSymbol ( { className, ...props }: React.ComponentProps<"svg"> ) {
