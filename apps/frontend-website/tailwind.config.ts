@@ -623,6 +623,17 @@ const variantsPlugin = plugin( ({ addVariant }) => {
 	addVariant( "not-interpolate", "@supports ( not ( interpolate-size: allow-keywords ) )" )
 } )
 
+/**
+ |
+ | Selectors
+ |
+ |
+ */
+const selectorsPlugin = plugin( ({ addVariant }) => {
+	addVariant( "nav-open", `:is( &[ data-nav-open="true" ], [ data-nav-open="true" ] & )` )
+	addVariant( "nav-close", `:is( &[ data-nav-open="false" ], [ data-nav-open="false" ] & )` )
+} )
+
 
 
 
@@ -686,5 +697,6 @@ export default {
 		colorsPlugin,
 		transitionsAndAnimations,
 		variantsPlugin,
+		selectorsPlugin,
 	],
 } satisfies Config
