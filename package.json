@@ -9,7 +9,6 @@
 	"license": "ISC",
 	"main": "",
 	"name": "godrej-design-lab",
-	"packageManager": "pnpm@9.1.0",
 	"pnpm": {
 		"patchedDependencies": {
 			"@strapi/provider-upload-aws-s3@5.17.0": "patches/@strapi__provider-upload-aws-s3@5.17.0.patch",
