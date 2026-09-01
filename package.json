@@ -24,7 +24,14 @@
 				"linux",
 				"darwin"
 			]
-		}
+		},
+		"onlyBuiltDependencies": [
+			"@swc/core",
+			"better-sqlite3",
+			"core-js-pure",
+			"esbuild",
+			"sharp"
+		]
 	},
 	"private": true,
 	"scripts": {
