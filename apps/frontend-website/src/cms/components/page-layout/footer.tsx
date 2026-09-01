@@ -12,7 +12,7 @@ interface FooterNavigationProps extends React.ComponentProps<"footer"> {
 }
 export function Footer ( { blurb = [ ], navigation, className }: FooterNavigationProps ) {
 	return <footer className={ className }>
-		<nav className="bg-primary relative after:absolute after:top-0 after:right-0 after:w-1/3 after:h-full md:after:bg-secondary overflow-hidden">
+		<nav className="bg-primary relative after:absolute after:top-0 after:right-0 after:w-1/3 after:h-full md:after:bg-mine-shaft overflow-hidden">
 			<div className="container md:grid-layout">
 				<div className="py-6 lg:py-9 start-col-1 end-col-5 lg:end-col-7">
 					<div className="md:w-2c-1g lg:w-3c-2g text-white">
@@ -24,8 +24,8 @@ export function Footer ( { blurb = [ ], navigation, className }: FooterNavigatio
 						</ul>
 					</div>
 				</div>
-				<div className="relative start-gutter-5 lg:start-gutter-7 end-col-last lg:ml-0 py-4.5 md:pl-8 md:py-6 lg:pl-12 lg:py-10 bg-secondary text-white z-10 | before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-secondary md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-secondary">
-					<div className="md:flex flex-col justify-between h-full bg-secondary">
+				<div className="relative start-gutter-5 lg:start-gutter-7 end-col-last lg:ml-0 py-4.5 md:pl-8 md:py-6 lg:pl-12 lg:py-10 bg-mine-shaft text-white z-10 | before:absolute before:top-0 before:right-full before:w-1/2 before:h-full before:bg-mine-shaft md:before:hidden after:absolute after:top-0 after:left-full after:w-1/2 after:h-full after:bg-mine-shaft">
+					<div className="md:flex flex-col justify-between h-full bg-mine-shaft">
 						<Link to={ "/" }>
 							<GodrejLogo className="max-md:w-25 md:w-1c h-auto fill-white" />
 						</Link>
