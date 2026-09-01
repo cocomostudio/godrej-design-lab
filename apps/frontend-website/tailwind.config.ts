@@ -437,6 +437,7 @@ const colorsPlugin = plugin( ({ addBase }) => {
 			"--white": "255, 255, 255",
 			"--black": "0, 0, 0",
 			"--silver-chalice": "175, 175, 175",
+			"--mine-shaft": "63, 63, 63",
 
 			// Brand
 			"--blue-gray": "189, 207, 218",	// #bdcfda
@@ -666,6 +667,7 @@ export default {
 				// Grayscale/Neutral
 				"white": "rgba( var( --white ), <alpha-value> )",
 				"black": "rgba( var( --black ), <alpha-value> )",
+				"mine-shaft": "rgba( var( --mine-shaft ), <alpha-value> )",
 
 				// Brand
 				"blue-gray": "rgba( var( --blue-gray ), <alpha-value> )",
