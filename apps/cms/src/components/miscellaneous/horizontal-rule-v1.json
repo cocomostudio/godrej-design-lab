@@ -15,5 +15,27 @@
 			"default": "dark",
 			"required": true
 		}
+	},
+
+	"__": {
+		"What's this?": "Metadata for this schema. Strapi will ignore this, but our code will read and write it onto the database.",
+		"metadatas": {
+			"shade": {
+				"edit": {
+					"label": "Shade",
+					"description": ""
+				},
+				"list": {
+					"label": "Shade"
+				}
+			}
+		},
+		"layouts": {
+			"edit": [
+				[
+					{ "name": "shade", "size": 12 }
+				]
+			]
+		}
 	}
 }
