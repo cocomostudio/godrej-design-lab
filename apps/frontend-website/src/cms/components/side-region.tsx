@@ -10,6 +10,7 @@ import {
 	useState,
 	useEffect,
 } from "react"
+import { useLocation } from "react-router"
 import { Level } from "react-accessible-headings"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
@@ -53,7 +54,7 @@ export class SideRegion {
 		return <div className="side-region empty:hidden md:absolute top-0 left-0 md:w-1c lg:w-2c-1g h-full | _[&>:last-child]:mt-0">
 			<Level>
 				{ toc && <TableOfContents toc_content={ toc_content } className="max-md:hidden md:sticky md:top-48 lg:top-68 left-0 translate-y-0 z-10 transition-transform ease-vaul duration-750" /> }
-				<aside className="empty:hidden max-md:mt-6 [&>:first-child]:mt-0 | [&>section:last-child_hr]:hidden" style={{ marginTop: `${ 2 + ( toc_content.length * 3 ) }rem` }}>
+				<aside className="empty:hidden max-md:!mt-6 [&>:first-child]:mt-0 | [&>section:last-child_hr]:hidden" style={{ marginTop: `${ 2 + ( toc_content.length * 3 ) }rem` }}>
 					{ children }
 				</aside>
 			</Level>
@@ -75,9 +76,18 @@ function TableOfContents ( { toc_content, className = null }: React.ComponentPro
 
 function useCurrentSectionId () {
 	const [ current_section_id, set_current_section_id ] = useState( null )
+	const { pathname } = useLocation()
 
 	useEffect( function () {
+		set_current_section_id( null )
+			// ^ Reset current section when location changes
+
 		let section_dom_nodes = document.querySelectorAll( `section[ data-toc = "true" ]` )
+
+		if ( section_dom_nodes.length === 0 ) {
+			return
+		}
+
 		let sections_hashmap = { }
 		let sections_list = [ ]
 		for ( const section_dom_node of section_dom_nodes ) {
@@ -96,9 +106,10 @@ function useCurrentSectionId () {
 
 			for ( const [ index, entry ] of entries.entries() ) {
 				const section_id = entry.target.id
-				sections_hashmap[ section_id ].visible = entry.isIntersecting
-				sections_hashmap[ section_id ].intersection_ratio = entry.intersectionRatio
-				// console.log( entry.isIntersecting ? "Entered" : "Exited", ":", section_id )
+				if ( sections_hashmap[ section_id ] ) {
+					sections_hashmap[ section_id ].visible = entry.isIntersecting
+					sections_hashmap[ section_id ].intersection_ratio = entry.intersectionRatio
+				}
 			}
 
 			last_scroll_y = current_scroll_y
@@ -134,7 +145,7 @@ function useCurrentSectionId () {
 		section_dom_nodes.forEach( ( section_dom_node ) => observer.observe( section_dom_node ) )
 
 		return () => observer.disconnect()
-	}, [ ] )
+	}, [ pathname ] )
 
 	return current_section_id
 }
