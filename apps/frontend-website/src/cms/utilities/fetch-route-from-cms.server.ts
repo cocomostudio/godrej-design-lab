@@ -43,10 +43,29 @@ export function fetch_route_from_cms ( slug: string, search_params: URLSearchPar
 	)
 }
 
+/**
+ |
+ | **The slug is a visitor's string, so it is escaped rather than
+ | interpolated.** This used to build the query by template literal, which let
+ | a percent-encoded ampersand in the path smuggle extra parameters into it —
+ | and one of them, `pull_query_from_body`, is the switch the CMS reads to
+ | decide whether to take the query from the POST body at all. Given twice it
+ | parses as an array, the equality test against `"true"` fails, the body is
+ | ignored, and every other parameter the visitor appended is read as the
+ | query instead. `?status=draft` among them.
+ |
+ | That is a way round the signature check two functions below, so it is fixed
+ | here rather than left for ticket 15: a request to
+ | `/a-real-page%26pull_query_from_body=false%26status=draft` reached the CMS
+ | asking for unpublished content. `URLSearchParams` percent-encodes the
+ | value, so the whole string is now one path that matches no entry.
+ |
+ */
 function prepare_url ( slug: string ): URL {
-	const path = "/" + ( slug || "" )
-	const api_path = `/api/webtools/router?path=${ path }&pull_query_from_body=true`
-	return new URL( api_path, Environment.get( "CMS_URL" ) )
+	const url = new URL( "/api/webtools/router", Environment.get( "CMS_URL" ) )
+	url.searchParams.set( "path", "/" + ( slug || "" ) )
+	url.searchParams.set( "pull_query_from_body", "true" )
+	return url
 }
 
 function prepare_request_payload ( slug: string, search_params: URLSearchParams ) {
