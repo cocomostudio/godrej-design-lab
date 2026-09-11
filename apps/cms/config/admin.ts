@@ -20,7 +20,7 @@ export default function ( { env } ) {
 		preview: {
 			enabled: true,
 			config: {
-				allowedOrigins: env( "CLIENT_URL" ),
+				allowedOrigins: env( "CLIENT_URLS" ).split( "," ),
 				async handler ( uid, { documentId, locale, status } ) {
 					if ( ! uid || ! status ) {
 						return null
@@ -39,7 +39,8 @@ export default function ( { env } ) {
 						return null
 					}
 
-					const url_base = env( "IS_ON_AWS" ) === "true" ? `https://${ env( "CLIENT_URL" ) }` : env( "CLIENT_URL" );
+					const a_client_url = env( "CLIENT_URLS" ).split( "," )[ 0 ]
+					const url_base = env( "IS_ON_AWS" ) === "true" ? `https://${ a_client_url }` : a_client_url;
 					const status_query_param_string = `?status=${ status }`
 
 					return url_base + url_path + status_query_param_string
