@@ -43,6 +43,7 @@ type Env = {
 	CMS_URL: string
 	CMS_PUBLIC_URL: string
 	CMS_HOST_NAME: string
+	CMS_ADMIN_URLS: string[]
 	PREVIEW_LINK_SECRET: string
 	SERVE_MODE: ServeMode
 	HTTP_SERVER_PORT: number
@@ -97,6 +98,30 @@ const _env: Env = {
 	 |
 	 */
 	CMS_HOST_NAME: process.env.CMS_HOST_NAME ?? "",
+	/**
+	 |
+	 | The CMS's origins **as a browser sees them** — a third answer again,
+	 | distinct from both of the above: `CMS_URL` is a private address only
+	 | this process can resolve, and `CMS_PUBLIC_URL` is the CDN in front of
+	 | the media. This one is where the admin panel is served from, and it
+	 | exists for exactly one reason: the admin frames this website for Entry
+	 | Preview, so the content security policy has to name it as a permitted
+	 | frame ancestor.
+	 |
+	 | The same value is `CMS_URLS` in the CMS's own environment file. It is
+	 | not called that here because `CMS_URL` next door already means something
+	 | else entirely, and two keys one letter apart with unrelated meanings is
+	 | a trap rather than a symmetry.
+	 |
+	 | Comma-separated, because the CMS could answer to more than one name, and
+	 | scheme-completed to `https://` — the deployed hosts write these as bare
+	 | hostnames, which is the form the CMS's own origin lists already take.
+	 |
+	 | Empty is allowed: the policy ships report-only, so an unset value costs
+	 | a console report during Entry Preview and nothing else.
+	 |
+	 */
+	CMS_ADMIN_URLS: read_origins( process.env.CMS_ADMIN_URLS ),
 	/**
 	 |
 	 | Signs the preview links the CMS hands an editor, and which this server
@@ -155,6 +180,27 @@ function read_application_environment (): ApplicationEnvironment {
 	return raw === ENVIRONMENTS.PRODUCTION
 		? ENVIRONMENTS.PRODUCTION
 		: ENVIRONMENTS.DEVELOPMENT
+}
+
+/**
+ |
+ | A comma-separated list of origins, as the CMS's `CMS_URLS` and `CLIENT_URLS`
+ | are written on every host we have.
+ |
+ | An entry without a scheme is completed to `https://`, matching how
+ | `apps/cms/config/middlewares.ts` reads the same shape of value: the deployed
+ | hosts write bare hostnames, a local checkout writes full URLs, and both are
+ | meant to work without re-editing an environment file per ticket. A bare
+ | hostname reached over cleartext is therefore a hostname this never matches,
+ | which is the right way round.
+ |
+ */
+function read_origins ( raw: string | undefined ): string[] {
+	return ( raw ?? "" )
+		.split( "," )
+		.map( entry => entry.trim() )
+		.filter( entry => entry !== "" )
+		.map( entry => entry.includes( "://" ) ? entry : `https://${ entry }` )
 }
 
 /**

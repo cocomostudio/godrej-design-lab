@@ -121,6 +121,12 @@ cannot leave alone are:
   address no browser can resolve.
 - `PREVIEW_LINK_SECRET`, which must equal `PREVIEW_SECRET` in `apps/cms/.env`
   on the other machine. Nothing reconciles the two.
+- `CMS_ADMIN_URLS`, the origin a browser reaches the *admin panel* at — the
+  same value as `CMS_URLS` in `apps/cms/.env`. The website's content security
+  policy names it as a permitted frame ancestor, which is what lets the admin
+  frame the website for Entry Preview. Unset, Entry Preview still works today
+  because that policy ships report-only, and stops working the moment it is
+  promoted to enforcing.
 
 `HTTP_SERVER_PORT` defaults to 3000, which is what nginx already proxies to. A
 value set in PM2's `env_production` block would win over this file, because Node

@@ -30,6 +30,7 @@ import morgan from "morgan"
 import { createRequestHandler } from "@react-router/express"
 
 import { Environment } from "../environment/index.ts"
+import { register_security_headers_middleware } from "./security-headers.ts"
 
 const APP_ROOT = path.resolve( import.meta.dirname, "..", ".." )
 
@@ -81,6 +82,13 @@ function configure_express_server ( express_app: Express.Application ) {
 	express_app.use( compression() )
 	// ↑ What `react-router-serve` did. nginx does not gzip for this host yet,
 	// 	so removing it would be a bandwidth regression rather than a tidy-up.
+
+	register_security_headers_middleware( express_app )
+	// ↑ **Above everything that can answer a request**, which is the only
+	// 	position that works: the static mounts and Vite's middleware both end
+	// 	the chain themselves, so anything registered below them never runs for
+	// 	an asset. Assets are exactly where `nosniff` matters. See
+	// 	`security-headers.ts`.
 }
 
 /**

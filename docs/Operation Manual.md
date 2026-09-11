@@ -371,6 +371,7 @@ cat > apps/frontend-website/.env.production <<EOF
 CMS_URL=http://172.19.137.24
 CMS_HOST_NAME=
 CMS_PUBLIC_URL=https://abc.cloudfront.net
+CMS_ADMIN_URLS=cms.example.com
 PREVIEW_LINK_SECRET=secret
 EOF
 ```
@@ -392,6 +393,18 @@ What each key is for:
   URL. It is not the same as `CMS_URL`, because a browser on the Internet cannot
   reach a private VPC address. Left unset it falls back to `CMS_URL`, which
   would be wrong here.
+
+* `CMS_ADMIN_URLS` is the origin a browser reaches the *admin panel* at — the
+  same value as `CMS_URLS` in `apps/cms/.env` on the CMS box. It is the third
+  distinct answer to "where is the CMS" in this file, and they are all
+  different on purpose: `CMS_URL` is a private VPC address, `CMS_PUBLIC_URL` is
+  the CDN in front of the media, and this one is the admin panel. Comma
+  separated; a value without a scheme is read as `https://`.
+
+  The website's content security policy names it as a permitted frame ancestor,
+  which is what lets the admin panel frame the website for Entry Preview. That
+  policy is sent report-only today, so leaving this empty breaks nothing yet —
+  it breaks Entry Preview on the day the policy is promoted to enforcing.
 
 * `PREVIEW_LINK_SECRET` must be the same value as `PREVIEW_SECRET` in
   `apps/cms/.env` on the CMS box. Nothing checks that the two match; if they
