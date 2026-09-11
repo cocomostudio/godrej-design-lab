@@ -2,6 +2,13 @@
 # Any temporary directory
 __tmp*
 
+# Environment
+.env
+.env.*
+# ↑ but the scaffolded example, which carries no secrets, is the only record
+#   of which keys an app needs.
+!.env.example
+
 # React Router
 .react-router/
 build/
