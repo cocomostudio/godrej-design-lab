@@ -1,5 +1,8 @@
 
-import { CMS_PUBLIC_DIR_URL } from "env"
+import http from "node:http"
+import https from "node:https"
+
+import { CMS_PUBLIC_DIR_URL, CMS_HOST_NAME } from "env"
 
 export function fetch_route_from_cms ( slug: string, search_params: URLSearchParams ) {
 	const url = prepare_url( slug )
@@ -146,13 +149,51 @@ function prepare_request_payload ( search_params: URLSearchParams ) {
 	}
 }
 
-function make_http_request ( url: string, payload: unknown ) {
-	return fetch( url, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify( payload )
+// NOTE: This deliberately uses `node:http`/`node:https` rather than `fetch`.
+// `Host` is a forbidden header name, so `fetch` silently discards it, and the
+// CMS sits behind a virtual host that needs it to route the request correctly.
+function make_http_request ( url: string, payload: unknown ): Promise<any> {
+	const is_secure = new URL( url ).protocol === "https:"
+	const transport = is_secure ? https : http
+	const body = JSON.stringify( payload )
+
+	return new Promise( ( resolve, reject ) => {
+		const request = transport.request(
+			url,
+			prepare_request_options( body, is_secure ),
+			response => {
+				response.setEncoding( "utf8" )
+				let text = ""
+				response.on( "data", chunk => text += chunk )
+				response.on( "end", () => {
+					try {
+						resolve( JSON.parse( text ) )
+					}
+					catch {
+						reject( new Error(
+							`The CMS responded with ${ response.statusCode } and a body that is not JSON: ${ text.slice( 0, 200 ) }`
+						) )
+					}
+				} )
+			}
+		)
+		request.on( "error", reject )
+		request.end( body )
 	} )
-		.then( r => r.json() )
+}
+
+function prepare_request_options ( body: string, is_secure: boolean ) {
+	const headers: Record<string, string> = {
+		"Content-Type": "application/json",
+		"Content-Length": String( Buffer.byteLength( body ) )
+	}
+	if ( CMS_HOST_NAME ) headers[ "Host" ] = CMS_HOST_NAME
+
+	return {
+		method: "POST",
+		headers,
+			// Over TLS the certificate is matched against the SNI name, not the
+			// address we dialled, so that has to be overridden alongside `Host`.
+		...( is_secure && CMS_HOST_NAME ? { servername: CMS_HOST_NAME } : {} )
+	}
 }
