@@ -311,7 +311,8 @@ DATABASE_NAME=dbname
 DATABASE_USERNAME=dbuser
 DATABASE_PASSWORD=dbpass
 DATABASE_SSL=true
-CLIENT_URL=
+CMS_URLS=
+CLIENT_URLS=
 PREVIEW_SECRET=secret
 AWS_BUCKET_NAME=s3bucket
 CLOUDFRONT_URL=https://abc.cloudfront.net
@@ -320,6 +321,12 @@ EOF
 ```
 
 Please note that dummy env variables have been placed in this documentation. For real environment variables please login to the CMS box for further inspection.
+
+`CMS_URLS` and `CLIENT_URLS` are the two origin lists the cross-origin policy is
+built from — the CMS's own public origin, and the website's. Both are
+comma-separated, and a value without a scheme is read as `https://`. Any other
+origin is refused by the browser, so a hostname missing from these lists is a
+hostname the admin panel will not work from.
 
 
 **Environment variables for the frontend boxes**
