@@ -9,8 +9,7 @@
 import { Link } from "react-router"
 import { H } from "react-accessible-headings"
 
-import { html_line_break } from "~/__lib/html/line-break"
-import { NEW_LINES_REGEX } from "~/__lib/strings/regular-expressions"
+import { with_line_breaks } from "~/__lib/react/line-breaks"
 import { Button } from "~/__lib/react/button"
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 
@@ -50,15 +49,15 @@ export class Heading {
 		else if ( line_1 ) {
 			return <HeadingContainer link={ link }>
 				<H className={ `${ common_classes } ${ classes } ${ font_family_class } ${ className }` } style={ style }>
-					<span className="text-primary" dangerouslySetInnerHTML={{ __html: line_1?.replace( NEW_LINES_REGEX, html_line_break ) }} />
+					<span className="text-primary">{ with_line_breaks( line_1 ) }</span>
 					<br />
-					<span className="text-secondary" dangerouslySetInnerHTML={{ __html: line_2?.replace( NEW_LINES_REGEX, html_line_break ) }} />
+					<span className="text-secondary">{ with_line_breaks( line_2 ) }</span>
 				</H>
 			</HeadingContainer>
 		}
 		else {
 			return <HeadingContainer link={ link }>
-				<H className={ `${ common_classes } ${ classes } text-secondary ${ className }` } style={ style } dangerouslySetInnerHTML={{ __html: line_2?.replace( NEW_LINES_REGEX, html_line_break ) }} />
+				<H className={ `${ common_classes } ${ classes } text-secondary ${ className }` } style={ style }>{ with_line_breaks( line_2 ) }</H>
 			</HeadingContainer>
 		}
 	}
