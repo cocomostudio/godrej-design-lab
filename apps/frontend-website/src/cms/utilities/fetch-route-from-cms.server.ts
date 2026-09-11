@@ -1,8 +1,38 @@
 
+/**
+ |
+ | The one call the website makes for page content.
+ |
+ | `.server.ts` so that it never reaches the browser bundle even if something
+ | other than a loader comes to import it — the CMS's origin is a server-side
+ | concern, and a route module's imports are only stripped while the import is
+ | reachable from server-only exports alone.
+ |
+ */
+
 import http from "node:http"
 import https from "node:https"
 
-import { CMS_PUBLIC_DIR_URL, CMS_HOST_NAME } from "env"
+import { Environment } from "../../../server/environment/index.ts"
+
+/**
+ |
+ | Where a picture the CMS stores is served from.
+ |
+ | The browser cannot read server-side configuration, so this travels in the
+ | loader's data instead — which is why the question is answered here, in the
+ | one module that already knows the CMS exists and is guaranteed never to
+ | reach the browser bundle.
+ |
+ | `CMS_PUBLIC_URL` rather than `CMS_URL`, and the distinction is the whole
+ | point: `CMS_URL` is where *this process* dials the CMS, which in production
+ | is a private address inside the VPC that no visitor can resolve. This value
+ | ends up in an `src` attribute in someone else's browser.
+ |
+ */
+export function media_origin () {
+	return Environment.get( "CMS_PUBLIC_URL" )
+}
 
 export function fetch_route_from_cms ( slug: string, search_params: URLSearchParams ) {
 	const url = prepare_url( slug )
@@ -15,7 +45,7 @@ export function fetch_route_from_cms ( slug: string, search_params: URLSearchPar
 function prepare_url ( slug: string ): URL {
 	const path = "/" + ( slug || "" )
 	const api_path = `/api/webtools/router?path=${ path }&pull_query_from_body=true`
-	return new URL( api_path, CMS_PUBLIC_DIR_URL )
+	return new URL( api_path, Environment.get( "CMS_URL" ) )
 }
 
 function prepare_request_payload ( search_params: URLSearchParams ) {
@@ -187,13 +217,14 @@ function prepare_request_options ( body: string, is_secure: boolean ) {
 		"Content-Type": "application/json",
 		"Content-Length": String( Buffer.byteLength( body ) )
 	}
-	if ( CMS_HOST_NAME ) headers[ "Host" ] = CMS_HOST_NAME
+	const cms_host_name = Environment.get( "CMS_HOST_NAME" )
+	if ( cms_host_name ) headers[ "Host" ] = cms_host_name
 
 	return {
 		method: "POST",
 		headers,
 			// Over TLS the certificate is matched against the SNI name, not the
 			// address we dialled, so that has to be overridden alongside `Host`.
-		...( is_secure && CMS_HOST_NAME ? { servername: CMS_HOST_NAME } : {} )
+		...( is_secure && cms_host_name ? { servername: cms_host_name } : {} )
 	}
 }

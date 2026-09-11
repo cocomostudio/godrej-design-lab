@@ -189,9 +189,11 @@ Before we proceed to step 3, it makes sense for the admin operating this system 
 │   │   ├── README.md
 │   │   └── tsconfig.json
 │   └── frontend-website
+│       ├── server
 │       ├── src
+│       ├── .env.example
 │       ├── CONTRIBUTING.md
-│       ├── env.ts
+│       ├── entry-point.ts
 │       ├── package.json
 │       ├── react-router.config.ts
 │       ├── README.md
@@ -322,23 +324,44 @@ Please note that dummy env variables have been placed in this documentation. For
 
 **Environment variables for the frontend boxes**
 
-In the frontend boxes, we will modify the following config:
-
-In `apps/frontend-website/env.ts`:
-
-DELETE:
+The frontend reads its configuration from an environment file of its own, in the
+same way the CMS does. Note the filename: in production the frontend reads
+`.env.production`, not `.env`.
 
 ```bash
-export const CMS_PUBLIC_DIR_URL = "http://localhost:1337"
+cat > apps/frontend-website/.env.production <<EOF
+CMS_URL=http://172.19.137.24
+CMS_HOST_NAME=
+CMS_PUBLIC_URL=https://abc.cloudfront.net
+PREVIEW_LINK_SECRET=secret
+EOF
 ```
 
-ADD:
+Please note that dummy env variables have been placed in this documentation. For
+real environment variables please login to a frontend box for further
+inspection. `apps/frontend-website/.env.example` documents every key in full.
 
-```bash
-export const CMS_PUBLIC_DIR_URL = "http://172.19.137.24"
-```
+What each key is for:
 
-This is an important step so that the frontend knows where the backend lives.
+* `CMS_URL` is how the frontend box reaches the Strapi box — an address inside
+  the VPC. This is the important one: it is how the frontend knows where the
+  backend lives.
+
+* `CMS_HOST_NAME` is only needed if Strapi is reached by an address that is not
+  the name it answers to. Leave it empty otherwise.
+
+* `CMS_PUBLIC_URL` is where a *visitor's browser* fetches media from — the CDN
+  URL. It is not the same as `CMS_URL`, because a browser on the Internet cannot
+  reach a private VPC address. Left unset it falls back to `CMS_URL`, which
+  would be wrong here.
+
+* `PREVIEW_LINK_SECRET` must be the same value as `PREVIEW_SECRET` in
+  `apps/cms/.env` on the CMS box. Nothing checks that the two match; if they
+  drift, Entry Preview stops working.
+
+The port is not in this file. The frontend listens on 3000 by default, which is
+what nginx proxies to. Set `HTTP_SERVER_PORT` only if that has to change, and
+change the nginx configuration with it.
 
 
 ## **Step 4: Building and running the application** {#step-4:-building-and-running-the-application}

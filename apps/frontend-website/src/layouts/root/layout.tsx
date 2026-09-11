@@ -39,7 +39,7 @@ export function RootLayout ( { children }: { children: React.ReactNode } ) {
 function useArbitraryCodeToBeInjected () {
 	for ( const match of useMatches() ) {
 		if ( match.id === "cms" ) {
-			return match.data?.page_context?.arbitrary_code ?? { }
+			return match.data?.page?.page_context?.arbitrary_code ?? { }
 		}
 	}
 

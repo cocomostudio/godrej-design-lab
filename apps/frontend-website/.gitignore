@@ -3,3 +3,9 @@
 public/*
 !public/fonts/
 !public/fonts/**
+
+# Vite
+vite.config.ts.timestamp-*
+# ↑ Vite writes one of these beside the config while it loads it, and leaves it
+#   behind if the process dies. The website's own server runs Vite now, so
+#   these turn up here.

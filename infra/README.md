@@ -17,7 +17,7 @@ deployment only; it has no part in production.
 | Runs | Strapi, via `pnpm -F cms run start` | the website, via `pnpm -F few run start` |
 | Under | PM2 | PM2 |
 | Proxy | none yet — nginx is planned | none yet |
-| App reads | `apps/cms/.env` | — |
+| App reads | `apps/cms/.env` | `apps/frontend-website/.env.production` |
 | Host facts | `production/cms-host/.env` | — |
 
 ## Layout
@@ -50,7 +50,8 @@ sudo mkdir -p /var/log/gdl && sudo chown "$USER" /var/log/gdl
 pm2 start infra/production/cms-host/pm2/ecosystem.config.cjs --env production && pm2 save
 ```
 
-On `website-host` there is no host `.env` to fill in:
+On `website-host` there is no host `.env` to fill in — but the application has
+one of its own, which the checklist below covers:
 
 ```bash
 pm2 start infra/production/website-host/pm2/ecosystem.config.cjs --env production && pm2 save
@@ -65,8 +66,32 @@ shell's environment rather than this file.
 
 ## Per-machine checklist
 
-`production/cms-host/.env` does not configure Strapi. That machine also needs
-`apps/cms/.env`, which is gitignored and therefore never arrives with a deploy:
-the database block, `APP_KEYS` and the other secrets, and `PORT` if the default
+Neither `.env` under `infra/` configures an app. Each machine also needs the
+app's own env file, which is gitignored and therefore never arrives with a
+deploy.
+
+**`cms-host` — `apps/cms/.env`**
+
+The database block, `APP_KEYS` and the other secrets, and `PORT` if the default
 of 1337 is not wanted. When nginx arrives, its `CMS_PORT` in the host's `.env`
 must equal that `PORT` — nothing reconciles the two.
+
+**`website-host` — `apps/frontend-website/.env.production`**
+
+Note the filename. The `start` script passes
+`--env-file-if-exists .env.production`, so a file named `.env` is ignored in
+production. `.env.example` beside it documents every key; the ones a deployment
+cannot leave alone are:
+
+- `CMS_URL`. The code defaults to `http://localhost:1337`, which is wrong the
+  moment the CMS is on another machine.
+- `CMS_PUBLIC_URL`, the origin a *visitor's browser* fetches media from — the
+  CDN. Unset it falls back to `CMS_URL`, which in production is a private VPC
+  address no browser can resolve.
+- `PREVIEW_LINK_SECRET`, which must equal `PREVIEW_SECRET` in `apps/cms/.env`
+  on the other machine. Nothing reconciles the two.
+
+`HTTP_SERVER_PORT` defaults to 3000, which is what nginx already proxies to. A
+value set in PM2's `env_production` block would win over this file, because Node
+lets an already-set variable stand — which is why the port lives here and not in
+the ecosystem config.

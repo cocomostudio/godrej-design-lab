@@ -10,7 +10,8 @@ import { Link } from "react-router"
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 
-import { CMS_PUBLIC_DIR_URL } from "env"
+import { media_url } from "../media"
+import { use_media_origin } from "../media-origin"
 
 export class ImageLink {
 	static id = "navigation.image-link-v1"
@@ -20,6 +21,8 @@ export class ImageLink {
 	}
 
 	static Renderer ({ image, link }) {
+		const media_origin = use_media_origin()
+
 		let props = { }
 		if ( link.target ) {
 			props.target = link.target
@@ -29,7 +32,7 @@ export class ImageLink {
 		}
 
 		return <Link to={ link.url } className="rounded-md overflow-hidden" { ...props }>
-			<img src={ CMS_PUBLIC_DIR_URL + image.file.url } alt={ image.file.alternativeText } className="object-cover" />
+			<img src={ media_url( image.file.url, media_origin ) } alt={ image.file.alternativeText } className="object-cover" />
 		</Link>
 	}
 }

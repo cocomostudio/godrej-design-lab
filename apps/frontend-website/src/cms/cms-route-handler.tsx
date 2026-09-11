@@ -9,7 +9,11 @@ import {
 } from "react-router"
 
 import { render_strapi_component } from "./strapi-component-renderer"
-import { fetch_route_from_cms } from "./utilities/fetch-route-from-cms"
+import {
+	fetch_route_from_cms,
+	media_origin,
+} from "./utilities/fetch-route-from-cms.server"
+import { MediaOrigin } from "./media-origin"
 import { isRouteErrorResponse } from "react-router"
 
 export async function loader ( { request, params }: Route.LoaderArgs ) {
@@ -41,12 +45,20 @@ export async function loader ( { request, params }: Route.LoaderArgs ) {
 		response.data.__component = "container.page-layout-v1"
 	}
 
-	return response?.data
+	return {
+		page: response?.data ?? null,
+		// Where a picture the CMS stores is served from. Server-side
+		// configuration, so it travels in the loader's data rather than being
+		// read again in the browser.
+		media_origin: media_origin(),
+	}
 }
 
 export default function ThisPage () {
 	const data = useLoaderData()
-	return render_strapi_component( data )
+	return <MediaOrigin origin={ data.media_origin }>
+		{ render_strapi_component( data.page ) }
+	</MediaOrigin>
 }
 
 export function ErrorBoundary ( { error }: Route.ErrorBoundaryProps ) {

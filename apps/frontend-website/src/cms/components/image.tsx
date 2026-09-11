@@ -8,7 +8,8 @@
 
 import { shallow_clone_props } from "../utilities/shallow-clone-props"
 
-import { CMS_PUBLIC_DIR_URL } from "env"
+import { media_url } from "../media"
+import { use_media_origin } from "../media-origin"
 import stylesheet from "./image.css?url"
 
 export class Image {
@@ -63,10 +64,12 @@ type UseImageURLsArgs = [
 	fallback?: string,
 ]
 function useImageURLs ( ...[ data, variant, fallback ]: UseImageURLsArgs ) {
+	const media_origin = use_media_origin()
+
 	let images = [ ]
 	if ( data ) {
 		if ( data?.provider === "local" ) {
-			images = getConstructedImageURLList( data.formats, CMS_PUBLIC_DIR_URL )
+			images = getConstructedImageURLList( data.formats, media_origin )
 		}
 		else if ( data?.provider === "aws-s3" ) {
 			images = getConstructedImageURLList( data.formats )
@@ -82,12 +85,10 @@ function useImageURLs ( ...[ data, variant, fallback ]: UseImageURLsArgs ) {
 	}
 	else /* if ( images.length === 0 ) */ {
 		if ( fallback ) {
-			srcURL = fallback.startsWith( "https://" )
-				? fallback
-				: CMS_PUBLIC_DIR_URL + fallback
+			srcURL = media_url( fallback, media_origin )
 		}
 		else {
-			srcURL = CMS_PUBLIC_DIR_URL + FALLBACK_IMAGE
+			srcURL = media_url( FALLBACK_IMAGE, media_origin )
 			// ^ If the "default" fallback image is being used,
 			// 		then there is no need for a `srcSet`.
 			// 	In fact, when the `srcSet` is the same as the srcURL,
@@ -112,7 +113,7 @@ function getConstructedImageURLList ( formats, base_url = "" ) {
 		const image = formats[ currrent_variant ]
 		images.push( {
 			variant: currrent_variant.toUpperCase(),
-			url: base_url + image.url,
+			url: media_url( image.url, base_url ),
 			w: image.width
 		} )
 	}

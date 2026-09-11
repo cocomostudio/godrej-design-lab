@@ -7,7 +7,10 @@ import {
 	layout,
 } from "@react-router/dev/routes"
 
-import { NODE_ENV } from "env"
+	// Which routes the build contains. Read straight from `process.env` rather
+	// than through the server's environment module: this file is evaluated by
+	// Vite at build and config time, in a process that is not the server.
+const NODE_ENV = process.env.NODE_ENV
 
 export default [
 	...( NODE_ENV === "development" ? [ index( "routes/home.tsx" ) ] : [ ] ),
