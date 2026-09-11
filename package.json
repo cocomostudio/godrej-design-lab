@@ -34,7 +34,9 @@
 		]
 	},
 	"private": true,
+	"type": "module",
 	"scripts": {
+		"dev": "node scripts/ensure-local-env.js && pnpm --recursive --parallel run dev",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"package": "COPYFILE_DISABLE=1 tar --exclude-from=.tarignore --no-mac-metadata --no-xattrs -czf repo.tgz ."
 	},
