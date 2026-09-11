@@ -20,10 +20,20 @@ deployment only; it has no part in production.
 | App reads | `apps/cms/.env` | `apps/frontend-website/.env.production` |
 | Host facts | `production/cms-host/.env` | — |
 
+The proxy row is disputed. `docs/Operation Manual.md` describes nginx as already
+installed and configured on every box, and describes a different number of boxes
+than this table does. Neither document has been rewritten to match the other —
+the disagreement is written up at
+[`topology-discrepancy.md`](topology-discrepancy.md) for the project lead.
+Whatever nginx configuration those hosts do run is recorded in
+[`docs/Nginx.md`](../docs/Nginx.md), which is where it lives until it moves
+under `production/<host>/nginx/`.
+
 ## Layout
 
 ```
 infra/
+├── topology-discrepancy.md   open question — see the note above
 └── production/
     ├── cms-host/
     │   ├── .env.example          the record of which keys the host needs
