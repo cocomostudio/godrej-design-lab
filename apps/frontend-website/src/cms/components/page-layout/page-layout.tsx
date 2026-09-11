@@ -52,7 +52,7 @@ export class PageLayout {
 			for ( const color in color_scheme_styles ) {
 				document.documentElement.style.setProperty( color, color_scheme_styles[ color ] )
 			}
-		}, [ ] )
+		}, [ Object.values( color_scheme_styles ).join( "|" ) ] )
 
 		return <>
 			<DocumentMeta
