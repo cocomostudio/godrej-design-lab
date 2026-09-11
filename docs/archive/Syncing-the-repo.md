@@ -1,3 +1,17 @@
+---
+status: archived
+archived_on: 11/09/2026
+reason: >
+  This is not how the repository is synced to production any more. The procedure
+  below — building repo.tgz and store.tgz locally, SCP'ing them, and installing
+  offline from a pre-fetched pnpm store — is no longer followed, and nothing in
+  this repository should be read as describing the current deployment.
+read_it_as: >
+  A record of how deployment used to work, kept for history. Not a source of
+  truth about the hosts, the service account, the checkout layout, or the
+  architecture they run on.
+---
+
 Make sure you have this in package.json under `pnpm`:
 
 
