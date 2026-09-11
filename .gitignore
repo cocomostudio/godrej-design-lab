@@ -1,4 +1,9 @@
 
+# User-specific
+.gitignore.user
+# ↑ For this to work, run the following **at the root of this git repository**:
+# git config --local core.excludesFile .gitignore.user
+
 # Any temporary directory
 __tmp*
 
