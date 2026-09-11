@@ -3,7 +3,7 @@
  |
  | The middleware chain, in the order a request runs through it.
  |
- | Most of this is Strapi's stock chain. Four entries are the CMS's half of
+ | Most of this is Strapi's stock chain. Five entries are the CMS's half of
  | the VAPT remediation, and are the reason this file is worth reading:
  |
  | * `global::no-store` — first, so that nothing downstream can overwrite
@@ -12,8 +12,10 @@
  |   and the content security policy.
  | * `strapi::cors` — no longer "any origin on the Internet may read this".
  | * `strapi::poweredBy` — **absent**, deliberately. See below.
+ | * `global::upload-gate` — refuses executables to the media library.
  |
- | Ticket: `02-cms-response-hardening` under
+ | Tickets: `02-cms-response-hardening` and
+ | `04-media-library-refuses-executables` under
  | `__this-project/build-plans/2026-09-11__vapt-remediation/tickets/`.
  |
  */
@@ -86,6 +88,18 @@ export default function ( { env }: { env: Env } ) {
 				},
 			},
 		},
+		/**
+		 |
+		 | Directly below `strapi::body`, which is the only place it can
+		 | go: above it there is no parsed file to look at, and below the
+		 | router the upload controller has already taken the file.
+		 |
+		 | The size limit above is untouched by it. That limit is about
+		 | what the host can absorb; this is about what the media library
+		 | is willing to hold.
+		 |
+		 */
+		"global::upload-gate",
 		"strapi::session",
 		"strapi::favicon",
 		"strapi::public",
