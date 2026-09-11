@@ -273,6 +273,37 @@ server {
 EOF
 ```
 
+Finally, and applied identically on **every** box that runs nginx, we suppress the server banner. By default nginx announces its own version number in the `Server` header of every response it sends, including the error pages it generates itself. A version number is what allows an attacker to look up exploits written for that exact build, and Godrej's vulnerability assessment raised it as a finding. The `server_tokens off` directive removes it.
+
+We place this directive in a small file of its own rather than inside the two server blocks above, because in that position it applies to the whole of nginx — the blocks we wrote, the default server that ships with the package, and nginx's own generated error responses alike.
+
+```bash
+cat <<'EOF' | sudo tee /etc/nginx/conf.d/00-server-tokens.conf
+# Suppresses the nginx version in the Server header and in generated error
+# pages. http-level rather than per-server, so it also covers the stock
+# default_server and nginx's own error responses.
+#
+# This removes the version but NOT the name: responses still say
+# `Server: nginx`. See docs/Nginx.md for why that is where we stopped.
+server_tokens off;
+EOF
+```
+
+Having written all three files, we test the configuration and reload. The test step matters: if nginx is unhappy with anything, it says so here rather than failing to come back up.
+
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+The admin can confirm the result from any machine that can reach the box. The response should name nginx without a version after it.
+
+```bash
+curl -sSI http://<ip-of-the-box>/ | grep -i '^server:'
+```
+
+Note that the name `nginx` itself remains, and only the version is gone. Removing the name as well is not something stock nginx can do — it requires a third-party module that Amazon Linux 2023 does not package, and therefore an nginx that we compile and maintain ourselves instead of one that receives the distribution's security updates. We judged that a poor trade, since it is the version and not the name that makes a disclosed banner actionable. This is recorded in `docs/Nginx.md` alongside the configuration itself.
+
+
 **Step 3.2 -- configuring RDS certs in CMS box**
 
 Next, in configuration, only on the CMS box, we need to trust the official AWS RDS certs. The below has been done on the CMS box as a one time configuration
