@@ -1,5 +1,6 @@
 
 import type { Route } from "./+types/*"
+import type { ReactNode } from "react"
 
 import {
 	useLoaderData,
@@ -49,14 +50,14 @@ export default function ThisPage () {
 }
 
 export function ErrorBoundary ( { error }: Route.ErrorBoundaryProps ) {
-	let heading: string
+	let heading: ReactNode = null
 	let message: string
 	let details: string
 	let stack: string | undefined
 
 	if ( isRouteErrorResponse( error ) ) {
 		if ( error.status === 404 ) {
-			heading = `<span class="text-primary">Page</span><br/><span class="text-secondary">not found</span>`
+			heading = <><span className="text-primary">Page</span><br /><span className="text-secondary">not found</span></>
 		}
 		message = error.status === 404
 			? "The requested page could not be found."
@@ -67,7 +68,7 @@ export function ErrorBoundary ( { error }: Route.ErrorBoundaryProps ) {
 		&& error
 		&& error instanceof Error
 	) {
-		heading = `<span class="text-primary">There was</span><br/><span class="text-secondary">an issue</span>`
+		heading = <><span className="text-primary">There was</span><br /><span className="text-secondary">an issue</span></>
 		details = error.message
 		stack = error.stack
 	}
@@ -76,7 +77,7 @@ export function ErrorBoundary ( { error }: Route.ErrorBoundaryProps ) {
 
 	return <main className="container">
 		<div className="mt-8 md:ml-1c-1g lg:ml-2c-2g md:w-7c-6g lg:w-10c-9g">
-			<h2 className="text-h1 font-sans font-bold uppercase" dangerouslySetInnerHTML={{ __html: heading }}></h2>
+			<h2 className="text-h1 font-sans font-bold uppercase">{ heading }</h2>
 			<h3 className="mt-4 md:mt-8 lg:mt-10 text-h3">{ message }</h3>
 			{ details && <p className="mt-2 text-p">{ details }</p> }
 			<Link className="mt-6 md:mt-8 lg:mt-10 inline-block rounded-md bg-secondary text-white px-3 py-3.5 md:px-3.75 md:py-2.25 lg:px-6 lg:py-3.75 text-xs lg:text-sm uppercase" to="/">Go back</Link>
