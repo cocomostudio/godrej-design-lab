@@ -32,10 +32,10 @@ export function Footer ( { blurb = [ ], navigation, className }: FooterNavigatio
 						<div className="mt-10">
 							<p className="md:mt-auto font-mono text-2xs md:text-sm/[normal] font-bold">Copyright © Godrej Enterprises Group. All rights reserved</p>
 							<ul className="mt-4 md:mt-3 flex md:max-lg:flex-wrap justify-between | font-mono text-2xs md:text-sm font-bold">
-								<li><Link to="#">Legal</Link></li>
-								<li><Link to="#">Disclaimer</Link></li>
-								<li><Link to="/privacy-policy">Privacy Policy</Link></li>
-								<li><Link to="#">Terms &amp; Conditions</Link></li>
+								<li><Link to="https://www.godrejenterprises.com/legal" target="_blank">Legal</Link></li>
+								<li><Link to="https://www.godrejenterprises.com/legal/disclaimer" target="_blank">Disclaimer</Link></li>
+								<li><Link to="https://www.godrejenterprises.com/legal/privacy-policy" target="_blank">Privacy Policy</Link></li>
+								<li><Link to="https://www.godrejenterprises.com/legal/terms-and-conditions" target="_blank">Terms &amp; Conditions</Link></li>
 							</ul>
 						</div>
 					</div>
