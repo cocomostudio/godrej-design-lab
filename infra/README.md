@@ -120,7 +120,12 @@ cannot leave alone are:
   CDN. Unset it falls back to `CMS_URL`, which in production is a private VPC
   address no browser can resolve.
 - `PREVIEW_LINK_SECRET`, which must equal `PREVIEW_SECRET` in `apps/cms/.env`
-  on the other machine. Nothing reconciles the two.
+  on the other machine. Nothing reconciles the two. It is the key the CMS signs
+  Entry Preview links with and the website verifies before it will ask for
+  unpublished content, so an unset or mismatched value costs the editors their
+  drafts in the preview frame — they see the published page instead. It cannot
+  fail the other way: with no key the website refuses draft content outright
+  rather than verifying against one the whole Internet could guess.
 - `CMS_ADMIN_URLS`, the origin a browser reaches the *admin panel* at — the
   same value as `CMS_URLS` in `apps/cms/.env`. The website's content security
   policy names it as a permitted frame ancestor, which is what lets the admin

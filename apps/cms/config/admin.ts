@@ -1,4 +1,6 @@
 
+import { preview_link_query_string } from "../src/__lib/this/preview-link"
+
 export default function ( { env } ) {
 	return {
 		auth: {
@@ -41,9 +43,27 @@ export default function ( { env } ) {
 
 					const a_client_url = env( "CLIENT_URLS" ).split( "," )[ 0 ]
 					const url_base = env( "IS_ON_AWS" ) === "true" ? `https://${ a_client_url }` : a_client_url;
-					const status_query_param_string = `?status=${ status }`
 
-					return url_base + url_path + status_query_param_string
+					/**
+					 |
+					 | The status no longer travels on its own.
+					 |
+					 | The website fetches this page from the CMS server-side,
+					 | without the editor's session, so a bare `?status=draft`
+					 | is a request it cannot tell from a stranger's — which
+					 | is how unpublished content came to be one query
+					 | parameter away from anybody. A signature over this
+					 | path and this status is what survives the gap. See
+					 | `src/__lib/this/preview-link.ts`.
+					 |
+					 */
+					const query_string = preview_link_query_string(
+						url_path,
+						status,
+						env( "PREVIEW_SECRET", "" ),
+					)
+
+					return url_base + url_path + query_string
 				}
 			}
 		},

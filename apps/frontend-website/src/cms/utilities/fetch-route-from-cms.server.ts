@@ -14,6 +14,7 @@ import http from "node:http"
 import https from "node:https"
 
 import { Environment } from "../../../server/environment/index.ts"
+import { resolve_content_status } from "../../../server/preview-link/index.ts"
 
 /**
  |
@@ -38,7 +39,7 @@ export function fetch_route_from_cms ( slug: string, search_params: URLSearchPar
 	const url = prepare_url( slug )
 	return make_http_request(
 		url.href,
-		prepare_request_payload( search_params )
+		prepare_request_payload( slug, search_params )
 	)
 }
 
@@ -48,7 +49,7 @@ function prepare_url ( slug: string ): URL {
 	return new URL( api_path, Environment.get( "CMS_URL" ) )
 }
 
-function prepare_request_payload ( search_params: URLSearchParams ) {
+function prepare_request_payload ( slug: string, search_params: URLSearchParams ) {
 	const populate_all = { populate: "*" }
 	const populate_v1_attributes = {
 		"text.plain-string-v1": populate_all,
@@ -175,7 +176,21 @@ function prepare_request_payload ( search_params: URLSearchParams ) {
 
 	return {
 		populate,
-		status: search_params.get( "status" ) || "published"
+		/**
+		 |
+		 | **Not `search_params.get( "status" )`.** That is what it was, and
+		 | it is why a member of the public could read every unpublished entry
+		 | on this site by appending a query parameter to a page address: this
+		 | request is made by the website's own server, so whatever status the
+		 | visitor asked for arrived at the CMS with the website's authority
+		 | behind it.
+		 |
+		 | `resolve_content_status` grants `draft` only against a signature
+		 | the CMS minted for this exact path, and answers `published` to
+		 | everything else. See `server/preview-link/index.ts`.
+		 |
+		 */
+		status: resolve_content_status( slug, search_params )
 	}
 }
 

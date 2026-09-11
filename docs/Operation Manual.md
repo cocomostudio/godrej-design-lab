@@ -407,8 +407,17 @@ What each key is for:
   it breaks Entry Preview on the day the policy is promoted to enforcing.
 
 * `PREVIEW_LINK_SECRET` must be the same value as `PREVIEW_SECRET` in
-  `apps/cms/.env` on the CMS box. Nothing checks that the two match; if they
-  drift, Entry Preview stops working.
+  `apps/cms/.env` on the CMS box. Nothing checks that the two match.
+
+  It is the key the CMS signs Entry Preview links with, and which the website
+  verifies before it will ask the CMS for unpublished content — without that
+  signature the website serves the published page, which is what stops any
+  visitor reading drafts by appending `?status=draft` to a page address. So if
+  the two drift, or either is left empty, Entry Preview stops showing drafts:
+  an editor sees the published version of the page in the preview frame, with
+  no error. It cannot fail the other way round — with no key the website
+  refuses draft content outright rather than verifying against one anybody
+  could guess.
 
 The port is not in this file. The frontend listens on 3000 by default, which is
 what nginx proxies to. Set `HTTP_SERVER_PORT` only if that has to change, and
