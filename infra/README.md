@@ -37,10 +37,31 @@ infra/
 └── production/
     ├── cms-host/
     │   ├── .env.example          the record of which keys the host needs
+    │   ├── database/             dump and restore, run by hand
+    │   │   ├── dump.sh
+    │   │   ├── restore.sh
+    │   │   └── connection.sh     sourced by both; reads apps/cms/.env
     │   └── pm2/ecosystem.config.cjs
     └── website-host/
         └── pm2/ecosystem.config.cjs
 ```
+
+## The database
+
+The CMS's data lives in RDS, and `cms-host/database/` holds two scripts that
+take it to a file on that host and put it back, over a third they both source.
+They read the connection out of `apps/cms/.env` — the same file Strapi reads, so
+there is no second place for it to drift — keep every credential off the command
+line, verify TLS against a certificate bundle on the host whenever that file
+enables TLS, and refuse to write a dump inside the checkout.
+
+They are run by hand and documented in
+[`docs/db-backup.md`](../docs/db-backup.md): what to confirm before an upgrade,
+how to take a dump and put one back, how to rehearse it, and the overrides.
+[`docs/db-rollback.md`](../docs/db-rollback.md) is the procedure that uses them
+when an upgrade has gone wrong — the snapshot-and-rename path, the dump path,
+and how to put the code back so that the two move together. Nothing here is
+scheduled.
 
 ## Installing
 
