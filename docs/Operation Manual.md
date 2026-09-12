@@ -201,8 +201,7 @@ Before we proceed to step 3, it makes sense for the admin operating this system 
 │       ├── tsconfig.json
 │       └── vite.config.ts
 ├── patches
-│   ├── @strapi__provider-upload-aws-s3@5.17.0.patch
-│   └── strapi-plugin-webtools@1.4.1.patch
+│   └── strapi-plugin-webtools@1.10.3.patch
 ├── appspec.yml
 ├── package.json
 ├── pnpm-lock.yaml
@@ -212,7 +211,7 @@ Before we proceed to step 3, it makes sense for the admin operating this system 
 
 As one can see, the first thing to understand about this is that this is a pnpm workspace. The workspace has two applications, named very aptly, under the root apps folder, as cms and frontend-website, which contains the primary business logic.
 
-In the periphery, two important patches have been made that are shown. We have, in fact, patched two open source tools, specifically for the Godrej environment and the GDL setup. Further information on these patches is outside the scope of this document, however the operator must note that these rely on a specific version of the external plugins. The project carefully pins these dependencies in package.json and pnpm-lock.yaml. Therefore it is highly discouraged to edit or modify these files. To reiterate, we do not foresee that the admin has to ever touch the code in this repository, and this is mainly for a birds eye view of the setup.
+In the periphery, one important patch has been made that is shown. We have, in fact, patched an open source tool, specifically for the Godrej environment and the GDL setup. Further information on this patch is outside the scope of this document, however the operator must note that it relies on a specific version of the external plugin — the version is in the patch's own filename, and a patch whose filename does not match the installed version will not be applied. The project carefully pins these dependencies in package.json. Therefore it is highly discouraged to edit or modify these files. To reiterate, we do not foresee that the admin has to ever touch the code in this repository, and this is mainly for a birds eye view of the setup.
 
 ## **Step 3: Configuration** {#step-3:-configuration}
 
