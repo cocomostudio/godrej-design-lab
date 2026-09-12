@@ -11,8 +11,7 @@
 	"name": "godrej-design-lab",
 	"pnpm": {
 		"patchedDependencies": {
-			"@strapi/provider-upload-aws-s3@5.17.0": "patches/@strapi__provider-upload-aws-s3@5.17.0.patch",
-			"strapi-plugin-webtools@1.4.1": "patches/strapi-plugin-webtools@1.4.1.patch"
+			"strapi-plugin-webtools@1.10.3": "patches/strapi-plugin-webtools@1.10.3.patch"
 		},
 		"supportedArchitectures": {
 			"cpu": [

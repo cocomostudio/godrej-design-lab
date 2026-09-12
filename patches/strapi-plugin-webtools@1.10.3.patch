@@ -1,0 +1,96 @@
+diff --git a/dist/server/index.js b/dist/server/index.js
+index 4aedccb28a515e2e189d8e3d98fdd5b37bb97f9b..83cc652759d0b7106d2da0ebde1da018a788fad4 100644
+--- a/dist/server/index.js
++++ b/dist/server/index.js
+@@ -399,6 +399,20 @@ const routes = {
+         config: {
+           policies: []
+         }
++      },
++      // Godrej Design Lab patch: a POST twin of the route above, so that the
++      // website can send its populate description in a body instead of a
++      // query string that outgrows the URL. `policies: []` mirrors the GET
++      // route, which means anonymous by design -- ticket 11 closes that, and
++      // ticket 15 retires this whole patch in favour of an endpoint that
++      // belongs to this application. Do not extend this patch; replace it.
++      {
++        method: "POST",
++        path: "/router",
++        handler: "core.router",
++        config: {
++          policies: []
++        }
+       }
+     ]
+   },
+@@ -770,7 +784,21 @@ const routerWithControllers = async (ctx) => {
+ };
+ const coreController = {
+   router: async (ctx) => {
+-    const { path, ...searchQuery } = ctx.query;
++    // Godrej Design Lab patch: read the query from the POST body when the
++    // caller asks for it. NOTE: this switch FAILS OPEN -- not to "no query",
++    // but to "the caller's raw query string is the query" -- so anything
++    // interpolated into this URL unescaped is a privilege escalation rather
++    // than a malformed request. The one caller escapes the path for exactly
++    // that reason; see apps/frontend-website/src/cms/utilities/
++    // fetch-route-from-cms.server.ts. Retired by ticket 15.
++    //
++    // Patch the controller, not `routerWithControllers` above -- 1.10.3 has a
++    // near-identical destructure there, and patching that one instead
++    // silently drops the body on the floor.
++    let { path, ...searchQuery } = ctx.query;
++    if (searchQuery.pull_query_from_body === "true") {
++      searchQuery = ctx.request.body;
++    }
+     const { auth } = ctx.state;
+     const routerUseControllers = strapi.config.get("plugin::webtools.router_use_controllers", false);
+     if (routerUseControllers) {
+diff --git a/dist/server/index.mjs b/dist/server/index.mjs
+index 1300e864c04715ea703fc1fdb2f391d10daa40ff..9cd4f6366abe53a0911226884269b13dd03c9b4e 100644
+--- a/dist/server/index.mjs
++++ b/dist/server/index.mjs
+@@ -392,6 +392,20 @@ const routes = {
+         config: {
+           policies: []
+         }
++      },
++      // Godrej Design Lab patch: a POST twin of the route above, so that the
++      // website can send its populate description in a body instead of a
++      // query string that outgrows the URL. `policies: []` mirrors the GET
++      // route, which means anonymous by design -- ticket 11 closes that, and
++      // ticket 15 retires this whole patch in favour of an endpoint that
++      // belongs to this application. Do not extend this patch; replace it.
++      {
++        method: "POST",
++        path: "/router",
++        handler: "core.router",
++        config: {
++          policies: []
++        }
+       }
+     ]
+   },
+@@ -763,7 +777,21 @@ const routerWithControllers = async (ctx) => {
+ };
+ const coreController = {
+   router: async (ctx) => {
+-    const { path, ...searchQuery } = ctx.query;
++    // Godrej Design Lab patch: read the query from the POST body when the
++    // caller asks for it. NOTE: this switch FAILS OPEN -- not to "no query",
++    // but to "the caller's raw query string is the query" -- so anything
++    // interpolated into this URL unescaped is a privilege escalation rather
++    // than a malformed request. The one caller escapes the path for exactly
++    // that reason; see apps/frontend-website/src/cms/utilities/
++    // fetch-route-from-cms.server.ts. Retired by ticket 15.
++    //
++    // Patch the controller, not `routerWithControllers` above -- 1.10.3 has a
++    // near-identical destructure there, and patching that one instead
++    // silently drops the body on the floor.
++    let { path, ...searchQuery } = ctx.query;
++    if (searchQuery.pull_query_from_body === "true") {
++      searchQuery = ctx.request.body;
++    }
+     const { auth } = ctx.state;
+     const routerUseControllers = strapi.config.get("plugin::webtools.router_use_controllers", false);
+     if (routerUseControllers) {
